@@ -1,0 +1,68 @@
+[
+  {
+    "scenario_id": 1,
+    "clause_type": "Haftungsbeschränkung (Limitation of Liability)",
+    "source_document": "vendor-agb-it-services.md",
+    "section": "§ 8 Abs. 2",
+    "clause_text": "Die Haftung von DataStream ist in jedem Fall — einschließlich bei Vorsatz und grober Fahrlässigkeit — der Höhe nach begrenzt auf die vom Auftraggeber in den letzten 6 Monaten gezahlte Nettovergütung, maximal jedoch EUR 100.000,00.",
+    "relevant_bgb_provisions": ["§ 309 Nr. 7b BGB", "§ 307 Abs. 1 BGB"],
+    "expected_assessment": "VOID",
+    "expected_risk": "HIGH",
+    "explanation": "This clause attempts to cap liability even for intentional misconduct (Vorsatz) and gross negligence (grobe Fahrlässigkeit). Under § 309 Nr. 7b BGB, liability for gross negligence may not be excluded or limited in AGB. This prohibition has strong indicative effect in B2B contracts via § 310 Abs. 1 BGB. The BGH has consistently held that liability caps covering gross negligence are void. The clause should be revised to exclude Vorsatz and grobe Fahrlässigkeit from the cap."
+  },
+  {
+    "scenario_id": 2,
+    "clause_type": "Gewährleistungsfrist (Warranty Period)",
+    "source_document": "vendor-agb-it-services.md",
+    "section": "§ 7 Abs. 4",
+    "clause_text": "Die Gewährleistungsfrist beträgt 6 Monate ab Abnahme.",
+    "relevant_bgb_provisions": ["§ 634a Abs. 1 BGB", "§ 308 Nr. 8 BGB", "§ 307 Abs. 1 BGB"],
+    "expected_assessment": "LIKELY VOID",
+    "expected_risk": "HIGH",
+    "explanation": "The statutory warranty period for works contracts (Werkvertrag) is 2 years for movable works and 5 years for buildings (§ 634a Abs. 1 BGB). A reduction to 6 months is a drastic deviation from the statutory default. Under § 308 Nr. 8 BGB, excessively short limitation periods are prohibited. In B2B, while some shortening may be permissible, 6 months is generally considered unreasonably short by German courts. A period of at least 12 months is typically the minimum courts accept in B2B."
+  },
+  {
+    "scenario_id": 3,
+    "clause_type": "Abnahmefiktion (Deemed Acceptance)",
+    "source_document": "vendor-agb-it-services.md",
+    "section": "§ 5 Abs. 2",
+    "clause_text": "Erfolgt innerhalb dieser Frist keine ausdrückliche Abnahme oder begründete Rückweisung, gilt die Leistung als abgenommen (Abnahmefiktion).",
+    "relevant_bgb_provisions": ["§ 308 Nr. 5 BGB", "§ 640 BGB"],
+    "expected_assessment": "RISKY",
+    "expected_risk": "MEDIUM",
+    "explanation": "Deemed acceptance clauses (Abnahmefiktion) are subject to § 308 Nr. 5 BGB, which prohibits fictitious declarations unless the user explicitly draws attention to the deemed acceptance effect. The 5-working-day period combined with deemed acceptance is aggressive. While deemed acceptance clauses are not per se void in B2B, the short timeframe (5 working days) may be considered unreasonable for complex IT deliverables. A reasonable period would be at least 2–4 weeks depending on the complexity of the deliverable."
+  },
+  {
+    "scenario_id": 4,
+    "clause_type": "Leistungsänderungsrecht (Right to Modify Performance)",
+    "source_document": "vendor-agb-it-services.md",
+    "section": "§ 2 Abs. 2",
+    "clause_text": "DataStream ist berechtigt, den Umfang und die Art der Leistungserbringung jederzeit nach eigenem Ermessen zu ändern, sofern dies dem Auftraggeber zumutbar ist und den Vertragszweck nicht wesentlich beeinträchtigt.",
+    "relevant_bgb_provisions": ["§ 308 Nr. 4 BGB", "§ 307 Abs. 2 Nr. 2 BGB"],
+    "expected_assessment": "RISKY",
+    "expected_risk": "MEDIUM",
+    "explanation": "Under § 308 Nr. 4 BGB, clauses reserving the right to modify performance are prohibited unless the modification is reasonable for the other party. While this clause includes a reasonableness qualifier, the phrase 'at any time at its own discretion' is very broad. The clause lacks specific criteria for when changes are permitted and does not require notice or the customer's consent. Courts may find this unreasonable under § 307 Abs. 2 Nr. 2 BGB as it could undermine the contractual purpose."
+  },
+  {
+    "scenario_id": 5,
+    "clause_type": "Vertragsstrafe bei Verzug (Penalty for Delay)",
+    "source_document": "einkaufsbedingungen-manufacturing.md",
+    "section": "§ 4 Abs. 2",
+    "clause_text": "Im Falle des Lieferverzugs ist der Auftraggeber berechtigt, eine Vertragsstrafe in Höhe von 1 % des Bestellwerts pro angefangener Woche Verzug zu verlangen, insgesamt jedoch nicht mehr als 10 % des Bestellwerts. Die Geltendmachung weitergehender Schadensersatzansprüche bleibt unberührt. Die Vertragsstrafe wird auf einen weitergehenden Schadensersatzanspruch nicht angerechnet.",
+    "relevant_bgb_provisions": ["§ 309 Nr. 6 BGB", "§ 307 Abs. 1 BGB", "§ 341 Abs. 2 BGB"],
+    "expected_assessment": "PARTIALLY PROBLEMATIC",
+    "expected_risk": "MEDIUM",
+    "explanation": "The penalty rate (1% per week, capped at 10%) is at the upper end of what courts consider acceptable in B2B — the BGH has accepted caps up to 5% as standard, and rates up to 10% may be upheld in specific industries. However, the clause that the penalty is NOT credited against further damages (keine Anrechnung) deviates from § 341 Abs. 2 BGB, which provides that the penalty is credited against damage claims. This non-crediting provision is likely void under § 307 as it leads to an unreasonable accumulation of claims."
+  },
+  {
+    "scenario_id": 6,
+    "clause_type": "Unbeschränkte Haftung des Lieferanten (Unlimited Supplier Liability)",
+    "source_document": "einkaufsbedingungen-manufacturing.md",
+    "section": "§ 8",
+    "clause_text": "Der Lieferant haftet unbeschränkt für alle Schäden, die er, seine Mitarbeiter oder seine Erfüllungsgehilfen im Zusammenhang mit der Vertragserfüllung verursachen. Der Lieferant haftet auch für mittelbare Schäden, entgangenen Gewinn und Folgeschäden. Eine Haftungsbeschränkung des Lieferanten ist ausgeschlossen.",
+    "relevant_bgb_provisions": ["§ 307 Abs. 1 BGB", "§ 307 Abs. 2 Nr. 1 BGB"],
+    "expected_assessment": "RISKY",
+    "expected_risk": "MEDIUM",
+    "explanation": "While AGB typically cannot limit liability for gross negligence, imposing unlimited liability (including for indirect and consequential damages at all negligence levels) through AGB is also problematic. In Einkaufsbedingungen (where the buyer is the AGB user), imposing unlimited liability on the supplier deviates from the statutory model that generally limits liability for simple negligence to foreseeable damages. Courts have found such sweeping unlimited liability clauses in purchasing terms to be unreasonable under § 307, as they shift disproportionate risk to the supplier. The clause should at minimum limit liability for simple negligence to foreseeable, contract-typical damages."
+  }
+]

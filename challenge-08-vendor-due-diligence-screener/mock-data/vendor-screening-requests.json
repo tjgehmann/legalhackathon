@@ -1,0 +1,179 @@
+[
+  {
+    "scenario_id": 1,
+    "vendor_name": "CloudBridge Solutions GmbH",
+    "country": "Germany",
+    "address": "Friedrichstraße 123, 10117 Berlin, Germany",
+    "industry": "Cloud Infrastructure / IT Services",
+    "registration_number": "HRB 192847 B",
+    "key_individuals": [
+      {
+        "name": "Maria Schmidt",
+        "role": "Managing Director",
+        "nationality": "German"
+      },
+      {
+        "name": "Thomas Weber",
+        "role": "CTO",
+        "nationality": "German"
+      }
+    ],
+    "purpose": "Cloud hosting and infrastructure services for TechForward's staging environment",
+    "contract_value": "EUR 180,000 per year",
+    "expected_result": "CLEAR",
+    "expected_result_reason": "Standard German IT vendor with no sanctions matches. Clean screening expected."
+  },
+  {
+    "scenario_id": 2,
+    "vendor_name": "Al-Rashid Trading LLC",
+    "country": "United Arab Emirates",
+    "address": "Dubai Internet City, Building 12, Office 401, Dubai, UAE",
+    "industry": "IT Hardware Distribution",
+    "registration_number": "DIC-2021-4829",
+    "key_individuals": [
+      {
+        "name": "Omar Al-Rashid",
+        "role": "General Manager",
+        "nationality": "Emirati"
+      }
+    ],
+    "purpose": "Supply of networking equipment for TechForward's Dubai-based clients",
+    "contract_value": "EUR 95,000",
+    "expected_result": "POTENTIAL MATCH — REQUIRES REVIEW",
+    "expected_result_reason": "Name is similar to sanctioned entity 'Al Rashid Trading Company LLC' (EU-2024-0847) but different country (UAE vs Syria) and different legal form. Needs careful analysis to determine if this is the same entity operating under a different jurisdiction or a different company."
+  },
+  {
+    "scenario_id": 3,
+    "vendor_name": "Noor Advanced Technologies Co.",
+    "country": "Iran",
+    "address": "Isfahan Science and Technology Town, Isfahan, Iran",
+    "industry": "Technology / Electronics",
+    "registration_number": "IR-IND-29481-ISF",
+    "key_individuals": [
+      {
+        "name": "Ahmad Hosseini",
+        "role": "Director",
+        "nationality": "Iranian"
+      }
+    ],
+    "purpose": "Software component licensing",
+    "contract_value": "EUR 25,000",
+    "expected_result": "BLOCKED — CONFIRMED MATCH",
+    "expected_result_reason": "Exact match with BAFA-listed entity 'Noor Advanced Technologies Co.' (BAFA-2024-0183). Same name, country, address, and registration number. Must block engagement."
+  },
+  {
+    "scenario_id": 4,
+    "vendor_name": "Petrov & Partners Consulting AG",
+    "country": "Switzerland",
+    "address": "Bahnhofstrasse 42, 8001 Zürich, Switzerland",
+    "industry": "Management Consulting",
+    "registration_number": "CHE-294.817.293",
+    "key_individuals": [
+      {
+        "name": "Viktor Petrov",
+        "role": "Senior Partner",
+        "nationality": "Swiss"
+      },
+      {
+        "name": "Elena Müller",
+        "role": "Managing Partner",
+        "nationality": "Swiss"
+      }
+    ],
+    "purpose": "Strategic consulting for market expansion in Eastern Europe",
+    "contract_value": "EUR 250,000",
+    "expected_result": "POTENTIAL MATCH — REQUIRES REVIEW",
+    "expected_result_reason": "Key individual 'Viktor Petrov' has name similarity to sanctioned individual 'Viktor Andreevich Petrov' (EU-2022-1293). Different nationality (Swiss vs Russian) and no patronymic. Common surname — likely false positive but requires enhanced due diligence to confirm."
+  },
+  {
+    "scenario_id": 5,
+    "vendor_name": "Baltic Data Systems OÜ",
+    "country": "Estonia",
+    "address": "Narva mnt 7, 10117 Tallinn, Estonia",
+    "industry": "Software Development / IT Outsourcing",
+    "registration_number": "EE-14829374",
+    "key_individuals": [
+      {
+        "name": "Andrei Sokolov",
+        "role": "CEO",
+        "nationality": "Estonian"
+      },
+      {
+        "name": "Sergei Volkov",
+        "role": "Head of Development",
+        "nationality": "Estonian"
+      }
+    ],
+    "purpose": "Outsourced software development for TechForward's mobile application",
+    "contract_value": "EUR 320,000",
+    "expected_result": "POTENTIAL MATCH — REQUIRES REVIEW",
+    "expected_result_reason": "Key individual 'Sergei Volkov' has name similarity to sanctioned individual 'Sergei Dmitrievich Volkov' (EU-2024-1847). Different nationality (Estonian vs Russian). The alias 'Sergej Wolkow' on the sanctions list shows transliteration variations. Requires enhanced due diligence — verify date of birth and confirm different person."
+  },
+  {
+    "scenario_id": 6,
+    "vendor_name": "Horizon Digital Solutions Ltd",
+    "country": "United Kingdom",
+    "address": "71-75 Shelton Street, London WC2H 9JQ, UK",
+    "industry": "Digital Marketing / Analytics",
+    "registration_number": "UK-CO-12847291",
+    "key_individuals": [
+      {
+        "name": "James Hartley",
+        "role": "Director",
+        "nationality": "British"
+      }
+    ],
+    "purpose": "Digital marketing analytics platform subscription",
+    "contract_value": "EUR 48,000 per year",
+    "expected_result": "POTENTIAL MATCH — REQUIRES REVIEW",
+    "expected_result_reason": "Name is similar to OFAC-listed entity 'Horizon Digital Solutions FZE' (OFAC-SDN-38291). Different country (UK vs UAE), different legal form (Ltd vs FZE), different industry focus. Likely false positive but name similarity warrants verification."
+  },
+  {
+    "scenario_id": 7,
+    "vendor_name": "Polska Digital Sp. z o.o.",
+    "country": "Poland",
+    "address": "ul. Marszałkowska 84, 00-514 Warsaw, Poland",
+    "industry": "Software Development",
+    "registration_number": "KRS-0000847291",
+    "key_individuals": [
+      {
+        "name": "Aleksander Nowak",
+        "role": "Board Member",
+        "nationality": "Polish"
+      },
+      {
+        "name": "Katarzyna Wiśniewska",
+        "role": "CEO",
+        "nationality": "Polish"
+      }
+    ],
+    "purpose": "Custom software development for compliance module",
+    "contract_value": "EUR 150,000",
+    "expected_result": "REQUIRES ENHANCED DUE DILIGENCE",
+    "expected_result_reason": "Key individual 'Aleksander Nowak' matches PEP entry (EU-PEP-2025-0294) — former Deputy Minister of Digital Affairs. Not sanctioned, but PEP status requires enhanced due diligence, source of wealth verification, and senior management approval before onboarding."
+  },
+  {
+    "scenario_id": 8,
+    "vendor_name": "Sakura Technologies K.K.",
+    "country": "Japan",
+    "address": "Minato-ku, Tokyo 105-0001, Japan",
+    "industry": "AI / Machine Learning",
+    "registration_number": "JP-0100-01-184729",
+    "key_individuals": [
+      {
+        "name": "Yuki Tanaka",
+        "role": "CEO",
+        "nationality": "Japanese"
+      },
+      {
+        "name": "Kenji Yamamoto",
+        "role": "CTO",
+        "nationality": "Japanese"
+      }
+    ],
+    "purpose": "AI model training and optimization services",
+    "contract_value": "EUR 200,000",
+    "expected_result": "CLEAR",
+    "expected_result_reason": "Japanese technology company with no name matches against any sanctions or watchlists. Clean screening expected. Standard onboarding process applies."
+  }
+]

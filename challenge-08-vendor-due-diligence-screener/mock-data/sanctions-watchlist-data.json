@@ -1,0 +1,178 @@
+[
+  {
+    "entry_id": "EU-2024-0847",
+    "list": "EU Consolidated Sanctions List",
+    "source": "European Commission",
+    "last_updated": "2026-02-15",
+    "entity_type": "organization",
+    "name": "Al Rashid Trading Company LLC",
+    "aliases": ["Al-Rashid Trading Co.", "ART Company", "Al Rashid Import Export"],
+    "country": "Syria",
+    "address": "14 Al-Thawra Street, Damascus, Syria",
+    "reason": "Designated for providing financial support to entities involved in the Syrian regime's weapons procurement program",
+    "date_listed": "2018-06-15",
+    "sanctions_program": "Syria Sanctions Regulation (EU) 2019/796",
+    "identifiers": {
+      "registration_number": "SY-COM-29481"
+    }
+  },
+  {
+    "entry_id": "EU-2022-1293",
+    "list": "EU Consolidated Sanctions List",
+    "source": "European Commission",
+    "last_updated": "2026-02-15",
+    "entity_type": "individual",
+    "name": "Viktor Andreevich Petrov",
+    "aliases": ["Viktor A. Petrov", "V. Petrov"],
+    "country": "Russia",
+    "date_of_birth": "1968-03-14",
+    "nationality": "Russian",
+    "address": "Moscow, Russia",
+    "reason": "Designated as a person associated with leading businesspersons involved in economic sectors providing a substantial source of revenue to the Government of the Russian Federation",
+    "date_listed": "2022-04-08",
+    "sanctions_program": "Russia Sanctions Regulation (EU) 269/2014",
+    "identifiers": {
+      "passport_number": "RF-7829134"
+    }
+  },
+  {
+    "entry_id": "OFAC-SDN-38291",
+    "list": "OFAC Specially Designated Nationals List",
+    "source": "US Department of the Treasury",
+    "last_updated": "2026-02-10",
+    "entity_type": "organization",
+    "name": "Horizon Digital Solutions FZE",
+    "aliases": ["Horizon DS", "HDS Free Zone Enterprise"],
+    "country": "United Arab Emirates",
+    "address": "Sharjah Airport International Free Zone, Building W4-028, Sharjah, UAE",
+    "reason": "Designated for acting as a front company for the procurement of controlled technology items on behalf of a sanctioned Iranian entity",
+    "date_listed": "2023-09-22",
+    "sanctions_program": "Iran Sanctions (EO 13846)",
+    "identifiers": {
+      "registration_number": "SAIF-FZ-2019-7241"
+    }
+  },
+  {
+    "entry_id": "OFAC-SDN-41023",
+    "list": "OFAC Specially Designated Nationals List",
+    "source": "US Department of the Treasury",
+    "last_updated": "2026-02-10",
+    "entity_type": "individual",
+    "name": "Chen Wei",
+    "aliases": ["Wei Chen", "Chen W."],
+    "country": "China",
+    "date_of_birth": "1975-11-02",
+    "nationality": "Chinese",
+    "address": "Shenzhen, Guangdong Province, China",
+    "reason": "Designated for involvement in proliferation of weapons of mass destruction-related technology",
+    "date_listed": "2024-01-15",
+    "sanctions_program": "Nonproliferation Sanctions (EO 13382)",
+    "identifiers": {
+      "passport_number": "E83729104"
+    }
+  },
+  {
+    "entry_id": "UN-SC-7829",
+    "list": "UN Security Council Consolidated List",
+    "source": "United Nations",
+    "last_updated": "2026-01-30",
+    "entity_type": "organization",
+    "name": "Golden Star Minerals Ltd",
+    "aliases": ["GSM Ltd", "Golden Star Mining"],
+    "country": "Democratic Republic of the Congo",
+    "address": "Lubumbashi, DRC",
+    "reason": "Designated for providing financial and material support to armed groups operating in the eastern DRC",
+    "date_listed": "2020-12-01",
+    "sanctions_program": "DRC Sanctions (Resolution 1807)",
+    "identifiers": {
+      "registration_number": "DRC-RCCM-2018-B-04821"
+    }
+  },
+  {
+    "entry_id": "EU-2023-0592",
+    "list": "EU Consolidated Sanctions List",
+    "source": "European Commission",
+    "last_updated": "2026-02-15",
+    "entity_type": "organization",
+    "name": "Minsk Semiconductor Technologies OJSC",
+    "aliases": ["MST OJSC", "Minsk Semicond", "Minskiye Poluprovodnikovye Tekhnologii"],
+    "country": "Belarus",
+    "address": "17 Partizansky Prospekt, 220033 Minsk, Belarus",
+    "reason": "Designated for contributing to the technological enhancement of the Belarusian defense and security sector",
+    "date_listed": "2023-06-23",
+    "sanctions_program": "Belarus Sanctions Regulation (EU) 2006/765",
+    "identifiers": {
+      "registration_number": "BY-UNP-100582947"
+    }
+  },
+  {
+    "entry_id": "BAFA-2024-0183",
+    "list": "BAFA Export Control — Denied Parties",
+    "source": "German Federal Office for Economic Affairs and Export Control",
+    "last_updated": "2026-01-20",
+    "entity_type": "organization",
+    "name": "Noor Advanced Technologies Co.",
+    "aliases": ["NAT Co.", "Noor AdvTech"],
+    "country": "Iran",
+    "address": "Isfahan Science and Technology Town, Isfahan, Iran",
+    "reason": "Listed for procurement activities related to Iran's nuclear program; recipient of controlled dual-use technology",
+    "date_listed": "2024-03-10",
+    "sanctions_program": "Iran Embargo Regulation (EU) 267/2012",
+    "identifiers": {
+      "registration_number": "IR-IND-29481-ISF"
+    }
+  },
+  {
+    "entry_id": "EU-2024-1847",
+    "list": "EU Consolidated Sanctions List",
+    "source": "European Commission",
+    "last_updated": "2026-02-15",
+    "entity_type": "individual",
+    "name": "Sergei Dmitrievich Volkov",
+    "aliases": ["S. Volkov", "Sergej Wolkow"],
+    "country": "Russia",
+    "date_of_birth": "1971-08-23",
+    "nationality": "Russian",
+    "address": "St. Petersburg, Russia",
+    "reason": "Chief Technology Officer of a major Russian defense contractor; designated for contributing to actions undermining the territorial integrity of Ukraine",
+    "date_listed": "2024-02-24",
+    "sanctions_program": "Russia Sanctions Regulation (EU) 269/2014",
+    "identifiers": {
+      "passport_number": "RF-5104829"
+    }
+  },
+  {
+    "entry_id": "OFAC-SDN-39847",
+    "list": "OFAC Specially Designated Nationals List",
+    "source": "US Department of the Treasury",
+    "last_updated": "2026-02-10",
+    "entity_type": "organization",
+    "name": "Pyongyang Digital Services Bureau",
+    "aliases": ["PDSB", "Korea Digital Services"],
+    "country": "North Korea",
+    "address": "Pyongyang, DPRK",
+    "reason": "Designated for generating revenue for the DPRK regime through overseas IT services contracts",
+    "date_listed": "2023-05-18",
+    "sanctions_program": "North Korea Sanctions (EO 13810)",
+    "identifiers": {}
+  },
+  {
+    "entry_id": "EU-PEP-2025-0294",
+    "list": "EU Politically Exposed Persons List",
+    "source": "EU Member State Submissions",
+    "last_updated": "2026-02-01",
+    "entity_type": "individual",
+    "name": "Aleksander Nowak",
+    "aliases": [],
+    "country": "Poland",
+    "date_of_birth": "1962-05-17",
+    "nationality": "Polish",
+    "address": "Warsaw, Poland",
+    "reason": "Former Deputy Minister of Digital Affairs (2019–2024); classified as PEP — enhanced due diligence required",
+    "date_listed": "2025-01-10",
+    "sanctions_program": "PEP List (EU Anti-Money Laundering Directive)",
+    "identifiers": {
+      "national_id": "PL-62051712345"
+    }
+  }
+]

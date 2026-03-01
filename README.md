@@ -61,6 +61,9 @@ Each challenge has its own folder with a detailed brief and mock data to get you
 | 4 | **Clause Library & Comparison Tool** | Legal teams | [challenge-04](./challenge-04-clause-library/) |
 | 5 | **Compliance Checklist Generator** | Product, Marketing, HR | [challenge-05](./challenge-05-compliance-checklist-generator/) |
 | 6 | **Legal Document Summarizer & Risk Flagger** | Legal teams, Management | [challenge-06](./challenge-06-legal-document-summarizer/) |
+| 7 | **German Court Case Checker** | Legal teams, Management | [challenge-07](./challenge-07-german-court-case-checker/) |
+| 8 | **Vendor Due Diligence Screener** | Compliance, Procurement | [challenge-08](./challenge-08-vendor-due-diligence-screener/) |
+| 9 | **AGB & Einkaufsbedingungen Review Tool** | Legal teams, Procurement | [challenge-09](./challenge-09-agb-review-tool/) |
 
 ---
 
@@ -171,7 +174,16 @@ legalhackathon/
 ├── challenge-05-compliance-checklist-generator/
 │   ├── CHALLENGE.md
 │   └── mock-data/
-└── challenge-06-legal-document-summarizer/
+├── challenge-06-legal-document-summarizer/
+│   ├── CHALLENGE.md
+│   └── mock-data/
+├── challenge-07-german-court-case-checker/
+│   ├── CHALLENGE.md
+│   └── mock-data/
+├── challenge-08-vendor-due-diligence-screener/
+│   ├── CHALLENGE.md
+│   └── mock-data/
+└── challenge-09-agb-review-tool/
     ├── CHALLENGE.md
     └── mock-data/
 ```
