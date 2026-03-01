@@ -1,0 +1,297 @@
+{
+  "reporting_period": {
+    "start": "2024-08-01",
+    "end": "2024-10-31"
+  },
+  "summary": {
+    "total_escalations": 487,
+    "average_resolution_time_hours": 52.3,
+    "escalations_resolved_without_legal_change": 364,
+    "percentage_routine": 74.7
+  },
+  "monthly_breakdown": [
+    {
+      "month": "2024-08",
+      "total_escalations": 148,
+      "by_category": {
+        "Warranty — Scope Dispute": 56,
+        "Product Return — Outside Window": 22,
+        "GDPR — Right to Erasure": 14,
+        "GDPR — Right of Access": 11,
+        "Billing Dispute — Overcharge": 9,
+        "Billing Dispute — Unauthorized Charge": 7,
+        "Service Outage — Credit": 8,
+        "Service Outage — Damages": 3,
+        "Delayed Delivery — Compensation": 6,
+        "Subscription Cancellation — Refund": 5,
+        "Product Safety — Defect Report": 2,
+        "Contract Dispute — SLA Breach": 3,
+        "Price Increase — Objection": 2
+      },
+      "by_risk_outcome": {
+        "resolved_as_green": 68,
+        "resolved_as_yellow": 52,
+        "resolved_as_red": 28
+      },
+      "average_resolution_time_hours": 56.1,
+      "top_agents_escalating": [
+        { "agent": "Maria Schmidt", "escalations": 31 },
+        { "agent": "Thomas Weber", "escalations": 28 },
+        { "agent": "Laura Fischer", "escalations": 26 },
+        { "agent": "Jan Richter", "escalations": 34 },
+        { "agent": "Sophie Braun", "escalations": 29 }
+      ]
+    },
+    {
+      "month": "2024-09",
+      "total_escalations": 163,
+      "by_category": {
+        "Warranty — Scope Dispute": 62,
+        "Product Return — Outside Window": 25,
+        "GDPR — Right to Erasure": 16,
+        "GDPR — Right of Access": 9,
+        "Billing Dispute — Overcharge": 11,
+        "Billing Dispute — Unauthorized Charge": 8,
+        "Service Outage — Credit": 6,
+        "Service Outage — Damages": 4,
+        "Delayed Delivery — Compensation": 7,
+        "Subscription Cancellation — Refund": 6,
+        "Product Safety — Defect Report": 1,
+        "Contract Dispute — SLA Breach": 4,
+        "Price Increase — Objection": 4
+      },
+      "by_risk_outcome": {
+        "resolved_as_green": 76,
+        "resolved_as_yellow": 56,
+        "resolved_as_red": 31
+      },
+      "average_resolution_time_hours": 51.8,
+      "top_agents_escalating": [
+        { "agent": "Maria Schmidt", "escalations": 35 },
+        { "agent": "Thomas Weber", "escalations": 30 },
+        { "agent": "Laura Fischer", "escalations": 29 },
+        { "agent": "Jan Richter", "escalations": 38 },
+        { "agent": "Sophie Braun", "escalations": 31 }
+      ]
+    },
+    {
+      "month": "2024-10",
+      "total_escalations": 176,
+      "by_category": {
+        "Warranty — Scope Dispute": 68,
+        "Product Return — Outside Window": 27,
+        "GDPR — Right to Erasure": 18,
+        "GDPR — Right of Access": 12,
+        "Billing Dispute — Overcharge": 10,
+        "Billing Dispute — Unauthorized Charge": 9,
+        "Service Outage — Credit": 7,
+        "Service Outage — Damages": 5,
+        "Delayed Delivery — Compensation": 8,
+        "Subscription Cancellation — Refund": 4,
+        "Product Safety — Defect Report": 3,
+        "Contract Dispute — SLA Breach": 2,
+        "Price Increase — Objection": 3
+      },
+      "by_risk_outcome": {
+        "resolved_as_green": 82,
+        "resolved_as_yellow": 60,
+        "resolved_as_red": 34
+      },
+      "average_resolution_time_hours": 49.0,
+      "top_agents_escalating": [
+        { "agent": "Maria Schmidt", "escalations": 37 },
+        { "agent": "Thomas Weber", "escalations": 33 },
+        { "agent": "Laura Fischer", "escalations": 32 },
+        { "agent": "Jan Richter", "escalations": 40 },
+        { "agent": "Sophie Braun", "escalations": 34 }
+      ]
+    }
+  ],
+  "category_trends": [
+    {
+      "category": "Warranty — Scope Dispute",
+      "total_3_months": 186,
+      "percentage_of_total": 38.2,
+      "trend": "increasing",
+      "monthly_counts": [56, 62, 68],
+      "avg_resolution_time_hours": 48.5,
+      "common_outcomes": [
+        { "outcome": "Replacement provided", "count": 78, "percentage": 41.9 },
+        { "outcome": "Repair offered", "count": 52, "percentage": 28.0 },
+        { "outcome": "Claim denied (accidental damage)", "count": 34, "percentage": 18.3 },
+        { "outcome": "Pro-rated refund", "count": 22, "percentage": 11.8 }
+      ],
+      "policy_gap_identified": true,
+      "policy_gap_description": "Unclear warranty coverage language on website leads to customer confusion about what constitutes a 'manufacturing defect' vs. 'wear and tear'. Dead pixel policy and commercial-use exclusions not prominently communicated.",
+      "recommended_action": "Rewrite warranty section of T&Cs to include clear examples and a visual guide. Add FAQ on warranty scope to product pages."
+    },
+    {
+      "category": "Product Return — Outside Window",
+      "total_3_months": 74,
+      "percentage_of_total": 15.2,
+      "trend": "stable",
+      "monthly_counts": [22, 25, 27],
+      "avg_resolution_time_hours": 38.2,
+      "common_outcomes": [
+        { "outcome": "Goodwill replacement", "count": 35, "percentage": 47.3 },
+        { "outcome": "Store credit", "count": 24, "percentage": 32.4 },
+        { "outcome": "Claim denied", "count": 15, "percentage": 20.3 }
+      ],
+      "policy_gap_identified": false,
+      "recommended_action": "Current authority matrix rules adequately cover most cases. Consider extending Green threshold from EUR 200 to EUR 250."
+    },
+    {
+      "category": "GDPR — Right to Erasure",
+      "total_3_months": 48,
+      "percentage_of_total": 9.9,
+      "trend": "increasing",
+      "monthly_counts": [14, 16, 18],
+      "avg_resolution_time_hours": 72.1,
+      "common_outcomes": [
+        { "outcome": "Full deletion processed", "count": 28, "percentage": 58.3 },
+        { "outcome": "Partial deletion (legal retention)", "count": 14, "percentage": 29.2 },
+        { "outcome": "Deletion blocked (open claims)", "count": 6, "percentage": 12.5 }
+      ],
+      "policy_gap_identified": true,
+      "policy_gap_description": "CC agents lack clear guidance on when legal retention obligations override deletion requests. Each case gets escalated even when the answer is straightforward.",
+      "recommended_action": "Create a decision tree for GDPR erasure requests that CC agents can follow. Include checklist: open orders? unpaid invoices? tax retention period? If all clear, process deletion without legal involvement."
+    },
+    {
+      "category": "GDPR — Right of Access",
+      "total_3_months": 32,
+      "percentage_of_total": 6.6,
+      "trend": "stable",
+      "monthly_counts": [11, 9, 12],
+      "avg_resolution_time_hours": 65.3,
+      "common_outcomes": [
+        { "outcome": "Data export provided", "count": 30, "percentage": 93.8 },
+        { "outcome": "Identity verification failed", "count": 2, "percentage": 6.2 }
+      ],
+      "policy_gap_identified": true,
+      "policy_gap_description": "Process for data export is manual and requires IT involvement. CC agents always escalate because they can't initiate exports themselves.",
+      "recommended_action": "Build a self-service data export tool in the customer portal. Create an admin tool for CC agents to trigger exports directly."
+    },
+    {
+      "category": "Billing Dispute — Overcharge",
+      "total_3_months": 30,
+      "percentage_of_total": 6.2,
+      "trend": "stable",
+      "monthly_counts": [9, 11, 10],
+      "avg_resolution_time_hours": 24.5,
+      "common_outcomes": [
+        { "outcome": "Full refund of overcharge", "count": 28, "percentage": 93.3 },
+        { "outcome": "Partial refund", "count": 2, "percentage": 6.7 }
+      ],
+      "policy_gap_identified": false,
+      "recommended_action": "These should rarely reach legal. Ensure CC agents know they can resolve confirmed duplicate charges up to EUR 200 immediately."
+    },
+    {
+      "category": "Billing Dispute — Unauthorized Charge",
+      "total_3_months": 24,
+      "percentage_of_total": 4.9,
+      "trend": "increasing",
+      "monthly_counts": [7, 8, 9],
+      "avg_resolution_time_hours": 41.7,
+      "common_outcomes": [
+        { "outcome": "Full refund provided", "count": 16, "percentage": 66.7 },
+        { "outcome": "Partial refund (trial conversion)", "count": 6, "percentage": 25.0 },
+        { "outcome": "Claim denied (valid subscription)", "count": 2, "percentage": 8.3 }
+      ],
+      "policy_gap_identified": true,
+      "policy_gap_description": "Free trial auto-conversion is generating complaints. Customers feel tricked even though opt-in emails are sent. The UX dark pattern issue needs product attention.",
+      "recommended_action": "Add a confirmation step before free trial converts to paid. Send a reminder email 3 days before conversion. These changes would reduce unauthorized charge complaints by an estimated 60%."
+    },
+    {
+      "category": "Service Outage — Credit",
+      "total_3_months": 21,
+      "percentage_of_total": 4.3,
+      "trend": "stable",
+      "monthly_counts": [8, 6, 7],
+      "avg_resolution_time_hours": 28.4,
+      "common_outcomes": [
+        { "outcome": "One month credit issued", "count": 18, "percentage": 85.7 },
+        { "outcome": "Extended credit (multiple months)", "count": 3, "percentage": 14.3 }
+      ],
+      "policy_gap_identified": false,
+      "recommended_action": "Current Green-level authority (up to EUR 50 credit) handles most cases. No changes needed."
+    },
+    {
+      "category": "Service Outage — Damages",
+      "total_3_months": 12,
+      "percentage_of_total": 2.5,
+      "trend": "increasing",
+      "monthly_counts": [3, 4, 5],
+      "avg_resolution_time_hours": 96.8,
+      "common_outcomes": [
+        { "outcome": "Negotiated settlement", "count": 4, "percentage": 33.3 },
+        { "outcome": "Claim denied (no SLA)", "count": 5, "percentage": 41.7 },
+        { "outcome": "Ongoing/unresolved", "count": 3, "percentage": 25.0 }
+      ],
+      "policy_gap_identified": false,
+      "recommended_action": "These are appropriately escalated to Red. Consider adding clearer SLA language to consumer plans stating no liability for consequential damages."
+    },
+    {
+      "category": "Delayed Delivery — Compensation",
+      "total_3_months": 21,
+      "percentage_of_total": 4.3,
+      "trend": "increasing",
+      "monthly_counts": [6, 7, 8],
+      "avg_resolution_time_hours": 32.1,
+      "common_outcomes": [
+        { "outcome": "Shipping refund only", "count": 10, "percentage": 47.6 },
+        { "outcome": "Shipping refund + store credit", "count": 8, "percentage": 38.1 },
+        { "outcome": "Full order refund", "count": 3, "percentage": 14.3 }
+      ],
+      "policy_gap_identified": false,
+      "recommended_action": "Most cases are routine. Authority matrix Green rules should cover shipping refunds. Add EUR 20 store credit as standard goodwill for express delivery failures."
+    },
+    {
+      "category": "Subscription Cancellation — Refund",
+      "total_3_months": 15,
+      "percentage_of_total": 3.1,
+      "trend": "stable",
+      "monthly_counts": [5, 6, 4],
+      "avg_resolution_time_hours": 44.6,
+      "common_outcomes": [
+        { "outcome": "Pro-rated refund with fee", "count": 9, "percentage": 60.0 },
+        { "outcome": "Full refund (consumer protection)", "count": 4, "percentage": 26.7 },
+        { "outcome": "No refund (terms upheld)", "count": 2, "percentage": 13.3 }
+      ],
+      "policy_gap_identified": true,
+      "policy_gap_description": "Non-refundable annual plan terms may conflict with German consumer protection law in certain cases. Legal has overridden terms in 26.7% of cases.",
+      "recommended_action": "Review annual plan refund policy for compliance with German consumer protection. Consider offering a 14-day money-back guarantee for all subscriptions to reduce disputes."
+    }
+  ],
+  "individual_escalations": [
+    { "id": "ESC-2024-301", "date": "2024-08-05", "category": "Warranty — Scope Dispute", "financial_eur": 299, "resolution": "Replacement provided", "time_hours": 36 },
+    { "id": "ESC-2024-302", "date": "2024-08-06", "category": "GDPR — Right to Erasure", "financial_eur": 0, "resolution": "Full deletion processed", "time_hours": 72 },
+    { "id": "ESC-2024-303", "date": "2024-08-07", "category": "Product Return — Outside Window", "financial_eur": 149, "resolution": "Store credit issued", "time_hours": 24 },
+    { "id": "ESC-2024-304", "date": "2024-08-09", "category": "Billing Dispute — Overcharge", "financial_eur": 59, "resolution": "Full refund", "time_hours": 12 },
+    { "id": "ESC-2024-305", "date": "2024-08-10", "category": "Warranty — Scope Dispute", "financial_eur": 899, "resolution": "Repair offered", "time_hours": 48 },
+    { "id": "ESC-2024-306", "date": "2024-08-12", "category": "Service Outage — Damages", "financial_eur": 15000, "resolution": "Claim denied — no SLA", "time_hours": 120 },
+    { "id": "ESC-2024-307", "date": "2024-08-14", "category": "Delayed Delivery — Compensation", "financial_eur": 89, "resolution": "Shipping refund + EUR 20 credit", "time_hours": 18 },
+    { "id": "ESC-2024-308", "date": "2024-08-15", "category": "GDPR — Right of Access", "financial_eur": 0, "resolution": "Data export provided", "time_hours": 68 },
+    { "id": "ESC-2024-309", "date": "2024-08-18", "category": "Warranty — Scope Dispute", "financial_eur": 450, "resolution": "Claim denied — accidental damage", "time_hours": 28 },
+    { "id": "ESC-2024-310", "date": "2024-08-20", "category": "Subscription Cancellation — Refund", "financial_eur": 199, "resolution": "Pro-rated refund with fee", "time_hours": 40 },
+    { "id": "ESC-2024-311", "date": "2024-09-02", "category": "Warranty — Scope Dispute", "financial_eur": 1299, "resolution": "Replacement provided", "time_hours": 56 },
+    { "id": "ESC-2024-312", "date": "2024-09-04", "category": "Contract Dispute — SLA Breach", "financial_eur": 30000, "resolution": "Negotiated 50% penalty reduction", "time_hours": 168 },
+    { "id": "ESC-2024-313", "date": "2024-09-05", "category": "Billing Dispute — Unauthorized Charge", "financial_eur": 44, "resolution": "Full refund + service cancelled", "time_hours": 36 },
+    { "id": "ESC-2024-314", "date": "2024-09-08", "category": "GDPR — Right to Erasure", "financial_eur": 0, "resolution": "Partial deletion — tax records retained", "time_hours": 80 },
+    { "id": "ESC-2024-315", "date": "2024-09-10", "category": "Product Return — Outside Window", "financial_eur": 79, "resolution": "Goodwill replacement", "time_hours": 20 },
+    { "id": "ESC-2024-316", "date": "2024-09-12", "category": "Price Increase — Objection", "financial_eur": 5988, "resolution": "6-month price lock offered", "time_hours": 42 },
+    { "id": "ESC-2024-317", "date": "2024-09-15", "category": "Product Safety — Defect Report", "financial_eur": 340, "resolution": "Product recall initiated for batch", "time_hours": 96 },
+    { "id": "ESC-2024-318", "date": "2024-09-18", "category": "Warranty — Scope Dispute", "financial_eur": 599, "resolution": "Replacement provided (EU 2-year guarantee)", "time_hours": 52 },
+    { "id": "ESC-2024-319", "date": "2024-09-22", "category": "Service Outage — Credit", "financial_eur": 29, "resolution": "One month credit issued", "time_hours": 16 },
+    { "id": "ESC-2024-320", "date": "2024-09-25", "category": "Delayed Delivery — Compensation", "financial_eur": 215, "resolution": "Full order refund", "time_hours": 44 },
+    { "id": "ESC-2024-321", "date": "2024-10-01", "category": "Warranty — Scope Dispute", "financial_eur": 749, "resolution": "Repair offered", "time_hours": 38 },
+    { "id": "ESC-2024-322", "date": "2024-10-03", "category": "GDPR — Right to Erasure", "financial_eur": 0, "resolution": "Deletion blocked — open invoice", "time_hours": 96 },
+    { "id": "ESC-2024-323", "date": "2024-10-05", "category": "Billing Dispute — Overcharge", "financial_eur": 119, "resolution": "Full refund", "time_hours": 8 },
+    { "id": "ESC-2024-324", "date": "2024-10-08", "category": "License Compliance — Overage", "financial_eur": 12500, "resolution": "Negotiated 30% reduction", "time_hours": 144 },
+    { "id": "ESC-2024-325", "date": "2024-10-10", "category": "Warranty — Scope Dispute", "financial_eur": 399, "resolution": "Pro-rated refund", "time_hours": 32 },
+    { "id": "ESC-2024-326", "date": "2024-10-14", "category": "Data Breach — Compensation", "financial_eur": 10000, "resolution": "Ongoing — legal review", "time_hours": null },
+    { "id": "ESC-2024-327", "date": "2024-10-16", "category": "Product Return — Outside Window", "financial_eur": 199, "resolution": "Goodwill replacement", "time_hours": 22 },
+    { "id": "ESC-2024-328", "date": "2024-10-18", "category": "Service Outage — Damages", "financial_eur": 25000, "resolution": "Ongoing — legal review", "time_hours": null },
+    { "id": "ESC-2024-329", "date": "2024-10-22", "category": "Subscription Cancellation — Refund", "financial_eur": 299, "resolution": "Full refund (consumer protection)", "time_hours": 56 },
+    { "id": "ESC-2024-330", "date": "2024-10-28", "category": "Warranty — Scope Dispute", "financial_eur": 1099, "resolution": "Replacement provided", "time_hours": 64 }
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "version": "2.1",
+  "last_updated": "2024-10-15",
+  "approved_by": "Dr. Katrin Hofmann, Head of Legal",
+  "risk_levels": {
+    "green": {
+      "label": "Pre-Approved",
+      "description": "CC agent can resolve immediately without legal approval",
+      "max_financial_exposure_eur": 200,
+      "requires_approval": false,
+      "requires_waiver": true
+    },
+    "yellow": {
+      "label": "Manager Approval",
+      "description": "CC agent receives recommended response but needs one-click manager approval before proceeding",
+      "max_financial_exposure_eur": 1000,
+      "requires_approval": true,
+      "approval_level": "Team Lead / CC Manager",
+      "requires_waiver": true
+    },
+    "red": {
+      "label": "Legal Escalation",
+      "description": "Must be escalated to the legal team with full context package",
+      "max_financial_exposure_eur": null,
+      "requires_approval": true,
+      "approval_level": "Legal Department",
+      "requires_waiver": false
+    }
+  },
+  "rules": [
+    {
+      "id": "RULE-001",
+      "category": "Product Return — Within Window",
+      "risk_level": "green",
+      "conditions": {
+        "return_window_days": 14,
+        "product_condition": ["unopened", "defective", "wrong_item"],
+        "max_value_eur": 500
+      },
+      "pre_approved_action": "Process full refund or exchange. No questions asked for unopened items within 14-day cooling-off period.",
+      "response_template": "We're sorry for the inconvenience. We're happy to process a full refund for your {product_name}. The refund of EUR {amount} will be credited to your original payment method within 5-7 business days.",
+      "waiver_type": "standard_refund"
+    },
+    {
+      "id": "RULE-002",
+      "category": "Product Return — Outside Window (Defective)",
+      "risk_level": "green",
+      "conditions": {
+        "product_age_months_max": 6,
+        "defect_confirmed": true,
+        "max_value_eur": 200
+      },
+      "pre_approved_action": "Offer replacement product or store credit. If product value ≤ EUR 200, process immediately.",
+      "response_template": "We understand your frustration with the defective {product_name}. Even though the return window has passed, we'd like to offer you a {resolution_type} as a gesture of goodwill. {resolution_details}",
+      "waiver_type": "goodwill_replacement"
+    },
+    {
+      "id": "RULE-003",
+      "category": "Product Return — Outside Window (Defective)",
+      "risk_level": "yellow",
+      "conditions": {
+        "product_age_months_max": 12,
+        "defect_confirmed": true,
+        "max_value_eur": 1000
+      },
+      "pre_approved_action": "Recommend replacement or pro-rated refund. Requires manager one-click approval.",
+      "response_template": "We're reviewing your warranty claim for the {product_name}. Based on the defect you've described, we'd like to offer {resolution_type}. This offer is subject to a brief approval step and we'll confirm within 1 business hour.",
+      "waiver_type": "warranty_resolution"
+    },
+    {
+      "id": "RULE-004",
+      "category": "Billing Dispute — Overcharge",
+      "risk_level": "green",
+      "conditions": {
+        "duplicate_charge_confirmed": true,
+        "max_refund_eur": 200
+      },
+      "pre_approved_action": "Refund duplicate charge immediately. Add EUR 10 service credit as goodwill gesture.",
+      "response_template": "We've confirmed the duplicate charge of EUR {amount} on your account. We've processed an immediate refund and added a EUR 10 service credit for the inconvenience. The refund will appear within 3-5 business days.",
+      "waiver_type": "billing_correction"
+    },
+    {
+      "id": "RULE-005",
+      "category": "Billing Dispute — Unauthorized Charge",
+      "risk_level": "yellow",
+      "conditions": {
+        "subscription_auto_converted": true,
+        "max_refund_months": 3,
+        "max_refund_eur": 100
+      },
+      "pre_approved_action": "Refund up to 3 months of charges from auto-converted trial. Cancel the add-on. Requires manager approval.",
+      "response_template": "We understand your concern about the {service_name} charges. After reviewing your account, we'd like to offer a full refund of EUR {amount} for the past {months} months and cancel the service immediately. We'll ensure no further charges occur.",
+      "waiver_type": "subscription_refund"
+    },
+    {
+      "id": "RULE-006",
+      "category": "Service Outage — Credit",
+      "risk_level": "green",
+      "conditions": {
+        "outage_confirmed": true,
+        "customer_plan": "consumer",
+        "max_credit_eur": 50
+      },
+      "pre_approved_action": "Issue service credit equivalent to 1 month of subscription. Cap at EUR 50.",
+      "response_template": "We apologize for the service disruption you experienced. As a goodwill gesture, we've applied a service credit of EUR {amount} to your account, equivalent to one month of your subscription. This will be reflected in your next billing cycle.",
+      "waiver_type": "service_credit"
+    },
+    {
+      "id": "RULE-007",
+      "category": "Service Outage — Damages",
+      "risk_level": "red",
+      "conditions": {
+        "damages_claimed": true,
+        "litigation_threatened": true,
+        "financial_exposure_eur_min": 1000
+      },
+      "pre_approved_action": "Escalate to legal immediately. Do not admit fault or make any settlement offers. Provide context package.",
+      "response_template": "We take your concerns very seriously. Given the nature of your claim, I've escalated this to our specialized team who will review your case thoroughly. You'll receive a detailed response within {response_days} business days. Reference number: {case_id}.",
+      "waiver_type": null
+    },
+    {
+      "id": "RULE-008",
+      "category": "GDPR — Right of Access",
+      "risk_level": "yellow",
+      "conditions": {
+        "request_type": "data_access",
+        "identity_verified": true
+      },
+      "pre_approved_action": "Acknowledge request. Initiate data export process. Must complete within 30 days per GDPR Art. 15(3). Requires manager sign-off on data package before sending.",
+      "response_template": "We've received your data access request and are processing it. Under GDPR, we will provide your data within 30 days. You'll receive your complete data export in a machine-readable format at the email address associated with your account.",
+      "waiver_type": null
+    },
+    {
+      "id": "RULE-009",
+      "category": "GDPR — Right to Erasure",
+      "risk_level": "yellow",
+      "conditions": {
+        "request_type": "data_deletion",
+        "open_orders": false,
+        "unpaid_invoices": false,
+        "identity_verified": true
+      },
+      "pre_approved_action": "Process data deletion request. Retain only data required by law (tax records for 10 years, contract data for statute of limitations). Requires manager approval.",
+      "response_template": "We've received your request to delete your personal data. We will process this within 30 days. Please note that certain data may be retained where we have a legal obligation (e.g., tax records). We'll confirm completion and detail any data retained with legal justification.",
+      "waiver_type": "data_deletion_confirmation"
+    },
+    {
+      "id": "RULE-010",
+      "category": "GDPR — Right to Erasure",
+      "risk_level": "red",
+      "conditions": {
+        "request_type": "data_deletion",
+        "open_orders": true,
+        "unpaid_invoices": true
+      },
+      "pre_approved_action": "Escalate to legal. Deletion cannot proceed while legitimate business interests exist (open claims, unpaid invoices). Legal must assess and respond.",
+      "response_template": "We've received your data deletion request. As you have active matters with us, our legal team needs to review how to best accommodate your request while addressing the outstanding items. They'll contact you within {response_days} business days.",
+      "waiver_type": null
+    },
+    {
+      "id": "RULE-011",
+      "category": "Warranty — Scope Dispute",
+      "risk_level": "yellow",
+      "conditions": {
+        "warranty_valid": true,
+        "defect_type": "manufacturing",
+        "max_value_eur": 1000
+      },
+      "pre_approved_action": "Offer repair or replacement. If customer insists on refund, escalate to manager. Consider EU 2-year legal guarantee.",
+      "response_template": "We understand your concern about the {product_name}. We'd like to offer a {resolution_type} to resolve this issue. Under EU consumer protection, you're entitled to a remedy for manufacturing defects. We'll process your {resolution_type} once approved.",
+      "waiver_type": "warranty_resolution"
+    },
+    {
+      "id": "RULE-012",
+      "category": "Warranty — Scope Dispute",
+      "risk_level": "green",
+      "conditions": {
+        "warranty_valid": false,
+        "damage_type": "accidental",
+        "clear_documentation": true
+      },
+      "pre_approved_action": "Deny warranty claim with clear explanation. Offer paid repair option at discounted rate (20% off standard repair price).",
+      "response_template": "After reviewing your case, we've determined that the damage to your {product_name} is due to {damage_cause}, which is not covered under the manufacturer's warranty. However, we'd like to offer you a discounted repair at EUR {repair_cost} (20% off our standard rate).",
+      "waiver_type": null
+    },
+    {
+      "id": "RULE-013",
+      "category": "Delayed Delivery — Compensation",
+      "risk_level": "green",
+      "conditions": {
+        "delivery_guarantee_breached": true,
+        "max_shipping_refund_eur": 50
+      },
+      "pre_approved_action": "Refund shipping costs immediately. For express delivery failures, add EUR 20 store credit.",
+      "response_template": "We sincerely apologize for the delayed delivery. We've refunded your shipping cost of EUR {shipping_cost} and added a EUR 20 store credit to your account as an apology for the inconvenience.",
+      "waiver_type": "shipping_refund"
+    },
+    {
+      "id": "RULE-014",
+      "category": "Delayed Delivery — Damages",
+      "risk_level": "yellow",
+      "conditions": {
+        "delivery_guarantee_breached": true,
+        "consequential_damages_claimed": true,
+        "max_compensation_eur": 500
+      },
+      "pre_approved_action": "Refund shipping. Offer compensation up to EUR 100 plus store credit. Requires manager approval for amounts > EUR 50.",
+      "response_template": "We understand the impact of the delivery delay and want to make this right. We'd like to offer a full shipping refund of EUR {shipping_cost} plus EUR {compensation} in compensation. {additional_offer}",
+      "waiver_type": "delivery_compensation"
+    },
+    {
+      "id": "RULE-015",
+      "category": "Product Safety — Defect Report",
+      "risk_level": "red",
+      "conditions": {
+        "safety_concern": true,
+        "injury_or_property_damage": true
+      },
+      "pre_approved_action": "Escalate immediately to Legal AND Product Safety. Arrange product return for inspection. Do not admit liability. Document everything.",
+      "response_template": "We take product safety extremely seriously. I've immediately escalated your report to our product safety team and they will contact you within 24 hours. In the meantime, please discontinue use of the product. We'll arrange a prepaid return for inspection. Reference: {case_id}.",
+      "waiver_type": null
+    },
+    {
+      "id": "RULE-016",
+      "category": "Subscription Cancellation — Refund",
+      "risk_level": "yellow",
+      "conditions": {
+        "subscription_type": "annual",
+        "months_used_max": 3,
+        "max_refund_eur": 500
+      },
+      "pre_approved_action": "Offer pro-rated refund for remaining months minus a 10% early termination fee. Requires manager approval.",
+      "response_template": "We're sorry to see you go. Based on your {months_used} months of usage, we can offer a pro-rated refund of EUR {refund_amount}. This accounts for the remaining subscription period minus a small early termination fee as outlined in our terms.",
+      "waiver_type": "subscription_cancellation"
+    },
+    {
+      "id": "RULE-017",
+      "category": "SLA Breach — Enterprise",
+      "risk_level": "red",
+      "conditions": {
+        "customer_tier": "enterprise",
+        "sla_breach_confirmed": true,
+        "contractual_penalties_claimed": true
+      },
+      "pre_approved_action": "Escalate to Legal. Enterprise SLA disputes require contract review and negotiated resolution. Never approve penalties without legal sign-off.",
+      "response_template": "We've escalated your SLA concern to our legal and account management teams for a thorough review of the service levels under your contract. Your dedicated account manager will reach out within 1 business day with a detailed response. Reference: {case_id}.",
+      "waiver_type": null
+    },
+    {
+      "id": "RULE-018",
+      "category": "Data Breach — Compensation",
+      "risk_level": "red",
+      "conditions": {
+        "data_breach_related": true,
+        "compensation_claimed": true
+      },
+      "pre_approved_action": "Escalate to Legal and DPO immediately. Do not acknowledge fault, extent of breach, or discuss compensation amounts. Provide only factual information already disclosed in official breach notification.",
+      "response_template": "We understand your concern regarding the data security incident. Our Data Protection Officer is handling all related inquiries. I've flagged your case for priority review and you'll receive a detailed response within {response_days} business days. Reference: {case_id}.",
+      "waiver_type": null
+    },
+    {
+      "id": "RULE-019",
+      "category": "Price Increase — Objection",
+      "risk_level": "yellow",
+      "conditions": {
+        "price_increase_notified": true,
+        "customer_tier": ["premium", "enterprise"],
+        "max_discount_percent": 10
+      },
+      "pre_approved_action": "Offer to lock current price for 6 additional months or provide a 5% loyalty discount on the new price. Requires manager approval for discounts > 5%.",
+      "response_template": "We value your loyalty as a {customer_tier} customer. While we've had to adjust our pricing, we'd like to offer you {offer_details} as a valued long-term customer. Shall we apply this to your account?",
+      "waiver_type": "price_adjustment"
+    },
+    {
+      "id": "RULE-020",
+      "category": "License Compliance — Overage",
+      "risk_level": "red",
+      "conditions": {
+        "customer_tier": "enterprise",
+        "overage_disputed": true,
+        "financial_exposure_eur_min": 1000
+      },
+      "pre_approved_action": "Escalate to Legal. Overage billing disputes require contract review. Suspend further overage charges pending review if requested.",
+      "response_template": "We've received your inquiry regarding the license overage charges. This has been escalated to our legal and contract management teams for a detailed review. We'll provide a comprehensive response within {response_days} business days. Reference: {case_id}.",
+      "waiver_type": null
+    }
+  ],
+  "escalation_modifiers": {
+    "litigation_threatened": {
+      "effect": "auto_escalate_to_red",
+      "description": "Any case where the customer threatens legal action or mentions an attorney is automatically classified as Red, regardless of financial exposure."
+    },
+    "media_threat": {
+      "effect": "auto_escalate_to_red",
+      "description": "Any case where the customer threatens to go to media or post on social media with significant reach (>10K followers) escalates to Red."
+    },
+    "repeat_complaint": {
+      "effect": "upgrade_one_level",
+      "description": "If the customer has filed 3+ complaints about the same issue in the past 6 months, upgrade the risk level by one tier."
+    },
+    "premium_customer": {
+      "effect": "increase_financial_threshold",
+      "multiplier": 1.5,
+      "description": "For Premium tier customers, financial thresholds for Green and Yellow are multiplied by 1.5x."
+    },
+    "enterprise_customer": {
+      "effect": "auto_involve_account_manager",
+      "description": "Enterprise customers always have their dedicated account manager notified, in addition to the standard risk classification."
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "version": "1.0",
+  "last_updated": "2024-10-20",
+  "approved_by": "Dr. Katrin Hofmann, Head of Legal",
+  "templates": [
+    {
+      "id": "WAIVER-001",
+      "type": "standard_refund",
+      "name": "Standard Refund Micro-Waiver",
+      "applicable_categories": ["Product Return — Within Window", "Product Return — Defective"],
+      "template_en": "I, {customer_name}, confirm that I am returning {product_name} (Order #{order_id}) and accept a full refund of EUR {refund_amount} to my original payment method. I understand this refund resolves my claim regarding this product. Once the refund is processed, I will not pursue further claims related to this specific order. This agreement does not affect my statutory consumer rights under applicable EU and German law.",
+      "template_de": "Ich, {customer_name}, bestätige, dass ich {product_name} (Bestellung Nr. {order_id}) zurückgebe und eine vollständige Rückerstattung von EUR {refund_amount} auf mein ursprüngliches Zahlungsmittel akzeptiere. Ich verstehe, dass diese Rückerstattung meinen Anspruch bezüglich dieses Produkts abschließt. Nach Bearbeitung der Rückerstattung werde ich keine weiteren Ansprüche im Zusammenhang mit dieser Bestellung geltend machen. Diese Vereinbarung berührt nicht meine gesetzlichen Verbraucherrechte nach geltendem EU- und deutschem Recht.",
+      "required_variables": ["customer_name", "product_name", "order_id", "refund_amount"],
+      "legal_elements": {
+        "release_of_claims": true,
+        "consideration": "Refund of purchase price",
+        "mutual_agreement": true,
+        "statutory_rights_preserved": true
+      }
+    },
+    {
+      "id": "WAIVER-002",
+      "type": "goodwill_replacement",
+      "name": "Goodwill Replacement Micro-Waiver",
+      "applicable_categories": ["Product Return — Outside Window"],
+      "template_en": "I, {customer_name}, accept a {resolution_type} for my {product_name} (Order #{order_id}) as a goodwill gesture from TechForward GmbH. I understand that this resolution is provided outside the standard return window and is valued at EUR {resolution_value}. I accept this resolution as full settlement of my claim regarding this product. This agreement does not affect my statutory consumer rights under applicable EU and German law.",
+      "template_de": "Ich, {customer_name}, akzeptiere {resolution_type_de} für mein/e {product_name} (Bestellung Nr. {order_id}) als Kulanzbeweis der TechForward GmbH. Ich verstehe, dass diese Lösung außerhalb des regulären Rückgabezeitraums gewährt wird und einen Wert von EUR {resolution_value} hat. Ich akzeptiere diese Lösung als vollständige Beilegung meines Anspruchs bezüglich dieses Produkts. Diese Vereinbarung berührt nicht meine gesetzlichen Verbraucherrechte nach geltendem EU- und deutschem Recht.",
+      "required_variables": ["customer_name", "product_name", "order_id", "resolution_type", "resolution_type_de", "resolution_value"],
+      "legal_elements": {
+        "release_of_claims": true,
+        "consideration": "Replacement product or store credit",
+        "mutual_agreement": true,
+        "statutory_rights_preserved": true
+      }
+    },
+    {
+      "id": "WAIVER-003",
+      "type": "warranty_resolution",
+      "name": "Warranty Resolution Micro-Waiver",
+      "applicable_categories": ["Warranty — Scope Dispute"],
+      "template_en": "I, {customer_name}, accept {resolution_type} for my {product_name} (Order #{order_id}, purchased {purchase_date}) to resolve my warranty claim. TechForward GmbH will provide {resolution_details} valued at EUR {resolution_value}. I accept this as a satisfactory resolution of the reported defect ({defect_description}). I retain my statutory warranty rights for any new or different defects that may arise. This agreement does not limit my rights under EU consumer protection law, including the legal guarantee period.",
+      "template_de": "Ich, {customer_name}, akzeptiere {resolution_type_de} für mein/e {product_name} (Bestellung Nr. {order_id}, gekauft am {purchase_date}) zur Beilegung meines Gewährleistungsanspruchs. Die TechForward GmbH wird {resolution_details_de} im Wert von EUR {resolution_value} bereitstellen. Ich akzeptiere dies als zufriedenstellende Lösung des gemeldeten Mangels ({defect_description_de}). Ich behalte meine gesetzlichen Gewährleistungsrechte für etwaige neue oder andere Mängel. Diese Vereinbarung schränkt meine Rechte gemäß EU-Verbraucherschutzrecht, einschließlich der gesetzlichen Gewährleistungsfrist, nicht ein.",
+      "required_variables": ["customer_name", "product_name", "order_id", "purchase_date", "resolution_type", "resolution_type_de", "resolution_details", "resolution_details_de", "resolution_value", "defect_description", "defect_description_de"],
+      "legal_elements": {
+        "release_of_claims": true,
+        "consideration": "Repair, replacement, or partial refund",
+        "mutual_agreement": true,
+        "statutory_rights_preserved": true,
+        "scope_limited_to_specific_defect": true
+      }
+    },
+    {
+      "id": "WAIVER-004",
+      "type": "service_credit",
+      "name": "Service Credit Micro-Waiver",
+      "applicable_categories": ["Service Outage — Credit", "Billing Dispute — Overcharge"],
+      "template_en": "I, {customer_name}, accept a service credit of EUR {credit_amount} applied to my TechForward account (Account #{account_id}) as resolution for {issue_description}. This credit will be applied to my next billing cycle. I accept this credit as full settlement of my claim regarding this specific service disruption/billing issue. This agreement does not affect my rights regarding any future service issues or my statutory consumer rights.",
+      "template_de": "Ich, {customer_name}, akzeptiere eine Servicegutschrift von EUR {credit_amount} auf meinem TechForward-Konto (Konto Nr. {account_id}) als Lösung für {issue_description_de}. Diese Gutschrift wird im nächsten Abrechnungszeitraum angerechnet. Ich akzeptiere diese Gutschrift als vollständige Beilegung meines Anspruchs bezüglich dieser Serviceunterbrechung/Abrechnungsfrage. Diese Vereinbarung berührt nicht meine Rechte bezüglich zukünftiger Servicefragen oder meine gesetzlichen Verbraucherrechte.",
+      "required_variables": ["customer_name", "account_id", "credit_amount", "issue_description", "issue_description_de"],
+      "legal_elements": {
+        "release_of_claims": true,
+        "consideration": "Service credit",
+        "mutual_agreement": true,
+        "statutory_rights_preserved": true
+      }
+    },
+    {
+      "id": "WAIVER-005",
+      "type": "subscription_cancellation",
+      "name": "Subscription Cancellation Micro-Waiver",
+      "applicable_categories": ["Subscription Cancellation — Partial Refund"],
+      "template_en": "I, {customer_name}, confirm the cancellation of my {subscription_plan} subscription (Account #{account_id}), effective {cancellation_date}. I accept a pro-rated refund of EUR {refund_amount} for the unused portion of my subscription (covering {remaining_period}). An early termination fee of EUR {termination_fee} has been deducted as per the subscription terms. I understand that my access to {subscription_plan} services will end on {access_end_date}. This agreement does not affect my statutory consumer rights.",
+      "template_de": "Ich, {customer_name}, bestätige die Kündigung meines {subscription_plan}-Abonnements (Konto Nr. {account_id}) zum {cancellation_date}. Ich akzeptiere eine anteilige Rückerstattung von EUR {refund_amount} für den ungenutzten Teil meines Abonnements (für den Zeitraum {remaining_period}). Eine Gebühr für vorzeitige Kündigung von EUR {termination_fee} wurde gemäß den Abonnementbedingungen abgezogen. Ich verstehe, dass mein Zugang zu den {subscription_plan}-Diensten am {access_end_date} endet. Diese Vereinbarung berührt nicht meine gesetzlichen Verbraucherrechte.",
+      "required_variables": ["customer_name", "subscription_plan", "account_id", "cancellation_date", "refund_amount", "remaining_period", "termination_fee", "access_end_date"],
+      "legal_elements": {
+        "release_of_claims": true,
+        "consideration": "Pro-rated refund minus termination fee",
+        "mutual_agreement": true,
+        "statutory_rights_preserved": true
+      }
+    },
+    {
+      "id": "WAIVER-006",
+      "type": "data_deletion_confirmation",
+      "name": "Data Deletion Confirmation Micro-Waiver",
+      "applicable_categories": ["GDPR — Right to Erasure"],
+      "template_en": "I, {customer_name}, confirm my request for TechForward GmbH to delete my personal data in accordance with GDPR Article 17. I understand that: (1) TechForward will delete my personal data within 30 days; (2) Certain data may be retained where TechForward has a legal obligation (e.g., tax records retained for {tax_retention_years} years, contract data retained for the statutory limitation period); (3) Upon deletion, my account and all associated services will be permanently deactivated; (4) This action is irreversible — my data cannot be recovered after deletion. I acknowledge these terms and wish to proceed with the deletion of my personal data.",
+      "template_de": "Ich, {customer_name}, bestätige meine Anfrage an die TechForward GmbH, meine personenbezogenen Daten gemäß DSGVO Artikel 17 zu löschen. Ich verstehe, dass: (1) TechForward meine personenbezogenen Daten innerhalb von 30 Tagen löschen wird; (2) Bestimmte Daten aufbewahrt werden können, wenn TechForward eine gesetzliche Aufbewahrungspflicht hat (z.B. Steuerunterlagen für {tax_retention_years} Jahre, Vertragsdaten für die gesetzliche Verjährungsfrist); (3) Nach der Löschung werden mein Konto und alle zugehörigen Dienste dauerhaft deaktiviert; (4) Dieser Vorgang ist unwiderruflich — meine Daten können nach der Löschung nicht wiederhergestellt werden. Ich erkenne diese Bedingungen an und möchte mit der Löschung meiner personenbezogenen Daten fortfahren.",
+      "required_variables": ["customer_name", "tax_retention_years"],
+      "legal_elements": {
+        "release_of_claims": false,
+        "consideration": "Compliance with data subject rights",
+        "mutual_agreement": true,
+        "statutory_rights_preserved": true,
+        "gdpr_compliant": true,
+        "informed_consent": true
+      }
+    }
+  ]
+}
