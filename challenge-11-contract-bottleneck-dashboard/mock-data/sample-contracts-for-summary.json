@@ -1,0 +1,186 @@
+[
+  {
+    "contract_id": "SUM-001",
+    "customer": "Bayerische Maschinenbau AG",
+    "deal_value_eur": 340000,
+    "contract_type": "SaaS Subscription (2-year)",
+    "sales_owner": "Lisa Krüger",
+    "risk_profile": "LOW",
+    "summary_note": "Straightforward deal with minimal deviations. Should be fast-track signable.",
+    "key_terms": {
+      "term": "2 years, starting April 1, 2026",
+      "auto_renewal": "Yes, 1-year terms, 60-day notice (deviation: standard is 90 days)",
+      "monthly_fee": "EUR 14,167",
+      "annual_contract_value": "EUR 170,000"
+    },
+    "deviations_from_standard": [
+      {
+        "clause": "Auto-Renewal Notice Period",
+        "standard": "90-day notice",
+        "negotiated": "60-day notice",
+        "risk_level": "LOW",
+        "impact": "Minor — shorter notice window but still reasonable",
+        "requires_legal_approval": false
+      },
+      {
+        "clause": "SLA Uptime",
+        "standard": "99.5%",
+        "negotiated": "99.7%",
+        "risk_level": "LOW",
+        "impact": "Achievable based on historical performance (actual: 99.85% over past 12 months)",
+        "requires_legal_approval": false
+      }
+    ],
+    "recommended_action": "SIGN — Deviations are within pre-approved ranges. No legal escalation needed."
+  },
+  {
+    "contract_id": "SUM-002",
+    "customer": "Nordische Finanzgruppe AS",
+    "deal_value_eur": 580000,
+    "contract_type": "SaaS Subscription + Professional Services (3-year)",
+    "sales_owner": "Marcus Weber",
+    "risk_profile": "MEDIUM",
+    "summary_note": "Financial services client with enhanced requirements. Key deviations around liability and DPA need executive awareness.",
+    "key_terms": {
+      "term": "3 years, starting May 1, 2026",
+      "auto_renewal": "Yes, 1-year terms, 90-day notice (standard)",
+      "monthly_fee": "EUR 16,111",
+      "annual_contract_value": "EUR 193,333"
+    },
+    "deviations_from_standard": [
+      {
+        "clause": "Limitation of Liability",
+        "standard": "12 months' fees (EUR 193,333)",
+        "negotiated": "18 months' fees (EUR 290,000) with separate data breach carve-out capped at 24 months' fees (EUR 386,667)",
+        "risk_level": "MEDIUM",
+        "impact": "Increased maximum exposure by EUR 193,334 compared to standard. Data breach carve-out creates significant potential liability.",
+        "requires_legal_approval": true
+      },
+      {
+        "clause": "Data Processing (DPA)",
+        "standard": "Standard DPA with general sub-processor authorization",
+        "negotiated": "Enhanced DPA with specific sub-processor authorization, 30-day objection right, data residency in Frankfurt only, annual audit right",
+        "risk_level": "MEDIUM",
+        "impact": "Operationally more complex — must track sub-processor changes per-customer and accommodate audit requests. No US sub-processors for this customer's data.",
+        "requires_legal_approval": true
+      },
+      {
+        "clause": "Governing Law",
+        "standard": "German law, Berlin courts",
+        "negotiated": "German law, Oslo arbitration (Norwegian Arbitration Act)",
+        "risk_level": "LOW",
+        "impact": "German law preserved (positive). Oslo arbitration adds cost if disputes arise but acceptable for Nordic client.",
+        "requires_legal_approval": true
+      }
+    ],
+    "recommended_action": "ESCALATE — Liability deviations exceed sales pre-approval threshold. Recommend VP Legal sign-off on data breach carve-out. Commercially attractive deal worth the enhanced terms."
+  },
+  {
+    "contract_id": "SUM-003",
+    "customer": "Frankfurt Digital Health Klinikverbund gGmbH",
+    "deal_value_eur": 720000,
+    "contract_type": "SaaS Subscription + Professional Services (3-year)",
+    "sales_owner": "Lisa Krüger",
+    "risk_profile": "HIGH",
+    "summary_note": "Healthcare client with extensive non-standard requirements. Multiple high-risk deviations. Requires senior legal and management review.",
+    "key_terms": {
+      "term": "3 years, starting June 1, 2026",
+      "auto_renewal": "No auto-renewal — explicit renewal required (deviation)",
+      "monthly_fee": "EUR 20,000",
+      "annual_contract_value": "EUR 240,000"
+    },
+    "deviations_from_standard": [
+      {
+        "clause": "Limitation of Liability",
+        "standard": "12 months' fees (EUR 240,000)",
+        "negotiated": "24 months' fees (EUR 480,000) with unlimited liability for data breaches involving patient data. TechForward must maintain EUR 5M cyber insurance.",
+        "risk_level": "HIGH",
+        "impact": "Unlimited data breach liability is a significant exposure. Insurance requirement adds ~EUR 25K annual cost. If a patient data breach occurs, liability is uncapped.",
+        "requires_legal_approval": true
+      },
+      {
+        "clause": "Data Processing (DPA)",
+        "standard": "Standard DPA",
+        "negotiated": "Health data-specific DPA with: mandatory AES-256 encryption at rest and in transit, 4-hour breach notification SLA, annual penetration test by customer-approved provider, no US sub-processors, data residency in Frankfurt only, right to on-site audit with 14-day notice",
+        "risk_level": "HIGH",
+        "impact": "4-hour breach notification SLA is very aggressive (standard is 72 hours under GDPR). Annual pen test by external provider adds ~EUR 30K cost. On-site audit right with short notice is operationally disruptive.",
+        "requires_legal_approval": true
+      },
+      {
+        "clause": "Indemnification",
+        "standard": "Mutual IP indemnification capped at 12 months' fees",
+        "negotiated": "TechForward indemnifies for: IP infringement (uncapped), GDPR violations (uncapped), and any regulatory fines resulting from TechForward's service failures (capped at 24 months' fees)",
+        "risk_level": "HIGH",
+        "impact": "Uncapped GDPR indemnification is extremely risky. Regulatory fine indemnification, while capped, is non-standard and could set precedent for other healthcare clients.",
+        "requires_legal_approval": true
+      },
+      {
+        "clause": "Termination for Convenience",
+        "standard": "No termination for convenience",
+        "negotiated": "Customer may terminate for convenience at any time with 90 days' notice. No early termination fee.",
+        "risk_level": "HIGH",
+        "impact": "Customer can walk away at any time with 3 months' notice. On a 3-year, EUR 720K deal, this eliminates revenue certainty. If customer terminates after year 1, TechForward loses EUR 480K in expected revenue.",
+        "requires_legal_approval": true
+      },
+      {
+        "clause": "SLA / Uptime",
+        "standard": "99.5% uptime, service credits up to 10%",
+        "negotiated": "99.95% uptime, RPO 30 min, RTO 2 hours, service credits up to 30% of monthly fee, termination right if SLA missed 2 consecutive months",
+        "risk_level": "HIGH",
+        "impact": "99.95% uptime is near-carrier-grade. Achieving this requires dedicated infrastructure investment estimated at EUR 50-80K. Termination right for 2 months of SLA miss creates significant risk.",
+        "requires_legal_approval": true
+      }
+    ],
+    "recommended_action": "REJECT or RENEGOTIATE — Multiple high-risk deviations that collectively create unacceptable exposure. Uncapped data breach liability + termination for convenience + aggressive SLA = deal could cost more than it earns. Recommend pushback on: (1) cap data breach liability at 36 months' fees, (2) add early termination fee of 50% remaining value, (3) reduce SLA to 99.9% with longer RPO/RTO."
+  },
+  {
+    "contract_id": "SUM-004",
+    "customer": "Dresdner Verwaltungsdigital GmbH (Public Sector)",
+    "deal_value_eur": 390000,
+    "contract_type": "SaaS Subscription + Professional Services (3-year)",
+    "sales_owner": "Anna Schneider",
+    "risk_profile": "MEDIUM",
+    "summary_note": "Public sector deal with sector-specific requirements. Some deviations are non-negotiable (statutory public procurement rules). Good strategic value for public sector reference.",
+    "key_terms": {
+      "term": "3 years, starting July 1, 2026",
+      "auto_renewal": "No auto-renewal (public procurement requirement)",
+      "monthly_fee": "EUR 10,833",
+      "annual_contract_value": "EUR 130,000"
+    },
+    "deviations_from_standard": [
+      {
+        "clause": "Limitation of Liability",
+        "standard": "12 months' fees (EUR 130,000)",
+        "negotiated": "18 months' fees (EUR 195,000); unlimited for gross negligence and willful misconduct (required by public procurement law)",
+        "risk_level": "LOW",
+        "impact": "Modest increase in liability cap. Unlimited liability for gross negligence/willful misconduct mirrors statutory position anyway — not a real additional risk.",
+        "requires_legal_approval": true
+      },
+      {
+        "clause": "Data Processing (DPA)",
+        "standard": "Standard DPA",
+        "negotiated": "BSI-compliant DPA with German-only data residency, BSI C5 attestation requirement, specific access controls per BSI IT-Grundschutz, no non-EU sub-processors",
+        "risk_level": "MEDIUM",
+        "impact": "BSI C5 attestation requirement adds ~EUR 40K one-time cost and ongoing maintenance. However, this investment benefits all future public sector deals. German-only data residency is achievable (Frankfurt DC).",
+        "requires_legal_approval": true
+      },
+      {
+        "clause": "Source Code Escrow",
+        "standard": "Not offered as standard",
+        "negotiated": "Source code escrow with independent agent; release upon insolvency or if TechForward ceases to support the product",
+        "risk_level": "LOW",
+        "impact": "Standard public sector requirement. Annual escrow cost ~EUR 5K. Release conditions are reasonable.",
+        "requires_legal_approval": true
+      },
+      {
+        "clause": "Termination for Convenience",
+        "standard": "No termination for convenience",
+        "negotiated": "Termination for convenience with 6 months' notice after year 1; payment of 30% of remaining term fees",
+        "risk_level": "MEDIUM",
+        "impact": "Required by public procurement rules (Haushaltsrecht). Early termination fee of 30% provides reasonable protection. Maximum exposure if terminated at month 13: loss of ~EUR 182K net (70% of remaining fees).",
+        "requires_legal_approval": true
+      }
+    ],
+    "recommended_action": "SIGN with VP Legal approval — Deviations are mostly driven by public sector requirements and are industry-standard. BSI C5 investment is strategic (unlocks future public sector pipeline). Recommend accepting with condition that BSI C5 cost is amortized across public sector client base."
+  }
+]

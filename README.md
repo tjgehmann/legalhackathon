@@ -64,6 +64,8 @@ Each challenge has its own folder with a detailed brief and mock data to get you
 | 7 | **German Court Case Checker** | Legal teams, Management | [challenge-07](./challenge-07-german-court-case-checker/) |
 | 8 | **Vendor Due Diligence Screener** | Compliance, Procurement | [challenge-08](./challenge-08-vendor-due-diligence-screener/) |
 | 9 | **AGB & Einkaufsbedingungen Review Tool** | Legal teams, Procurement | [challenge-09](./challenge-09-agb-review-tool/) |
+| 10 | **Regulatory Horizon Map** | Executives, Legal teams | [challenge-10](./challenge-10-regulatory-horizon-map/) |
+| 11 | **Contract Bottleneck & Deal Velocity Dashboard** | Sales, Legal, CFO | [challenge-11](./challenge-11-contract-bottleneck-dashboard/) |
 
 ---
 
@@ -183,7 +185,13 @@ legalhackathon/
 ├── challenge-08-vendor-due-diligence-screener/
 │   ├── CHALLENGE.md
 │   └── mock-data/
-└── challenge-09-agb-review-tool/
+├── challenge-09-agb-review-tool/
+│   ├── CHALLENGE.md
+│   └── mock-data/
+├── challenge-10-regulatory-horizon-map/
+│   ├── CHALLENGE.md
+│   └── mock-data/
+└── challenge-11-contract-bottleneck-dashboard/
     ├── CHALLENGE.md
     └── mock-data/
 ```

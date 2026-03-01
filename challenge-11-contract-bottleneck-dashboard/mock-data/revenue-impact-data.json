@@ -1,0 +1,199 @@
+{
+  "reporting_period": "Q3 2025 – Q1 2026",
+  "currency": "EUR",
+
+  "pipeline_summary": {
+    "total_deals_in_period": 20,
+    "total_pipeline_value": 5831000,
+    "average_deal_value": 291550,
+    "deals_signed": 20,
+    "deals_lost": 0,
+    "deals_in_negotiation": 0
+  },
+
+  "cycle_time_metrics": {
+    "average_days_terms_sent_to_signed": 26.3,
+    "median_days_terms_sent_to_signed": 25.0,
+    "min_days": 3,
+    "max_days": 56,
+    "standard_deviation_days": 16.2,
+    "deals_closed_under_7_days": 3,
+    "deals_closed_7_to_14_days": 3,
+    "deals_closed_15_to_30_days": 5,
+    "deals_closed_31_to_45_days": 5,
+    "deals_closed_over_45_days": 4
+  },
+
+  "negotiation_impact": {
+    "deals_with_zero_negotiation": 2,
+    "average_days_zero_negotiation": 3.5,
+    "deals_with_1_to_2_rounds": 7,
+    "average_days_1_to_2_rounds": 14.3,
+    "deals_with_3_to_4_rounds": 7,
+    "average_days_3_to_4_rounds": 35.9,
+    "deals_with_5_plus_rounds": 4,
+    "average_days_5_plus_rounds": 53.3
+  },
+
+  "clause_negotiation_frequency": [
+    {
+      "clause": "Limitation of Liability",
+      "times_negotiated": 16,
+      "percentage_of_deals": 80,
+      "average_days_to_resolve": 9.7,
+      "required_legal_escalation_pct": 68.75,
+      "total_days_spent_across_all_deals": 155
+    },
+    {
+      "clause": "Data Processing (DPA)",
+      "times_negotiated": 13,
+      "percentage_of_deals": 65,
+      "average_days_to_resolve": 9.2,
+      "required_legal_escalation_pct": 76.9,
+      "total_days_spent_across_all_deals": 120
+    },
+    {
+      "clause": "Governing Law / Dispute Resolution",
+      "times_negotiated": 6,
+      "percentage_of_deals": 30,
+      "average_days_to_resolve": 7.3,
+      "required_legal_escalation_pct": 100,
+      "total_days_spent_across_all_deals": 44
+    },
+    {
+      "clause": "Auto-Renewal",
+      "times_negotiated": 6,
+      "percentage_of_deals": 30,
+      "average_days_to_resolve": 2.7,
+      "required_legal_escalation_pct": 0,
+      "total_days_spent_across_all_deals": 16
+    },
+    {
+      "clause": "Termination for Convenience",
+      "times_negotiated": 5,
+      "percentage_of_deals": 25,
+      "average_days_to_resolve": 6.6,
+      "required_legal_escalation_pct": 80,
+      "total_days_spent_across_all_deals": 33
+    },
+    {
+      "clause": "Indemnification",
+      "times_negotiated": 4,
+      "percentage_of_deals": 20,
+      "average_days_to_resolve": 11.3,
+      "required_legal_escalation_pct": 100,
+      "total_days_spent_across_all_deals": 45
+    },
+    {
+      "clause": "SLA / Uptime Guarantee",
+      "times_negotiated": 4,
+      "percentage_of_deals": 20,
+      "average_days_to_resolve": 7.5,
+      "required_legal_escalation_pct": 25,
+      "total_days_spent_across_all_deals": 30
+    },
+    {
+      "clause": "IP Ownership",
+      "times_negotiated": 3,
+      "percentage_of_deals": 15,
+      "average_days_to_resolve": 7.0,
+      "required_legal_escalation_pct": 100,
+      "total_days_spent_across_all_deals": 21
+    },
+    {
+      "clause": "Source Code Escrow",
+      "times_negotiated": 1,
+      "percentage_of_deals": 5,
+      "average_days_to_resolve": 8.0,
+      "required_legal_escalation_pct": 100,
+      "total_days_spent_across_all_deals": 8
+    }
+  ],
+
+  "revenue_impact_model": {
+    "description": "Models the financial impact of contract negotiation delays on revenue recognition and cash flow",
+    "assumptions": {
+      "revenue_recognition": "Ratably over contract term, starting on signature date",
+      "average_monthly_recurring_revenue_per_deal": 13500,
+      "weighted_average_cost_of_capital": 0.08,
+      "sales_team_cost_per_day": 850,
+      "legal_team_cost_per_day": 1200,
+      "opportunity_cost_per_day_delayed": "Average deal value / 365 = ~EUR 799/day"
+    },
+    "current_state": {
+      "average_negotiation_days": 26.3,
+      "total_negotiation_days_all_deals": 526,
+      "estimated_delayed_revenue": 420000,
+      "estimated_legal_cost_of_negotiations": 315600,
+      "estimated_sales_cost_of_negotiations": 223100,
+      "total_estimated_cost_of_current_process": 958700
+    },
+    "improvement_scenarios": [
+      {
+        "scenario": "Reduce average negotiation by 4 days (to ~22 days)",
+        "method": "Pre-approve liability caps up to 18 months and DPA data residency requests",
+        "deals_affected": 16,
+        "total_days_saved": 64,
+        "revenue_acceleration_eur": 51200,
+        "legal_cost_savings_eur": 76800,
+        "sales_cost_savings_eur": 54400,
+        "total_annual_benefit_eur": 182400
+      },
+      {
+        "scenario": "Reduce average negotiation by 8 days (to ~18 days)",
+        "method": "Implement SAR policies for top 5 clauses; empower sales to accept within defined ranges",
+        "deals_affected": 18,
+        "total_days_saved": 144,
+        "revenue_acceleration_eur": 115200,
+        "legal_cost_savings_eur": 172800,
+        "sales_cost_savings_eur": 122400,
+        "total_annual_benefit_eur": 410400
+      },
+      {
+        "scenario": "Reduce average negotiation by 14 days (to ~12 days)",
+        "method": "Full SAR implementation + executive summary for fast-track signing + automated deviation detection",
+        "deals_affected": 20,
+        "total_days_saved": 280,
+        "revenue_acceleration_eur": 224000,
+        "legal_cost_savings_eur": 336000,
+        "sales_cost_savings_eur": 238000,
+        "total_annual_benefit_eur": 798000
+      }
+    ]
+  },
+
+  "quarterly_revenue_impact": {
+    "q3_2025": {
+      "deals_closed": 7,
+      "total_value": 1715000,
+      "average_days_to_close": 24.7,
+      "revenue_delayed_by_negotiation_eur": 135000,
+      "note": "Two deals (Hanseatische, München Digital Health) accounted for 106 of 173 total negotiation days"
+    },
+    "q4_2025": {
+      "deals_closed": 9,
+      "total_value": 2448000,
+      "average_days_to_close": 28.9,
+      "revenue_delayed_by_negotiation_eur": 195000,
+      "note": "Q4 had the highest average cycle time due to multiple large, complex deals (EuroPharm, Nationale Stadtwerke)"
+    },
+    "q1_2026": {
+      "deals_closed": 4,
+      "total_value": 1668000,
+      "average_days_to_close": 24.0,
+      "revenue_delayed_by_negotiation_eur": 90000,
+      "note": "Q1 partial (Jan-Feb only). Includes one fast-track deal (Startup Accelerator, 3 days) pulling the average down."
+    }
+  },
+
+  "legal_team_utilization": {
+    "legal_team_size": 3,
+    "available_legal_hours_per_quarter": 1560,
+    "hours_spent_on_contract_negotiation_per_quarter": 620,
+    "percentage_of_legal_time_on_negotiations": 39.7,
+    "hours_spent_per_deal_average": 31,
+    "hours_spent_on_deals_with_no_negotiation": 2,
+    "hours_spent_on_deals_with_5_plus_rounds": 65,
+    "note": "Nearly 40% of legal team capacity is consumed by contract negotiations. Top 4 most complex deals consumed 50% of all negotiation hours."
+  }
+}

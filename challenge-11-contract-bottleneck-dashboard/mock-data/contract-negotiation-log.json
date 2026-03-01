@@ -1,0 +1,684 @@
+[
+  {
+    "deal_id": "DEAL-2025-001",
+    "customer": "Meridian Financial Group AG",
+    "deal_value_eur": 420000,
+    "contract_type": "SaaS Subscription (3-year)",
+    "sales_owner": "Lisa Krüger",
+    "date_terms_sent": "2025-07-10",
+    "date_signed": "2025-08-18",
+    "days_in_negotiation": 39,
+    "negotiation_rounds": 4,
+    "clauses_negotiated": [
+      {
+        "clause": "Limitation of Liability",
+        "standard_position": "Capped at 12 months' fees",
+        "customer_position": "Uncapped for data breaches; capped at 24 months' fees for other claims",
+        "final_outcome": "Capped at 12 months' fees generally; specific carve-out for data breaches capped at 24 months' fees",
+        "days_spent": 14,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Data Processing (DPA)",
+        "standard_position": "Standard DPA, sub-processors listed on website, general authorization",
+        "customer_position": "Specific authorization for each sub-processor; right to object with 30-day cure period",
+        "final_outcome": "General authorization with 30-day advance notice and right to object; if objection not resolved, customer may terminate affected services",
+        "days_spent": 10,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "SLA / Uptime Guarantee",
+        "standard_position": "99.5% monthly uptime; service credits up to 10% of monthly fee",
+        "customer_position": "99.9% uptime; service credits up to 30% of monthly fee; termination right if SLA missed 3 consecutive months",
+        "final_outcome": "99.7% uptime; service credits up to 15% of monthly fee; termination right after 3 consecutive months below 99.0%",
+        "days_spent": 7,
+        "required_legal_escalation": false
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-002",
+    "customer": "NordTech Solutions AB",
+    "deal_value_eur": 185000,
+    "contract_type": "SaaS Subscription (1-year)",
+    "sales_owner": "Marcus Weber",
+    "date_terms_sent": "2025-07-22",
+    "date_signed": "2025-08-05",
+    "days_in_negotiation": 14,
+    "negotiation_rounds": 2,
+    "clauses_negotiated": [
+      {
+        "clause": "Governing Law",
+        "standard_position": "German law, Berlin courts",
+        "customer_position": "Swedish law, Stockholm arbitration",
+        "final_outcome": "German law, arbitration in Stockholm (compromise)",
+        "days_spent": 5,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Auto-Renewal",
+        "standard_position": "Auto-renewal for successive 1-year terms with 90-day notice to cancel",
+        "customer_position": "No auto-renewal; manual renewal required",
+        "final_outcome": "Auto-renewal with 60-day notice to cancel (shortened notice period)",
+        "days_spent": 3,
+        "required_legal_escalation": false
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-003",
+    "customer": "Hanseatische Versicherung AG",
+    "deal_value_eur": 780000,
+    "contract_type": "SaaS Subscription + Professional Services (3-year)",
+    "sales_owner": "Lisa Krüger",
+    "date_terms_sent": "2025-08-01",
+    "date_signed": "2025-09-25",
+    "days_in_negotiation": 55,
+    "negotiation_rounds": 6,
+    "clauses_negotiated": [
+      {
+        "clause": "Limitation of Liability",
+        "standard_position": "Capped at 12 months' fees",
+        "customer_position": "Uncapped for all claims; insurance requirement of EUR 5M",
+        "final_outcome": "Capped at 24 months' fees; TechForward to maintain EUR 5M professional indemnity insurance",
+        "days_spent": 18,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Data Processing (DPA)",
+        "standard_position": "Standard DPA, general sub-processor authorization",
+        "customer_position": "Full BaFin-compliant DPA with specific audit rights, data residency in Germany only, no US sub-processors",
+        "final_outcome": "Enhanced DPA with annual audit right, data residency in Frankfurt, restriction on US sub-processors for insurance data",
+        "days_spent": 15,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Indemnification",
+        "standard_position": "Mutual indemnification for IP infringement and breach of confidentiality",
+        "customer_position": "Broad indemnification from TechForward for any regulatory fines resulting from service failures",
+        "final_outcome": "TechForward indemnifies for IP infringement and data breaches caused by TechForward's negligence; no indemnification for regulatory fines",
+        "days_spent": 12,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Termination for Convenience",
+        "standard_position": "No termination for convenience during initial term",
+        "customer_position": "Termination for convenience with 6 months' notice at any time",
+        "final_outcome": "Termination for convenience after month 18 with 6 months' notice and payment of early termination fee (50% of remaining term)",
+        "days_spent": 8,
+        "required_legal_escalation": true
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-004",
+    "customer": "GreenField Energie GmbH",
+    "deal_value_eur": 95000,
+    "contract_type": "SaaS Subscription (1-year)",
+    "sales_owner": "Anna Schneider",
+    "date_terms_sent": "2025-08-15",
+    "date_signed": "2025-08-22",
+    "days_in_negotiation": 7,
+    "negotiation_rounds": 1,
+    "clauses_negotiated": [
+      {
+        "clause": "Auto-Renewal",
+        "standard_position": "Auto-renewal for successive 1-year terms with 90-day notice",
+        "customer_position": "60-day notice period instead of 90",
+        "final_outcome": "Accepted customer position (60-day notice)",
+        "days_spent": 2,
+        "required_legal_escalation": false
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-005",
+    "customer": "Rhein-Main Logistik AG",
+    "deal_value_eur": 310000,
+    "contract_type": "SaaS Subscription (2-year)",
+    "sales_owner": "Marcus Weber",
+    "date_terms_sent": "2025-09-01",
+    "date_signed": "2025-10-02",
+    "days_in_negotiation": 31,
+    "negotiation_rounds": 3,
+    "clauses_negotiated": [
+      {
+        "clause": "Limitation of Liability",
+        "standard_position": "Capped at 12 months' fees",
+        "customer_position": "Capped at 18 months' fees with unlimited liability for data breaches",
+        "final_outcome": "Capped at 12 months' fees generally; data breach liability capped at 18 months' fees",
+        "days_spent": 10,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Data Processing (DPA)",
+        "standard_position": "Standard DPA",
+        "customer_position": "Additional requirements for sub-processor management and data deletion timelines",
+        "final_outcome": "Standard DPA with addendum specifying 30-day data deletion and quarterly sub-processor updates",
+        "days_spent": 8,
+        "required_legal_escalation": false
+      },
+      {
+        "clause": "IP Ownership",
+        "standard_position": "TechForward retains all IP; customer gets license",
+        "customer_position": "Customer wants ownership of custom configurations and integrations",
+        "final_outcome": "TechForward retains platform IP; customer owns custom configurations built by customer; joint ownership of integrations",
+        "days_spent": 6,
+        "required_legal_escalation": true
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-006",
+    "customer": "Atlas Consulting Partners LLP",
+    "deal_value_eur": 145000,
+    "contract_type": "SaaS Subscription (1-year)",
+    "sales_owner": "Anna Schneider",
+    "date_terms_sent": "2025-09-10",
+    "date_signed": "2025-10-08",
+    "days_in_negotiation": 28,
+    "negotiation_rounds": 3,
+    "clauses_negotiated": [
+      {
+        "clause": "Governing Law",
+        "standard_position": "German law, Berlin courts",
+        "customer_position": "English law, London courts",
+        "final_outcome": "German law, London arbitration (LCIA)",
+        "days_spent": 8,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Limitation of Liability",
+        "standard_position": "Capped at 12 months' fees",
+        "customer_position": "Capped at contract value (1-year fee) plus unlimited for IP and confidentiality breaches",
+        "final_outcome": "Capped at 12 months' fees; unlimited for willful breach of confidentiality only",
+        "days_spent": 10,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Auto-Renewal",
+        "standard_position": "Auto-renewal with 90-day notice",
+        "customer_position": "No auto-renewal",
+        "final_outcome": "Auto-renewal with 30-day notice (significantly shortened)",
+        "days_spent": 4,
+        "required_legal_escalation": false
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-007",
+    "customer": "München Digital Health GmbH",
+    "deal_value_eur": 520000,
+    "contract_type": "SaaS Subscription + Professional Services (2-year)",
+    "sales_owner": "Lisa Krüger",
+    "date_terms_sent": "2025-09-15",
+    "date_signed": "2025-11-05",
+    "days_in_negotiation": 51,
+    "negotiation_rounds": 5,
+    "clauses_negotiated": [
+      {
+        "clause": "Limitation of Liability",
+        "standard_position": "Capped at 12 months' fees",
+        "customer_position": "Unlimited liability; minimum EUR 2M insurance",
+        "final_outcome": "Capped at 24 months' fees; EUR 2M cyber insurance to be maintained",
+        "days_spent": 16,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Data Processing (DPA)",
+        "standard_position": "Standard DPA",
+        "customer_position": "Health data-specific DPA with enhanced security requirements, mandatory encryption, incident response SLA of 4 hours",
+        "final_outcome": "Enhanced DPA with health data addendum, AES-256 encryption, 24-hour incident notification, annual penetration test",
+        "days_spent": 14,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Indemnification",
+        "standard_position": "Mutual IP indemnification",
+        "customer_position": "TechForward indemnifies for any GDPR violations and resulting fines",
+        "final_outcome": "TechForward indemnifies for GDPR violations caused by TechForward's breach of DPA obligations; capped at 12 months' fees",
+        "days_spent": 10,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "SLA / Uptime Guarantee",
+        "standard_position": "99.5% monthly uptime",
+        "customer_position": "99.95% uptime (healthcare requirement); RPO 1 hour, RTO 4 hours",
+        "final_outcome": "99.9% uptime; RPO 4 hours, RTO 8 hours; service credits up to 20% of monthly fee",
+        "days_spent": 7,
+        "required_legal_escalation": false
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-008",
+    "customer": "Berliner Startup Factory GmbH",
+    "deal_value_eur": 48000,
+    "contract_type": "SaaS Subscription (1-year)",
+    "sales_owner": "Marcus Weber",
+    "date_terms_sent": "2025-10-01",
+    "date_signed": "2025-10-05",
+    "days_in_negotiation": 4,
+    "negotiation_rounds": 1,
+    "clauses_negotiated": []
+  },
+  {
+    "deal_id": "DEAL-2025-009",
+    "customer": "Schweizerische Industriewerke AG",
+    "deal_value_eur": 290000,
+    "contract_type": "SaaS Subscription (2-year)",
+    "sales_owner": "Anna Schneider",
+    "date_terms_sent": "2025-10-05",
+    "date_signed": "2025-11-12",
+    "days_in_negotiation": 38,
+    "negotiation_rounds": 4,
+    "clauses_negotiated": [
+      {
+        "clause": "Governing Law",
+        "standard_position": "German law, Berlin courts",
+        "customer_position": "Swiss law, Zürich courts",
+        "final_outcome": "German law, Zürich arbitration (Swiss Rules)",
+        "days_spent": 10,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Limitation of Liability",
+        "standard_position": "Capped at 12 months' fees",
+        "customer_position": "Capped at 2x annual fees",
+        "final_outcome": "Capped at 18 months' fees",
+        "days_spent": 8,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Data Processing (DPA)",
+        "standard_position": "Standard DPA",
+        "customer_position": "Data must remain in Switzerland or EU; no US sub-processors",
+        "final_outcome": "Data processed in Frankfurt only; US sub-processors excluded for this customer's data",
+        "days_spent": 7,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Termination for Convenience",
+        "standard_position": "No termination for convenience during initial term",
+        "customer_position": "Termination for convenience with 3 months' notice",
+        "final_outcome": "No termination for convenience during first 12 months; thereafter with 3 months' notice",
+        "days_spent": 5,
+        "required_legal_escalation": false
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-010",
+    "customer": "ProBuild Construction Group SE",
+    "deal_value_eur": 175000,
+    "contract_type": "SaaS Subscription (1-year)",
+    "sales_owner": "Marcus Weber",
+    "date_terms_sent": "2025-10-12",
+    "date_signed": "2025-10-30",
+    "days_in_negotiation": 18,
+    "negotiation_rounds": 2,
+    "clauses_negotiated": [
+      {
+        "clause": "Limitation of Liability",
+        "standard_position": "Capped at 12 months' fees",
+        "customer_position": "Capped at contract value plus unlimited for gross negligence",
+        "final_outcome": "Standard position accepted (12 months' fees cap; statutory liability for gross negligence unaffected)",
+        "days_spent": 6,
+        "required_legal_escalation": false
+      },
+      {
+        "clause": "Auto-Renewal",
+        "standard_position": "Auto-renewal with 90-day notice",
+        "customer_position": "Auto-renewal with 60-day notice",
+        "final_outcome": "Accepted customer position (60-day notice)",
+        "days_spent": 2,
+        "required_legal_escalation": false
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-011",
+    "customer": "Wiener Technologie Holding GmbH",
+    "deal_value_eur": 350000,
+    "contract_type": "SaaS Subscription (2-year)",
+    "sales_owner": "Lisa Krüger",
+    "date_terms_sent": "2025-10-20",
+    "date_signed": "2025-11-28",
+    "days_in_negotiation": 39,
+    "negotiation_rounds": 4,
+    "clauses_negotiated": [
+      {
+        "clause": "Limitation of Liability",
+        "standard_position": "Capped at 12 months' fees",
+        "customer_position": "Capped at 24 months' fees with separate uncapped carve-out for IP infringement",
+        "final_outcome": "Capped at 18 months' fees; IP infringement indemnity uncapped",
+        "days_spent": 12,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Data Processing (DPA)",
+        "standard_position": "Standard DPA",
+        "customer_position": "Austrian data protection authority-approved clauses; data residency in EU",
+        "final_outcome": "Standard DPA plus Austrian regulatory addendum; data processed in Frankfurt",
+        "days_spent": 8,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Governing Law",
+        "standard_position": "German law, Berlin courts",
+        "customer_position": "Austrian law, Vienna commercial court",
+        "final_outcome": "German law, Vienna commercial court",
+        "days_spent": 6,
+        "required_legal_escalation": true
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-012",
+    "customer": "Deutsche Automobilteile GmbH",
+    "deal_value_eur": 230000,
+    "contract_type": "SaaS Subscription (2-year)",
+    "sales_owner": "Anna Schneider",
+    "date_terms_sent": "2025-11-01",
+    "date_signed": "2025-11-20",
+    "days_in_negotiation": 19,
+    "negotiation_rounds": 2,
+    "clauses_negotiated": [
+      {
+        "clause": "Auto-Renewal",
+        "standard_position": "Auto-renewal with 90-day notice",
+        "customer_position": "No auto-renewal; explicit renewal required",
+        "final_outcome": "Auto-renewal with 60-day notice and explicit reminder email 90 days before renewal",
+        "days_spent": 3,
+        "required_legal_escalation": false
+      },
+      {
+        "clause": "IP Ownership",
+        "standard_position": "TechForward retains all IP",
+        "customer_position": "Customer wants full ownership of custom-developed integrations",
+        "final_outcome": "TechForward retains platform IP; customer receives perpetual, transferable license for custom integrations",
+        "days_spent": 7,
+        "required_legal_escalation": true
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-013",
+    "customer": "Parisian Media Group SAS",
+    "deal_value_eur": 160000,
+    "contract_type": "SaaS Subscription (1-year)",
+    "sales_owner": "Marcus Weber",
+    "date_terms_sent": "2025-11-10",
+    "date_signed": "2025-12-15",
+    "days_in_negotiation": 35,
+    "negotiation_rounds": 3,
+    "clauses_negotiated": [
+      {
+        "clause": "Governing Law",
+        "standard_position": "German law, Berlin courts",
+        "customer_position": "French law, Paris commercial court",
+        "final_outcome": "German law, ICC arbitration in Paris",
+        "days_spent": 12,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Limitation of Liability",
+        "standard_position": "Capped at 12 months' fees",
+        "customer_position": "French statutory liability rules; no contractual cap",
+        "final_outcome": "Capped at 12 months' fees; French mandatory liability provisions expressly preserved",
+        "days_spent": 10,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Data Processing (DPA)",
+        "standard_position": "Standard DPA",
+        "customer_position": "CNIL-aligned DPA with specific French regulatory requirements",
+        "final_outcome": "Standard DPA with French regulatory addendum",
+        "days_spent": 6,
+        "required_legal_escalation": true
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-014",
+    "customer": "BioScience Research Institute e.V.",
+    "deal_value_eur": 88000,
+    "contract_type": "SaaS Subscription (1-year)",
+    "sales_owner": "Anna Schneider",
+    "date_terms_sent": "2025-11-15",
+    "date_signed": "2025-11-28",
+    "days_in_negotiation": 13,
+    "negotiation_rounds": 2,
+    "clauses_negotiated": [
+      {
+        "clause": "Data Processing (DPA)",
+        "standard_position": "Standard DPA",
+        "customer_position": "Enhanced security measures for research data; encryption at rest and in transit",
+        "final_outcome": "Standard DPA with research data addendum; AES-256 encryption confirmed",
+        "days_spent": 5,
+        "required_legal_escalation": false
+      },
+      {
+        "clause": "Limitation of Liability",
+        "standard_position": "Capped at 12 months' fees",
+        "customer_position": "Accepted standard position",
+        "final_outcome": "Standard position accepted",
+        "days_spent": 0,
+        "required_legal_escalation": false
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-015",
+    "customer": "Köln Retail International GmbH",
+    "deal_value_eur": 410000,
+    "contract_type": "SaaS Subscription + Professional Services (2-year)",
+    "sales_owner": "Lisa Krüger",
+    "date_terms_sent": "2025-11-20",
+    "date_signed": "2026-01-10",
+    "days_in_negotiation": 51,
+    "negotiation_rounds": 5,
+    "clauses_negotiated": [
+      {
+        "clause": "Limitation of Liability",
+        "standard_position": "Capped at 12 months' fees",
+        "customer_position": "Minimum EUR 1M; uncapped for data breaches",
+        "final_outcome": "Capped at 18 months' fees (minimum EUR 500K); data breach liability capped at EUR 1M",
+        "days_spent": 14,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Data Processing (DPA)",
+        "standard_position": "Standard DPA",
+        "customer_position": "Retail-specific data processing requirements; PCI-DSS compliance requirement; no profiling of end-consumer data",
+        "final_outcome": "Standard DPA with retail addendum; TechForward confirms no PCI data processed; no consumer profiling clause added",
+        "days_spent": 10,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "SLA / Uptime Guarantee",
+        "standard_position": "99.5% monthly uptime",
+        "customer_position": "99.9% uptime with enhanced SLA during peak retail periods (Black Friday, Christmas)",
+        "final_outcome": "99.7% standard; 99.9% during declared peak periods (max 30 days/year); enhanced service credits during peaks",
+        "days_spent": 8,
+        "required_legal_escalation": false
+      },
+      {
+        "clause": "Termination for Convenience",
+        "standard_position": "No termination for convenience",
+        "customer_position": "Termination for convenience with 90 days' notice",
+        "final_outcome": "No termination for convenience in year 1; termination with 6 months' notice and 25% early termination fee thereafter",
+        "days_spent": 6,
+        "required_legal_escalation": true
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-016",
+    "customer": "SmartFactory Robotics BV",
+    "deal_value_eur": 275000,
+    "contract_type": "SaaS Subscription (2-year)",
+    "sales_owner": "Marcus Weber",
+    "date_terms_sent": "2025-12-01",
+    "date_signed": "2025-12-22",
+    "days_in_negotiation": 21,
+    "negotiation_rounds": 2,
+    "clauses_negotiated": [
+      {
+        "clause": "Limitation of Liability",
+        "standard_position": "Capped at 12 months' fees",
+        "customer_position": "Capped at annual contract value",
+        "final_outcome": "Standard position accepted (12 months' fees = annual contract value for this deal)",
+        "days_spent": 3,
+        "required_legal_escalation": false
+      },
+      {
+        "clause": "IP Ownership",
+        "standard_position": "TechForward retains all IP",
+        "customer_position": "Joint IP for any ML models trained on customer's manufacturing data",
+        "final_outcome": "TechForward retains platform IP; customer retains rights to their data and any derived datasets; ML models remain TechForward IP but customer gets perpetual license",
+        "days_spent": 8,
+        "required_legal_escalation": true
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-017",
+    "customer": "Hamburg Port Services GmbH & Co. KG",
+    "deal_value_eur": 195000,
+    "contract_type": "SaaS Subscription (1-year)",
+    "sales_owner": "Anna Schneider",
+    "date_terms_sent": "2025-12-05",
+    "date_signed": "2025-12-18",
+    "days_in_negotiation": 13,
+    "negotiation_rounds": 2,
+    "clauses_negotiated": [
+      {
+        "clause": "Auto-Renewal",
+        "standard_position": "Auto-renewal with 90-day notice",
+        "customer_position": "30-day notice period",
+        "final_outcome": "Auto-renewal with 45-day notice",
+        "days_spent": 2,
+        "required_legal_escalation": false
+      },
+      {
+        "clause": "Limitation of Liability",
+        "standard_position": "Capped at 12 months' fees",
+        "customer_position": "Standard accepted",
+        "final_outcome": "Standard position accepted",
+        "days_spent": 0,
+        "required_legal_escalation": false
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-018",
+    "customer": "EuroPharm Distribution SA",
+    "deal_value_eur": 650000,
+    "contract_type": "SaaS Subscription + Professional Services (3-year)",
+    "sales_owner": "Lisa Krüger",
+    "date_terms_sent": "2025-12-10",
+    "date_signed": "2026-02-04",
+    "days_in_negotiation": 56,
+    "negotiation_rounds": 6,
+    "clauses_negotiated": [
+      {
+        "clause": "Limitation of Liability",
+        "standard_position": "Capped at 12 months' fees",
+        "customer_position": "Unlimited liability; minimum EUR 10M insurance",
+        "final_outcome": "Capped at 24 months' fees; EUR 5M professional indemnity and cyber insurance",
+        "days_spent": 18,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Data Processing (DPA)",
+        "standard_position": "Standard DPA",
+        "customer_position": "Pharma-specific data handling with GxP compliance requirements, validated systems, and audit rights including right to inspect data centers",
+        "final_outcome": "Enhanced DPA with pharma addendum; annual audit right (remote or on-site with 30-day notice); TechForward to maintain SOC 2 Type II",
+        "days_spent": 15,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Indemnification",
+        "standard_position": "Mutual IP indemnification",
+        "customer_position": "Broad indemnification for regulatory fines, product recalls affected by system failures, and third-party claims",
+        "final_outcome": "IP indemnification (uncapped); regulatory fine indemnification limited to cases of TechForward's gross negligence (capped at 12 months' fees)",
+        "days_spent": 12,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "SLA / Uptime Guarantee",
+        "standard_position": "99.5% monthly uptime",
+        "customer_position": "99.99% uptime; RPO 15 min; RTO 1 hour",
+        "final_outcome": "99.9% uptime; RPO 1 hour; RTO 4 hours; dedicated support channel",
+        "days_spent": 8,
+        "required_legal_escalation": false
+      }
+    ]
+  },
+  {
+    "deal_id": "DEAL-2025-019",
+    "customer": "Startup Accelerator Berlin e.V.",
+    "deal_value_eur": 35000,
+    "contract_type": "SaaS Subscription (1-year)",
+    "sales_owner": "Marcus Weber",
+    "date_terms_sent": "2026-01-05",
+    "date_signed": "2026-01-08",
+    "days_in_negotiation": 3,
+    "negotiation_rounds": 0,
+    "clauses_negotiated": []
+  },
+  {
+    "deal_id": "DEAL-2025-020",
+    "customer": "Nationale Stadtwerke Holding AG",
+    "deal_value_eur": 480000,
+    "contract_type": "SaaS Subscription + Professional Services (3-year)",
+    "sales_owner": "Lisa Krüger",
+    "date_terms_sent": "2026-01-10",
+    "date_signed": "2026-02-25",
+    "days_in_negotiation": 46,
+    "negotiation_rounds": 5,
+    "clauses_negotiated": [
+      {
+        "clause": "Limitation of Liability",
+        "standard_position": "Capped at 12 months' fees",
+        "customer_position": "Public sector procurement rules require minimum liability standards; uncapped for willful misconduct and gross negligence",
+        "final_outcome": "Capped at 18 months' fees; unlimited for willful misconduct and gross negligence (aligning with statutory requirements)",
+        "days_spent": 10,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Data Processing (DPA)",
+        "standard_position": "Standard DPA",
+        "customer_position": "Public sector DPA with enhanced data sovereignty requirements; data must stay in Germany; specific BSI (Federal Office for Information Security) standards",
+        "final_outcome": "Enhanced DPA with BSI-aligned security controls; data residency restricted to Frankfurt; annual BSI compliance certification",
+        "days_spent": 12,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Governing Law",
+        "standard_position": "German law, Berlin courts",
+        "customer_position": "German law, customer's local court (Düsseldorf)",
+        "final_outcome": "German law, Düsseldorf courts",
+        "days_spent": 3,
+        "required_legal_escalation": false
+      },
+      {
+        "clause": "Source Code Escrow",
+        "standard_position": "No escrow",
+        "customer_position": "Source code escrow with release upon insolvency or material breach",
+        "final_outcome": "Source code escrow with independent escrow agent; release upon insolvency only",
+        "days_spent": 8,
+        "required_legal_escalation": true
+      },
+      {
+        "clause": "Termination for Convenience",
+        "standard_position": "No termination for convenience",
+        "customer_position": "Public sector requires termination for convenience right",
+        "final_outcome": "Termination for convenience with 6 months' notice after year 1; payment of 30% of remaining term fees",
+        "days_spent": 6,
+        "required_legal_escalation": true
+      }
+    ]
+  }
+]
