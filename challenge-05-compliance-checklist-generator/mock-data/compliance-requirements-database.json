@@ -1,0 +1,276 @@
+{
+  "requirements": [
+    {
+      "id": "GDPR-001",
+      "regulation": "GDPR",
+      "category": "Data Privacy",
+      "title": "Privacy Notice",
+      "description": "Provide a clear, transparent privacy notice to data subjects before collecting their personal data",
+      "trigger_conditions": ["collects_personal_data", "eu_data_subjects"],
+      "priority": "must_do_before_launch",
+      "action_steps": [
+        "Draft or update privacy notice covering: identity of controller, purposes of processing, legal basis, data recipients, retention periods, and data subject rights",
+        "Make privacy notice accessible at point of data collection",
+        "Ensure privacy notice is written in clear, plain language"
+      ],
+      "legal_signoff_required": false,
+      "plain_language_summary": "You need to tell people what data you're collecting about them, why, and what their rights are — before you start collecting."
+    },
+    {
+      "id": "GDPR-002",
+      "regulation": "GDPR",
+      "category": "Data Privacy",
+      "title": "Lawful Basis for Processing",
+      "description": "Identify and document the lawful basis for each type of personal data processing",
+      "trigger_conditions": ["collects_personal_data", "eu_data_subjects"],
+      "priority": "must_do_before_launch",
+      "action_steps": [
+        "Identify the lawful basis for processing (consent, contract, legitimate interest, legal obligation, vital interest, or public interest)",
+        "Document the lawful basis in your data processing records",
+        "If relying on consent, ensure consent mechanism meets GDPR requirements (freely given, specific, informed, unambiguous)",
+        "If relying on legitimate interest, conduct and document a Legitimate Interest Assessment (LIA)"
+      ],
+      "legal_signoff_required": false,
+      "plain_language_summary": "You need a valid legal reason for processing personal data. Figure out which one applies and write it down."
+    },
+    {
+      "id": "GDPR-003",
+      "regulation": "GDPR",
+      "category": "Data Privacy",
+      "title": "Data Protection Impact Assessment (DPIA)",
+      "description": "Conduct a DPIA for high-risk processing activities",
+      "trigger_conditions": ["collects_personal_data", "eu_data_subjects", "high_risk_processing"],
+      "priority": "must_do_before_launch",
+      "action_steps": [
+        "Determine if processing is 'high risk' (profiling, large-scale processing, systematic monitoring, sensitive data, new technologies)",
+        "If high risk, complete a DPIA using the company template",
+        "Identify and assess risks to individuals' rights and freedoms",
+        "Document measures to mitigate identified risks",
+        "Submit DPIA to the DPO for review"
+      ],
+      "legal_signoff_required": true,
+      "plain_language_summary": "If your project involves risky data processing (like profiling or large-scale data collection), you need to formally assess the privacy risks before you start."
+    },
+    {
+      "id": "GDPR-004",
+      "regulation": "GDPR",
+      "category": "Data Privacy",
+      "title": "Data Processing Agreement with Vendors",
+      "description": "Ensure DPAs are in place with all third-party processors",
+      "trigger_conditions": ["shares_data_with_vendors", "eu_data_subjects"],
+      "priority": "must_do_before_launch",
+      "action_steps": [
+        "Identify all vendors/subprocessors who will process personal data",
+        "Ensure a GDPR-compliant Data Processing Agreement is in place with each vendor",
+        "Verify that vendor provides adequate security measures",
+        "If vendor is outside EU/EEA, ensure appropriate transfer mechanism (SCCs, adequacy decision)"
+      ],
+      "legal_signoff_required": true,
+      "plain_language_summary": "If you're sending personal data to an external vendor, you need a signed data processing agreement with them first."
+    },
+    {
+      "id": "GDPR-005",
+      "regulation": "GDPR",
+      "category": "Data Privacy",
+      "title": "Consent Management",
+      "description": "Implement proper consent collection and management mechanisms",
+      "trigger_conditions": ["requires_consent", "eu_data_subjects"],
+      "priority": "must_do_before_launch",
+      "action_steps": [
+        "Design consent collection UI with clear, affirmative action (no pre-ticked boxes)",
+        "Ensure consent is granular (separate consent for different purposes)",
+        "Implement mechanism to record when and how consent was given",
+        "Provide easy mechanism for users to withdraw consent at any time",
+        "Ensure withdrawal of consent is as easy as giving consent"
+      ],
+      "legal_signoff_required": false,
+      "plain_language_summary": "If you need consent to process data, make sure people actively opt in, can see what they're agreeing to, and can easily change their mind."
+    },
+    {
+      "id": "CCPA-001",
+      "regulation": "CCPA/CPRA",
+      "category": "Data Privacy",
+      "title": "California Consumer Privacy Rights",
+      "description": "Comply with CCPA/CPRA requirements for California residents",
+      "trigger_conditions": ["collects_personal_data", "us_california_consumers", "meets_ccpa_thresholds"],
+      "priority": "must_do_before_launch",
+      "action_steps": [
+        "Update privacy policy to include CCPA-required disclosures",
+        "Add 'Do Not Sell or Share My Personal Information' link on website",
+        "Implement process for handling consumer rights requests (access, deletion, correction, opt-out)",
+        "Ensure ability to respond to consumer requests within 45 days",
+        "Review data sharing practices for 'sale' or 'sharing' under CCPA definitions"
+      ],
+      "legal_signoff_required": true,
+      "plain_language_summary": "If you're collecting data from California residents, they have specific rights to know what you collect, get it deleted, and opt out of data selling/sharing."
+    },
+    {
+      "id": "CANSPAM-001",
+      "regulation": "CAN-SPAM",
+      "category": "Marketing",
+      "title": "Email Marketing Compliance (US)",
+      "description": "Ensure marketing emails comply with CAN-SPAM Act requirements",
+      "trigger_conditions": ["email_marketing", "us_recipients"],
+      "priority": "must_do_before_launch",
+      "action_steps": [
+        "Include clear identification that the message is an advertisement",
+        "Include valid physical postal address of the sender",
+        "Include a clear and conspicuous unsubscribe mechanism",
+        "Honor unsubscribe requests within 10 business days",
+        "Do not use deceptive subject lines or misleading header information",
+        "If using a third-party email service, ensure they comply as well"
+      ],
+      "legal_signoff_required": false,
+      "plain_language_summary": "US marketing emails need a real postal address, an unsubscribe link, honest subject lines, and you must remove people who opt out within 10 days."
+    },
+    {
+      "id": "GDPR-MKTG-001",
+      "regulation": "GDPR / ePrivacy",
+      "category": "Marketing",
+      "title": "Email Marketing Compliance (EU)",
+      "description": "Ensure marketing emails comply with GDPR and ePrivacy requirements for EU recipients",
+      "trigger_conditions": ["email_marketing", "eu_recipients"],
+      "priority": "must_do_before_launch",
+      "action_steps": [
+        "Obtain explicit opt-in consent before sending marketing emails (double opt-in recommended)",
+        "Maintain records of when and how consent was obtained",
+        "Include unsubscribe mechanism in every email",
+        "Honor unsubscribe requests within 5 business days (company policy)",
+        "Do not send marketing emails to purchased lists without verified consent",
+        "Maintain suppression list of individuals who have opted out"
+      ],
+      "legal_signoff_required": false,
+      "plain_language_summary": "For EU contacts, you need explicit consent (opt-in) before sending marketing emails. Keep records of consent and make it easy to unsubscribe."
+    },
+    {
+      "id": "COOKIE-001",
+      "regulation": "ePrivacy / GDPR",
+      "category": "Website",
+      "title": "Cookie Consent",
+      "description": "Implement cookie consent management for website visitors",
+      "trigger_conditions": ["website_launch", "uses_cookies", "eu_visitors"],
+      "priority": "must_do_before_launch",
+      "action_steps": [
+        "Implement a cookie consent banner that loads before non-essential cookies",
+        "Categorize cookies (strictly necessary, analytics, marketing, etc.)",
+        "Allow granular consent (users should be able to accept/reject each category)",
+        "Do not set non-essential cookies before consent is given",
+        "Maintain a cookie policy listing all cookies, their purposes, and retention periods",
+        "Provide easy mechanism to modify or withdraw cookie consent"
+      ],
+      "legal_signoff_required": false,
+      "plain_language_summary": "Your website needs a cookie banner that asks permission before setting tracking cookies. Users must be able to pick which types of cookies they accept."
+    },
+    {
+      "id": "ACCESS-001",
+      "regulation": "Various (ADA, EAA)",
+      "category": "Website",
+      "title": "Web Accessibility",
+      "description": "Ensure web content meets accessibility standards",
+      "trigger_conditions": ["website_launch", "public_facing"],
+      "priority": "should_do",
+      "action_steps": [
+        "Review website against WCAG 2.1 AA standards",
+        "Ensure all images have alt text",
+        "Ensure sufficient color contrast",
+        "Ensure keyboard navigability",
+        "Test with screen readers",
+        "Consider the European Accessibility Act requirements for products and services"
+      ],
+      "legal_signoff_required": false,
+      "plain_language_summary": "Make your website usable by people with disabilities. This is increasingly a legal requirement, not just a nice-to-have."
+    },
+    {
+      "id": "AML-001",
+      "regulation": "AML/KYC",
+      "category": "Financial Compliance",
+      "title": "Customer Due Diligence",
+      "description": "Conduct KYC/AML checks on new customers as required",
+      "trigger_conditions": ["financial_services", "high_value_transactions", "regulated_industry"],
+      "priority": "must_do_before_launch",
+      "action_steps": [
+        "Screen new customers against sanctions lists (EU, US, UK, UN)",
+        "Verify identity of beneficial owners for corporate customers",
+        "Assess customer risk level (low, medium, high)",
+        "Document due diligence findings",
+        "Implement ongoing monitoring for high-risk customers",
+        "Report suspicious transactions to the relevant Financial Intelligence Unit"
+      ],
+      "legal_signoff_required": true,
+      "plain_language_summary": "Before doing business with new customers (especially in regulated sectors), verify who they are, check sanctions lists, and assess their risk level."
+    },
+    {
+      "id": "EMPLOY-001",
+      "regulation": "German Labor Law",
+      "category": "Employment",
+      "title": "Works Council Consultation",
+      "description": "Consult works council before implementing new monitoring or data processing systems affecting employees",
+      "trigger_conditions": ["affects_employees", "new_monitoring_system", "germany"],
+      "priority": "must_do_before_launch",
+      "action_steps": [
+        "Identify if the new system involves monitoring employee behavior or performance",
+        "If yes, draft a works council notification describing the system, its purpose, and data collected",
+        "Submit notification to works council and allow adequate time for consultation",
+        "Negotiate a works agreement if required",
+        "Do not deploy the system before works council process is complete"
+      ],
+      "legal_signoff_required": true,
+      "plain_language_summary": "In Germany, if your project involves monitoring employees or changing how their data is processed, the works council must be consulted first."
+    },
+    {
+      "id": "AI-001",
+      "regulation": "EU AI Act",
+      "category": "AI/Technology",
+      "title": "AI System Risk Classification",
+      "description": "Classify AI systems according to the EU AI Act risk categories",
+      "trigger_conditions": ["uses_ai", "eu_market"],
+      "priority": "must_do_before_launch",
+      "action_steps": [
+        "Determine if the AI system falls into a prohibited, high-risk, limited-risk, or minimal-risk category",
+        "If high-risk: conduct conformity assessment, implement risk management system, ensure human oversight, document technical specifications",
+        "If limited-risk: implement transparency obligations (inform users they are interacting with AI)",
+        "If minimal-risk: voluntary codes of conduct recommended",
+        "Register high-risk AI systems in the EU database"
+      ],
+      "legal_signoff_required": true,
+      "plain_language_summary": "If your project uses AI and serves the EU market, you need to figure out what risk category it falls into under the EU AI Act and comply accordingly."
+    },
+    {
+      "id": "IP-CLEAR-001",
+      "regulation": "General IP Law",
+      "category": "Intellectual Property",
+      "title": "Third-Party IP Clearance",
+      "description": "Ensure the project does not infringe third-party intellectual property rights",
+      "trigger_conditions": ["new_product", "new_feature", "uses_third_party_content"],
+      "priority": "should_do",
+      "action_steps": [
+        "Review all third-party components (libraries, APIs, content) for license compliance",
+        "Verify trademarks do not conflict with existing marks",
+        "If the project name is new, conduct a trademark search before launch",
+        "Ensure open-source license obligations are met (attribution, source disclosure if copyleft)",
+        "Document all third-party components and their licenses"
+      ],
+      "legal_signoff_required": false,
+      "plain_language_summary": "Check that your project doesn't step on anyone else's intellectual property — especially trademarks, open-source licenses, and third-party content."
+    },
+    {
+      "id": "VENDOR-001",
+      "regulation": "Internal Policy",
+      "category": "Vendor Management",
+      "title": "Vendor Onboarding Compliance",
+      "description": "Complete required due diligence and agreements before engaging a new vendor",
+      "trigger_conditions": ["new_vendor", "vendor_onboarding"],
+      "priority": "must_do_before_launch",
+      "action_steps": [
+        "Complete vendor risk assessment questionnaire",
+        "Screen vendor against sanctions lists",
+        "Execute appropriate agreements (MSA, DPA, NDA as applicable)",
+        "Verify vendor's insurance coverage meets our requirements",
+        "Add vendor to the approved vendor list in the procurement system",
+        "Set up contract renewal and review reminders"
+      ],
+      "legal_signoff_required": false,
+      "plain_language_summary": "Before working with a new vendor, do your homework: check them out, sign the right agreements, and register them in the system."
+    }
+  ]
+}

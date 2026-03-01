@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "question": "Can we use this stock photo I found on Google Images for our blog post?",
+    "department": "Marketing",
+    "expected_answer": "No. Do not download images from Google Image Search. Use TechForward's licensed stock photo accounts (Shutterstock or Adobe Stock). Contact the Marketing team for login credentials. See Section 1.2 of the IP Policy.",
+    "policy_reference": "Section 1.2 — Use of Third-Party Content",
+    "should_escalate": false
+  },
+  {
+    "id": 2,
+    "question": "A customer asked if we can share their usage data with their partner company. Can we do that?",
+    "department": "Customer Success",
+    "expected_answer": "Not without explicit written authorization from the customer. Customer data may only be shared with third parties if the customer has expressly authorized it in writing. See Section 2.3 of the Data Privacy Policy.",
+    "policy_reference": "Section 2.3 — Sharing Personal Data",
+    "should_escalate": false
+  },
+  {
+    "id": 3,
+    "question": "Do we need a Data Processing Agreement with our new email marketing vendor?",
+    "department": "Marketing",
+    "expected_answer": "Yes. If the vendor will process personal data on TechForward's behalf (which an email marketing vendor certainly will), a DPA must be in place before sharing any data. Contact Legal to put a DPA in place. See Section 2.3 of the Data Privacy Policy.",
+    "policy_reference": "Section 2.3 — Sharing Personal Data",
+    "should_escalate": false
+  },
+  {
+    "id": 4,
+    "question": "I want to use an open-source library that uses the GPL license in our product. Is that okay?",
+    "department": "Engineering",
+    "expected_answer": "GPL-licensed software requires legal approval before use in company products due to its copyleft nature, which may require you to open-source your own code. Submit a request via the Legal Service Desk. See Section 1.2 of the IP Policy.",
+    "policy_reference": "Section 1.2 — Use of Third-Party Content (Open-source software)",
+    "should_escalate": false
+  },
+  {
+    "id": 5,
+    "question": "Can we put Acme Corp's logo on our website as a customer?",
+    "department": "Marketing",
+    "expected_answer": "Only if there is a written agreement permitting logo usage (either in the customer contract or a separate consent). Check the CRM for logo usage permissions. If none exists, ask the customer directly. See Section 1.3 of the IP Policy.",
+    "policy_reference": "Section 1.3 — Customer Logo Usage",
+    "should_escalate": false
+  },
+  {
+    "id": 6,
+    "question": "One of my team members is underperforming. Can I terminate their employment?",
+    "department": "Engineering",
+    "expected_answer": "This question should be escalated to HR and Legal. Termination decisions must be reviewed by both HR and Legal before any communication to the employee. German labor law provides strong protections, and a documented performance improvement process must be followed first. Please contact HR directly.",
+    "policy_reference": "Section 4.3 — Termination of Employment",
+    "should_escalate": true
+  },
+  {
+    "id": 7,
+    "question": "A vendor wants to sign a contract worth EUR 30,000. Can my department head sign it?",
+    "department": "Procurement",
+    "expected_answer": "Yes. Contracts with a total value up to EUR 50,000 may be signed by department heads. However, check if the contract involves personal data processing, non-standard liability terms, or other triggers that require legal review regardless of value. See Section 3.1 of the Contract Policy.",
+    "policy_reference": "Section 3.1 — Who Can Sign Contracts",
+    "should_escalate": false
+  },
+  {
+    "id": 8,
+    "question": "A competitor reached out to discuss coordinating pricing for a large RFP. Should I engage?",
+    "department": "Sales",
+    "expected_answer": "Absolutely not. End the conversation immediately. Do not discuss pricing, market allocation, or bidding strategies with competitors — this could violate antitrust/competition law and expose TechForward to severe penalties. Report this contact to Legal immediately. See Section 5.2 of the Compliance Policy.",
+    "policy_reference": "Section 5.2 — Competition / Antitrust Law",
+    "should_escalate": true
+  },
+  {
+    "id": 9,
+    "question": "What's the referral bonus for referring a senior engineer?",
+    "department": "Engineering",
+    "expected_answer": "The referral bonus for individual contributor roles (including senior engineers) is EUR 3,000. It's paid 50% upon the new hire's start date and 50% after 6 months of employment. Submit referrals through the referral portal. See Section 4.2 of the Employment Law section.",
+    "policy_reference": "Section 4.2 — Employee Referral Program",
+    "should_escalate": false
+  },
+  {
+    "id": 10,
+    "question": "A journalist contacted me about our new product launch. What should I do?",
+    "department": "Product",
+    "expected_answer": "Route all press inquiries to the Communications team. Do not speak to journalists about TechForward's business without prior authorization from Communications. See Section 6.3 of the Marketing & Communications Policy.",
+    "policy_reference": "Section 6.3 — Press and Analyst Communications",
+    "should_escalate": false
+  },
+  {
+    "id": 11,
+    "question": "Can I accept a EUR 200 dinner invitation from a vendor during a conference?",
+    "department": "Procurement",
+    "expected_answer": "Gifts, hospitality, or entertainment worth more than EUR 100 per instance require management approval. A EUR 200 dinner exceeds this threshold. Get your manager's approval first, and log it in the Gift Register. See Section 5.1 of the Compliance Policy.",
+    "policy_reference": "Section 5.1 — Anti-Bribery and Corruption",
+    "should_escalate": false
+  },
+  {
+    "id": 12,
+    "question": "We're using an MIT-licensed library in our product. Do we need legal approval?",
+    "department": "Engineering",
+    "expected_answer": "MIT is a permissive license and is approved for use. You do not need legal approval, but you should notify your engineering lead. See Section 1.2 of the IP Policy.",
+    "policy_reference": "Section 1.2 — Use of Third-Party Content (Open-source software)",
+    "should_escalate": false
+  },
+  {
+    "id": 13,
+    "question": "We received an email from someone asking to delete their personal data from our system. What do I do?",
+    "department": "Customer Support",
+    "expected_answer": "This is a data subject access request (specifically a deletion/erasure request). Forward it immediately to the Data Protection Officer at dpo@techforward.example.com. Do not attempt to respond to or process the request yourself. See Section 2.4 of the Data Privacy Policy.",
+    "policy_reference": "Section 2.4 — Data Subject Rights",
+    "should_escalate": false
+  },
+  {
+    "id": 14,
+    "question": "Can we send a promotional email to our list of free trial users who signed up last year?",
+    "department": "Marketing",
+    "expected_answer": "Only if those users gave explicit consent (opt-in) to receive marketing emails. For EU contacts, double opt-in is required. Check that these users are on your consented marketing list and not on any suppression list. If consent status is unclear, do not send the email. See Section 6.1 of the Marketing Policy.",
+    "policy_reference": "Section 6.1 — Email Marketing",
+    "should_escalate": false
+  },
+  {
+    "id": 15,
+    "question": "I think one of my colleagues is embezzling money. How do I report this?",
+    "department": "Finance",
+    "expected_answer": "Use the confidential Ethics Hotline to report this concern. Reports can be made anonymously. TechForward strictly prohibits retaliation against anyone who reports compliance concerns in good faith. See Section 5.4 of the Compliance Policy.",
+    "policy_reference": "Section 5.4 — Whistleblower Protection",
+    "should_escalate": true
+  },
+  {
+    "id": 16,
+    "question": "We want to engage a freelancer for a 6-month project. Do we need to do anything special?",
+    "department": "Engineering",
+    "expected_answer": "Yes. Engaging independent contractors requires legal review to ensure proper classification (contractor vs. employee). Key factors include control over work, exclusivity, and integration into the organization. Misclassification can result in significant penalties. Contact Legal before finalizing the engagement. See Section 4.4 of the Employment Law section.",
+    "policy_reference": "Section 4.4 — Contractor vs. Employee",
+    "should_escalate": false
+  },
+  {
+    "id": 17,
+    "question": "I discovered that a laptop with customer data was stolen from my car. What should I do?",
+    "department": "Sales",
+    "expected_answer": "This is a potential data breach. Report it to the Data Protection Officer immediately (within 1 hour of discovery) at dpo@techforward.example.com. Do not attempt to investigate yourself. Preserve all evidence and do not communicate about the breach externally. See Section 2.5 of the Data Privacy Policy.",
+    "policy_reference": "Section 2.5 — Data Breach Procedures",
+    "should_escalate": true
+  },
+  {
+    "id": 18,
+    "question": "Can I post on LinkedIn about the cool new feature we're launching next quarter?",
+    "department": "Product",
+    "expected_answer": "Be careful. You should not share confidential information about unannounced products on personal social media. Wait until the feature is publicly announced before posting about it. If you want to post about it sooner, coordinate with the Communications team for approved messaging. See Section 6.2 of the Marketing Policy.",
+    "policy_reference": "Section 6.2 — Social Media",
+    "should_escalate": false
+  },
+  {
+    "id": 19,
+    "question": "A potential customer in Iran wants to use our platform. Can we onboard them?",
+    "department": "Sales",
+    "expected_answer": "No. Iran is subject to comprehensive sanctions (EU, US, and UN). TechForward cannot engage in business with individuals or entities in sanctioned countries. Do not proceed with onboarding. Report this to Legal immediately. See Section 5.3 of the Compliance Policy.",
+    "policy_reference": "Section 5.3 — Sanctions and Export Controls",
+    "should_escalate": true
+  },
+  {
+    "id": 20,
+    "question": "Our standard contract says the customer's liability is capped. Can I offer an uncapped arrangement to close a big deal?",
+    "department": "Sales",
+    "expected_answer": "Modifying liability or indemnification terms from the standard contract requires legal review regardless of contract value. Do not agree to non-standard liability terms without legal approval. Contact Legal to discuss the specific situation and what might be acceptable. See Section 3.2 of the Contract Policy.",
+    "policy_reference": "Section 3.2 — Legal Review Requirements",
+    "should_escalate": true
+  }
+]

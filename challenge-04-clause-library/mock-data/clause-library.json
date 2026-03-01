@@ -1,0 +1,220 @@
+{
+  "clause_categories": [
+    {
+      "category": "Limitation of Liability",
+      "description": "Clauses that cap or limit one or both parties' liability under the agreement",
+      "variations": [
+        {
+          "id": "LOL-001",
+          "label": "Most Company-Favorable",
+          "favorability": "strongly_favorable",
+          "score": 9,
+          "text": "Provider's total aggregate liability arising out of or related to this Agreement shall not exceed an amount equal to the fees paid and payable by Customer during the twelve (12) month period preceding the event giving rise to the claim. This limitation shall not apply to (a) breaches of confidentiality obligations, (b) data protection breaches, (c) Provider's indemnification obligations under Section [X], or (d) gross negligence or willful misconduct.",
+          "context": "This is our gold-standard position. Accepted by most mid-market vendors in competitive procurement situations.",
+          "deal_type": "SaaS agreements, mid-market vendors"
+        },
+        {
+          "id": "LOL-002",
+          "label": "Balanced",
+          "favorability": "balanced",
+          "score": 6,
+          "text": "Neither party's total aggregate liability arising out of or related to this Agreement shall exceed the greater of (a) the fees paid and payable during the twelve (12) month period preceding the event giving rise to the claim, or (b) [AMOUNT]. The foregoing limitation shall not apply to either party's indemnification obligations, breaches of confidentiality, or willful misconduct.",
+          "context": "Fair middle ground that most enterprise vendors accept. The fixed floor amount provides protection for low-value contracts.",
+          "deal_type": "Enterprise SaaS, consulting agreements"
+        },
+        {
+          "id": "LOL-003",
+          "label": "Moderate Concession",
+          "favorability": "slightly_unfavorable",
+          "score": 4,
+          "text": "Each party's total aggregate liability under this Agreement shall not exceed the fees paid by Customer in the six (6) months preceding the event giving rise to liability. IN NO EVENT SHALL EITHER PARTY BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES.",
+          "context": "Acceptable when vendor has significant leverage. The 6-month cap is our minimum threshold. Ensure carve-outs for data breaches are added.",
+          "deal_type": "Strategic vendor relationships where vendor has leverage"
+        },
+        {
+          "id": "LOL-004",
+          "label": "Vendor-Favorable (Red Flag)",
+          "favorability": "strongly_unfavorable",
+          "score": 2,
+          "text": "PROVIDER'S TOTAL LIABILITY SHALL NOT EXCEED THE FEES PAID IN THE THREE (3) MONTHS PRECEDING THE CLAIM. PROVIDER SHALL NOT BE LIABLE FOR ANY INDIRECT, CONSEQUENTIAL, OR SPECIAL DAMAGES UNDER ANY CIRCUMSTANCES. THIS LIMITATION APPLIES REGARDLESS OF THE CAUSE OF ACTION AND EVEN IF PROVIDER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.",
+          "context": "Below our acceptable threshold. The 3-month cap is too low and provides almost no protection. Push for at minimum 6 months with carve-outs.",
+          "deal_type": "Typically seen in standard vendor paper — always negotiate"
+        }
+      ]
+    },
+    {
+      "category": "Indemnification",
+      "description": "Clauses where one or both parties agree to compensate the other for specified losses",
+      "variations": [
+        {
+          "id": "IND-001",
+          "label": "Most Company-Favorable",
+          "favorability": "strongly_favorable",
+          "score": 9,
+          "text": "Provider shall indemnify, defend, and hold harmless Customer from any third-party claims arising from: (a) infringement of intellectual property rights by the Service, (b) Provider's breach of its data protection obligations, (c) Provider's gross negligence or willful misconduct, or (d) Provider's violation of applicable law. Customer shall indemnify Provider from third-party claims arising from Customer's materials or data provided to Provider.",
+          "context": "Strong mutual indemnification with broad vendor coverage. Generally achievable with mid-market vendors.",
+          "deal_type": "SaaS agreements, technology licensing"
+        },
+        {
+          "id": "IND-002",
+          "label": "Balanced",
+          "favorability": "balanced",
+          "score": 6,
+          "text": "Each party shall indemnify the other from third-party claims arising from: (a) the indemnifying party's breach of its representations and warranties, (b) the indemnifying party's negligence or willful misconduct, and (c) the indemnifying party's violation of applicable law. Additionally, Provider shall indemnify Customer from claims alleging that the Service infringes a third party's intellectual property rights.",
+          "context": "Symmetric structure with an additional IP indemnity from the vendor. Fair and commonly accepted.",
+          "deal_type": "Enterprise agreements, professional services"
+        },
+        {
+          "id": "IND-003",
+          "label": "Minimal Acceptable",
+          "favorability": "slightly_unfavorable",
+          "score": 4,
+          "text": "Provider shall indemnify Customer solely against third-party claims that the Service, as delivered, infringes a third party's patent or copyright; provided that Provider's total indemnification liability shall not exceed the total fees paid under this Agreement.",
+          "context": "Bare minimum — IP indemnity only. Acceptable when combined with strong limitation of liability carve-outs for data breaches.",
+          "deal_type": "Commodity SaaS where vendor has strong leverage"
+        },
+        {
+          "id": "IND-004",
+          "label": "One-Sided (Red Flag)",
+          "favorability": "strongly_unfavorable",
+          "score": 1,
+          "text": "Customer shall indemnify, defend, and hold harmless Provider from any and all claims, damages, and expenses arising from Customer's use of the Service, Customer's data, or Customer's breach of this Agreement. Provider shall have no indemnification obligations under this Agreement.",
+          "context": "Completely one-sided — the customer bears all risk. Never accept this without significant pushback. Insist on at least IP infringement indemnity from the vendor.",
+          "deal_type": "Seen in aggressive vendor paper — always reject and negotiate"
+        }
+      ]
+    },
+    {
+      "category": "Data Protection",
+      "description": "Clauses governing the processing, storage, and transfer of personal data",
+      "variations": [
+        {
+          "id": "DP-001",
+          "label": "Most Company-Favorable (GDPR-Strong)",
+          "favorability": "strongly_favorable",
+          "score": 9,
+          "text": "Provider shall process Customer Personal Data solely in accordance with Customer's documented instructions. Provider shall not engage any subprocessor without Customer's prior written consent. Provider shall process and store Customer Personal Data exclusively within the European Economic Area. Provider shall notify Customer of any Personal Data Breach within 48 hours of becoming aware. Upon termination, Provider shall delete all Customer Personal Data within 30 days and certify such deletion.",
+          "context": "Maximum GDPR protection. Achievable with EU-based vendors and larger US vendors with EU infrastructure.",
+          "deal_type": "Data-intensive SaaS, HR platforms, CRM systems"
+        },
+        {
+          "id": "DP-002",
+          "label": "Balanced (GDPR-Compliant)",
+          "favorability": "balanced",
+          "score": 6,
+          "text": "Provider shall process Customer Personal Data in accordance with Customer's instructions and applicable data protection laws. Provider shall maintain an up-to-date list of subprocessors and notify Customer of any changes at least 30 days in advance, giving Customer the right to object. Transfers outside the EEA shall be subject to appropriate safeguards (Standard Contractual Clauses). Provider shall notify Customer of any Personal Data Breach within 72 hours. Upon termination, Provider shall return or delete Customer Personal Data within 60 days.",
+          "context": "Solid GDPR compliance with reasonable flexibility. Accepted by most enterprise vendors.",
+          "deal_type": "Standard enterprise SaaS agreements"
+        },
+        {
+          "id": "DP-003",
+          "label": "Weak (Red Flag)",
+          "favorability": "strongly_unfavorable",
+          "score": 2,
+          "text": "Provider may transfer and process Customer Data in any country where Provider or its subprocessors maintain facilities. Customer consents to such transfers. Provider shall use commercially reasonable efforts to notify Customer of any data breach. Provider may retain Customer Data for up to 36 months following termination for archival purposes.",
+          "context": "Inadequate for GDPR compliance. No transfer safeguards, no meaningful subprocessor controls, excessively long retention. Must be substantially renegotiated.",
+          "deal_type": "Often seen in US-origin vendor paper that hasn't been adapted for EU customers"
+        }
+      ]
+    },
+    {
+      "category": "Termination",
+      "description": "Clauses governing how and when the agreement can be ended",
+      "variations": [
+        {
+          "id": "TERM-001",
+          "label": "Most Company-Favorable",
+          "favorability": "strongly_favorable",
+          "score": 9,
+          "text": "Either party may terminate this Agreement for convenience upon 60 days' written notice. Either party may terminate for cause if the other party materially breaches this Agreement and fails to cure such breach within 30 days of written notice. Upon termination for cause by Customer, Provider shall refund any prepaid fees for the unused portion of the Subscription Term. Customer shall have 90 days following termination to export all Customer Data.",
+          "context": "Full flexibility with pro-rata refund rights and generous data export window. Achievable for large customers or competitive deals.",
+          "deal_type": "Enterprise agreements with negotiation leverage"
+        },
+        {
+          "id": "TERM-002",
+          "label": "Balanced",
+          "favorability": "balanced",
+          "score": 6,
+          "text": "Either party may terminate for cause upon 30 days' written notice of material breach if uncured. Customer may terminate for convenience upon 90 days' notice, subject to payment of fees through the end of the then-current term. Upon termination, Customer shall have 60 days to export Customer Data.",
+          "context": "Standard middle ground. Convenience termination with pay-through obligation is common for subscription contracts.",
+          "deal_type": "Standard SaaS agreements"
+        },
+        {
+          "id": "TERM-003",
+          "label": "Vendor-Favorable (Red Flag)",
+          "favorability": "strongly_unfavorable",
+          "score": 2,
+          "text": "Provider may terminate immediately upon notice if Customer breaches any provision. Customer may terminate only for material breach by Provider that remains uncured for 60 days. All fees are non-refundable. Customer shall have 15 business days to export data following termination.",
+          "context": "Heavily one-sided. Provider can terminate for any breach (not just material), while Customer has a long cure period requirement. No refund rights and very short data export window. Push for symmetry.",
+          "deal_type": "Aggressive vendor paper — negotiate vigorously"
+        }
+      ]
+    },
+    {
+      "category": "Intellectual Property Ownership",
+      "description": "Clauses governing ownership of work product and IP created during the engagement",
+      "variations": [
+        {
+          "id": "IP-001",
+          "label": "Full Customer Ownership",
+          "favorability": "strongly_favorable",
+          "score": 9,
+          "text": "All Work Product created by Provider specifically for Customer under this Agreement shall be the sole and exclusive property of Customer. Provider hereby assigns to Customer all rights, title, and interest in such Work Product, including all intellectual property rights. Provider retains ownership of its pre-existing intellectual property and general know-how.",
+          "context": "Best position for custom development and consulting engagements. Vendor retains pre-existing IP but all custom work belongs to us.",
+          "deal_type": "Custom software development, consulting engagements"
+        },
+        {
+          "id": "IP-002",
+          "label": "Balanced — License Back",
+          "favorability": "balanced",
+          "score": 6,
+          "text": "Provider owns all Work Product but grants Customer a perpetual, irrevocable, worldwide, royalty-free, non-exclusive license to use, modify, and create derivative works from the Work Product for Customer's internal and external business purposes. Provider may reuse generic methodologies, tools, and frameworks for other clients.",
+          "context": "Acceptable when full ownership isn't achievable. The broad perpetual license provides sufficient rights for most business purposes.",
+          "deal_type": "Consulting engagements where vendor insists on retaining IP"
+        },
+        {
+          "id": "IP-003",
+          "label": "Vendor Retains All (Red Flag)",
+          "favorability": "strongly_unfavorable",
+          "score": 2,
+          "text": "All Work Product shall be the sole and exclusive property of Provider. Upon full payment, Provider grants Customer a non-exclusive, non-transferable, limited license to use the Work Product solely for Customer's internal business purposes. Provider may reuse any and all Work Product components for other clients.",
+          "context": "Vendor keeps everything and gives us only a limited license. Not acceptable for bespoke work. Push for at minimum a broad perpetual license with modification rights.",
+          "deal_type": "Common in vendor paper for consulting — always negotiate"
+        }
+      ]
+    },
+    {
+      "category": "Auto-Renewal and Fee Escalation",
+      "description": "Clauses governing contract renewal mechanics and price adjustments",
+      "variations": [
+        {
+          "id": "AR-001",
+          "label": "Most Company-Favorable",
+          "favorability": "strongly_favorable",
+          "score": 9,
+          "text": "This Agreement shall renew for successive twelve (12) month periods unless either party provides written notice of non-renewal at least 60 days prior to the end of the then-current term. Fees for any renewal term shall not increase by more than 3% per annum or the Consumer Price Index increase for the preceding year, whichever is lower.",
+          "context": "Short renewal periods with low, predictable fee increases. Strong protection against price lock-in.",
+          "deal_type": "SaaS agreements with negotiation leverage"
+        },
+        {
+          "id": "AR-002",
+          "label": "Balanced",
+          "favorability": "balanced",
+          "score": 6,
+          "text": "This Agreement shall renew for successive twelve (12) month periods unless either party provides written notice of non-renewal at least 90 days prior to the end of the then-current term. Provider may increase fees by up to 7% upon each renewal by providing written notice at least 60 days prior to the renewal date.",
+          "context": "Reasonable middle ground. 90-day notice window is manageable with calendar reminders. 7% cap is above our ideal but within acceptable range.",
+          "deal_type": "Standard enterprise SaaS"
+        },
+        {
+          "id": "AR-003",
+          "label": "Vendor-Favorable (Red Flag)",
+          "favorability": "strongly_unfavorable",
+          "score": 2,
+          "text": "This Agreement shall automatically renew for successive twenty-four (24) month periods unless either party provides written notice of non-renewal at least 90 days prior to the end of the then-current term. Provider may increase fees by up to 15% upon each renewal term.",
+          "context": "Long auto-renewal periods combined with steep fee increases create significant lock-in risk. Push for 12-month renewal periods and fee caps under 8%.",
+          "deal_type": "Aggressive vendor paper — high priority to negotiate"
+        }
+      ]
+    }
+  ]
+}
