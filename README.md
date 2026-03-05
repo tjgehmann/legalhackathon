@@ -68,6 +68,7 @@ Each challenge has its own folder with a detailed brief and mock data to get you
 | 11 | **Contract Bottleneck & Deal Velocity Dashboard** | Sales, Legal, CFO | [challenge-11](./challenge-11-contract-bottleneck-dashboard/) |
 | 12 | **Sales Contract Review Playbook** | Sales, Legal | [challenge-12](./challenge-12-sales-contract-playbook/) |
 | 13 | **Customer Complaint Resolution Assistant** | Customer Care, Legal, Compliance | [challenge-13](./challenge-13-customer-complaint-assistant/) |
+| 14 | **Employment Law Self-Service Assistant for HR** | HR, Legal | [challenge-14](./challenge-14-employment-law-hr-assistant/) |
 
 ---
 
@@ -199,7 +200,10 @@ legalhackathon/
 ├── challenge-12-sales-contract-playbook/
 │   ├── CHALLENGE.md
 │   └── mock-data/
-└── challenge-13-customer-complaint-assistant/
+├── challenge-13-customer-complaint-assistant/
+│   ├── CHALLENGE.md
+│   └── mock-data/
+└── challenge-14-employment-law-hr-assistant/
     ├── CHALLENGE.md
     └── mock-data/
 ```

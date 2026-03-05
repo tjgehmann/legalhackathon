@@ -1,0 +1,361 @@
+{
+  "description": "10 realistic HR cases for testing the employment law assistant. Some contain hidden legal complexity — protected employee status, missed mandatory steps, or wrong dismissal type — that a well-built tool should detect and flag before HR proceeds.",
+  "cases": [
+    {
+      "id": "HR-001",
+      "title": "Probation Dismissal — Repeated Lateness",
+      "submitted_by": "Line Manager: Stefan Voigt",
+      "hr_request": "Stefan's new hire, Lukas Baum, has been late to work more than 10 times in his first 3 months. Stefan wants to end the employment. Lukas started on 15 December 2025. Today is 5 March 2026.",
+      "employee": {
+        "name": "Lukas Baum",
+        "start_date": "2025-12-15",
+        "position": "Junior Software Developer",
+        "tenure_months": 2.7,
+        "probation_period_months": 6,
+        "probation_active": true
+      },
+      "expected_classification": {
+        "scenario": "SCEN-01",
+        "scenario_name": "Dismissal During Probation Period",
+        "kschg_applies": false,
+        "legally_significant": false,
+        "protection_check_result": "No protections identified — proceed with caution",
+        "correct_notice_period_days": 14,
+        "works_council_required": true,
+        "escalation_required": false,
+        "correct_steps": [
+          "Confirm probation is still active (Lukas started 15 Dec 2025; 6-month probation expires 14 June 2026 — still active)",
+          "Run protection check — no protected status identified",
+          "Prepare and submit § 102 BetrVG Works Council consultation package",
+          "Wait 7 calendar days for Works Council response",
+          "Issue dismissal letter with 14-day notice period — termination date = 19 March 2026 (if issued today)"
+        ],
+        "hidden_complexity": null,
+        "common_error": "Many HR teams forget that Works Council consultation is required even during probation. Omitting this step makes the dismissal void."
+      }
+    },
+    {
+      "id": "HR-002",
+      "title": "Conduct Dismissal — Employee Who Revealed Salary Information",
+      "submitted_by": "HR Manager: Petra Kessler",
+      "hr_request": "Employee Miriam Schäfer has shared her salary with colleagues and posted a screenshot of her payslip in the team Slack channel, which caused significant unrest. She has been employed for 3 years. No prior warning has been issued. We want to dismiss her.",
+      "employee": {
+        "name": "Miriam Schäfer",
+        "start_date": "2023-01-10",
+        "position": "Marketing Manager",
+        "tenure_years": 3,
+        "probation_active": false,
+        "prior_warnings": 0
+      },
+      "expected_classification": {
+        "scenario": "SCEN-02",
+        "scenario_name": "Ordinary Conduct Dismissal",
+        "kschg_applies": true,
+        "legally_significant": true,
+        "protection_check_result": "No protections identified",
+        "correct_notice_period_weeks": 8,
+        "works_council_required": true,
+        "escalation_required": true,
+        "correct_steps": [
+          "Run protection check — no issues identified",
+          "Assess: no prior Abmahnung exists for this type of conduct",
+          "Assess: sharing salary information is generally not an absolute dismissal ground — a warning first is required",
+          "Do NOT proceed to dismissal — issue an Abmahnung first for breach of confidentiality / Code of Conduct",
+          "Escalate to Legal: the sharing of salary data may also raise questions about whether the employer can prohibit this (salary confidentiality clauses are partially void under AGG § 3)",
+          "Only after a further incident following the Abmahnung should dismissal be considered"
+        ],
+        "hidden_complexity": "Two layers: (1) no prior warning exists — dismissal without Abmahnung is very risky for this type of conduct and would likely fail in court. (2) Salary confidentiality clauses are legally problematic in Germany — employers cannot unconditionally prohibit employees from discussing salary (potential conflict with § 3 AGG and collective bargaining principles). Legal must assess whether the conduct even constitutes a dismissable offense.",
+        "trap": true,
+        "trap_description": "HR asked for dismissal. The correct answer is: issue an Abmahnung first, and have Legal assess whether the conduct is even a valid dismissal ground. Jumping to dismissal here would likely result in a successful Arbeitsgericht challenge."
+      }
+    },
+    {
+      "id": "HR-003",
+      "title": "Immediate Dismissal — Employee Caught Stealing",
+      "submitted_by": "CFO: Andrea Heller",
+      "hr_request": "Our office manager, Tobias Kern, was caught on camera taking cash from the petty cash box on 3 March 2026. The camera footage is clear. Andrea wants him dismissed immediately. Today is 5 March 2026.",
+      "employee": {
+        "name": "Tobias Kern",
+        "start_date": "2019-06-01",
+        "position": "Office Manager",
+        "tenure_years": 6.8,
+        "probation_active": false,
+        "prior_warnings": 1
+      },
+      "expected_classification": {
+        "scenario": "SCEN-04",
+        "scenario_name": "Extraordinary / Immediate Dismissal",
+        "kschg_applies": true,
+        "legally_significant": true,
+        "two_week_deadline": "2026-03-17",
+        "protection_check_result": "No protections identified — but MUST be confirmed",
+        "works_council_required": true,
+        "works_council_window_days": 3,
+        "escalation_required": true,
+        "correct_steps": [
+          "Log the exact date the decision-maker (CFO) became aware: 3 March 2026 — 2-week deadline = 17 March 2026",
+          "Run protection check immediately — theft does not override pregnancy or Works Council protections",
+          "Consider immediate suspension on paid garden leave while the Works Council process runs",
+          "Escalate to Legal immediately — extraordinary dismissal must be handled by Legal",
+          "Legal prepares and submits Works Council consultation package — 3-day window (submit by 6 March to receive response by 9 March)",
+          "Issue extraordinary dismissal letter after Works Council window, and before 17 March 2026 deadline",
+          "Deliver in person if at all possible — documented receipt is critical"
+        ],
+        "hidden_complexity": "The 2-week deadline under § 626 Abs. 2 BGB starts from when the authorized decision-maker (CFO) became aware on 3 March. The absolute deadline to issue the letter is 17 March 2026. With the 3-day Works Council window, the letter should be issued no later than 13 March to be safe. Missing the deadline makes the extraordinary dismissal void — fallback would be an ordinary dismissal with a very long notice period (6.8 years tenure = 7 months notice).",
+        "trap": true,
+        "trap_description": "The 2-week clock trap. If HR takes a few days to organize things and misses the Works Council consultation step, the deadline could be missed. Time-critical coordination required."
+      }
+    },
+    {
+      "id": "HR-004",
+      "title": "Probation Dismissal — Hidden Pregnancy",
+      "submitted_by": "Line Manager: Klaus Hartmann",
+      "hr_request": "New employee Laura Becker has not met expectations in her first 4 months. Klaus wants to dismiss her before the probation period ends. She started 1 November 2025. Today is 5 March 2026.",
+      "employee": {
+        "name": "Laura Becker",
+        "start_date": "2025-11-01",
+        "position": "Product Manager",
+        "tenure_months": 4,
+        "probation_period_months": 6,
+        "probation_active": true,
+        "additional_context": "Laura submitted a doctor's appointment confirmation to HR 3 days ago (2 March 2026) for a 'pregnancy check-up' — the HR system has this on file but the line manager is unaware."
+      },
+      "expected_classification": {
+        "scenario": "SCEN-09",
+        "scenario_name": "Dismissal During Pregnancy or Maternity Protection",
+        "kschg_applies": false,
+        "kschg_note": "Irrelevant — MuSchG absolute dismissal prohibition overrides everything",
+        "legally_significant": true,
+        "protection_check_result": "⛔ CRITICAL — pregnancy indicated by medical appointment record in HR system. Protection check MUST surface this.",
+        "works_council_required": false,
+        "works_council_note": "Works Council consultation is irrelevant — the dismissal cannot proceed at all without Aufsichtsbehörde approval",
+        "escalation_required": true,
+        "correct_steps": [
+          "During protection check: identify the medical appointment record from 2 March 2026",
+          "Flag potential pregnancy — even if unconfirmed, the employer cannot proceed once there is any indication",
+          "STOP — do not draft dismissal letter, do not communicate intent to dismiss to the employee",
+          "Escalate to Legal immediately",
+          "Legal will determine: (a) whether to confirm pregnancy status and (b) whether extraordinary circumstances exist to apply to the Aufsichtsbehörde",
+          "In almost all cases: the dismissal cannot proceed during pregnancy. HR must manage the probation extension or conversion to permanent employment."
+        ],
+        "hidden_complexity": "This is the most dangerous trap in the dataset. The line manager doesn't know about the pregnancy indication — but the company does (the HR system has the medical appointment). Employer knowledge is imputed. Issuing the dismissal letter could constitute a § 17 MuSchG violation, even if the manager acted in good faith. The protection check is the only thing that saves the employer here.",
+        "trap": true,
+        "trap_description": "The system has an indicator of pregnancy that the requesting manager doesn't know about. A tool that only checks what the manager reports — rather than checking the HR system and asking the right questions — will miss this and advise proceeding. The correct output is: STOP."
+      }
+    },
+    {
+      "id": "HR-005",
+      "title": "Redundancy — Role Elimination After Restructuring",
+      "submitted_by": "CEO: Michael Bauer",
+      "hr_request": "We are eliminating the Head of Print Marketing role as part of a digital-first restructuring. The role has become obsolete. The current holder, Franz Wagner, has been with us for 11 years. We want to give him 4 weeks notice as it is the minimum. Today is 5 March 2026.",
+      "employee": {
+        "name": "Franz Wagner",
+        "start_date": "2015-01-15",
+        "position": "Head of Print Marketing",
+        "tenure_years": 11,
+        "probation_active": false,
+        "age": 54,
+        "dependents": 2,
+        "disability_status": "none"
+      },
+      "expected_classification": {
+        "scenario": "SCEN-05",
+        "scenario_name": "Operational Redundancy",
+        "kschg_applies": true,
+        "legally_significant": true,
+        "correct_notice_period": {
+          "statutory_months": 5,
+          "note": "11 years tenure = 5 months statutory notice under § 622 Abs. 2 Nr. 5 BGB to the end of a calendar month. The CEO's proposed 4-week notice is wrong."
+        },
+        "sozialauswahl_required": true,
+        "works_council_required": true,
+        "escalation_required": true,
+        "correct_steps": [
+          "Run protection check — no protections identified",
+          "Escalate to Legal — redundancy dismissal must always involve Legal",
+          "Identify comparable employees in the marketing department who perform interchangeable work",
+          "Run Sozialauswahl: compare Franz (11 years, age 54, 2 dependents) against comparable employees — his strong social protection score means he would likely be the last to be made redundant if others are comparable",
+          "Check whether any other role in the company could accommodate Franz",
+          "Correct notice period: 5 months to end of calendar month — termination = 31 August 2026",
+          "Prepare Works Council consultation package including Sozialauswahl",
+          "Issue dismissal only after Legal sign-off and Works Council process"
+        ],
+        "hidden_complexity": "Two errors in the HR request: (1) the notice period of '4 weeks' is wrong — 11 years of tenure = 5 months statutory notice under § 622 BGB; (2) no Sozialauswahl has been considered — with 11 years tenure, age 54, and 2 dependents, Franz likely has the strongest social protection score in any comparable group, which may mean the wrong person is being selected for redundancy. Both errors would result in a successful Arbeitsgericht challenge.",
+        "trap": true,
+        "trap_description": "The CEO specified 4 weeks notice. The tool must catch that this is legally incorrect and output the correct 5-month notice period. The tool should also trigger the Sozialauswahl check."
+      }
+    },
+    {
+      "id": "HR-006",
+      "title": "Fixed-Term Contract Extension — Prior Employment Issue",
+      "submitted_by": "HR Manager: Petra Kessler",
+      "hr_request": "We want to extend Sofia Marek's fixed-term contract for another 6 months (sachgrundlose Befristung). Her current contract runs until 30 June 2026. She has been with us for 18 months total.",
+      "employee": {
+        "name": "Sofia Marek",
+        "position": "Data Analyst",
+        "current_contract_end": "2026-06-30",
+        "total_fixed_term_duration_months": 18,
+        "proposed_extension_months": 6,
+        "total_after_extension_months": 24,
+        "prior_employment_at_techforward": "Sofia completed a 3-month internship at TechForward in Summer 2021 before being hired on the fixed-term contract in January 2025."
+      },
+      "expected_classification": {
+        "scenario": "SCEN-07",
+        "scenario_name": "Fixed-Term Contract",
+        "legally_significant": true,
+        "escalation_required": true,
+        "correct_steps": [
+          "Check prior employment: Sofia completed an internship at TechForward in 2021",
+          "⛔ STOP — prior employment at the same employer (including internships) makes sachgrundlose Befristung invalid under § 14 Abs. 2 S. 2 TzBfG",
+          "Note: The BAG 2011 ruling applies a lifetime prior employment prohibition; however BVerfG 2018 limited this to cases where the prior employment was very recent (within 3 years) or it would be unreasonable to treat prior employment as blocking — Legal must assess",
+          "Options: (a) hire Sofia permanently, (b) identify an objective reason (Sachgrund) that justifies a Sachgrundbefristung, (c) take Legal advice on whether the 2018 BVerfG position applies",
+          "Do not sign an extension agreement until Legal has confirmed the approach"
+        ],
+        "hidden_complexity": "The prior internship blocks sachgrundlose Befristung — a fact HR missed. The total duration of 24 months would also be at the maximum limit, leaving no room for error. If the extension is signed and the Befristung is later challenged as invalid, the contract becomes a permanent employment contract from the date the defect occurred.",
+        "trap": true,
+        "trap_description": "HR is proceeding as though this is a standard extension. The prior employment check reveals an internship that may block sachgrundlose Befristung. The tool must surface this and stop HR from signing an agreement that could inadvertently create a permanent employment contract."
+      }
+    },
+    {
+      "id": "HR-007",
+      "title": "Performance Dismissal — Long-Term Sick Employee",
+      "submitted_by": "Line Manager: Julia Wendt",
+      "hr_request": "Employee Ralf Zimmermann has been off sick repeatedly — he was off for 8 weeks in Q3 2025 and has been off since January 2026 (currently week 6). His performance when present has also been below expectations. We want to end the employment.",
+      "employee": {
+        "name": "Ralf Zimmermann",
+        "start_date": "2021-04-01",
+        "position": "Account Manager",
+        "tenure_years": 4.9,
+        "sick_leave_record": {
+          "q3_2025_weeks": 8,
+          "jan_2026_to_present_weeks": 6,
+          "total_in_last_12_months_weeks": 14
+        },
+        "bem_offered": false,
+        "disability_status": "unknown — employee has not disclosed any disability"
+      },
+      "expected_classification": {
+        "scenario": "SCEN-03",
+        "scenario_name": "Ordinary Performance Dismissal / Illness-Related",
+        "kschg_applies": true,
+        "legally_significant": true,
+        "protection_check_result": "⚠️ No confirmed protections — but BEM must be completed before dismissal. Disability check required.",
+        "bem_required": true,
+        "works_council_required": true,
+        "escalation_required": true,
+        "correct_steps": [
+          "Run protection check — no confirmed protections but disability must be explored given the illness pattern",
+          "Identify BEM obligation: Ralf had more than 6 weeks sick leave in the last 12 months — BEM must have been offered (§ 167 Abs. 2 SGB IX)",
+          "⛔ BEM has not been offered — HR must initiate BEM before any dismissal steps",
+          "Initiate BEM: send written invitation to Ralf explaining BEM and that participation is voluntary",
+          "If Ralf declines BEM: document refusal and proceed to Legal to assess dismissal",
+          "Assess whether the illness pattern suggests a disability — if so, Integrationsamt involvement may be required",
+          "Legal to lead the dismissal process after BEM is completed or declined"
+        ],
+        "hidden_complexity": "Two mandatory prerequisites are missing: (1) BEM has not been offered — this is fatal to any illness-related dismissal in German courts; (2) the illness pattern (14 weeks in 12 months) may indicate a chronic condition or disability, which would trigger Integrationsamt obligations if a GdB ≥ 50 applies. Dismissing without BEM means the dismissal would almost certainly be overturned at the Arbeitsgericht.",
+        "trap": true,
+        "trap_description": "HR framed this as a performance dismissal but the underlying trigger is sick leave. The missing BEM step is the critical trap. A tool that treats this purely as a performance issue without identifying the BEM requirement would lead HR into a void dismissal."
+      }
+    },
+    {
+      "id": "HR-008",
+      "title": "New Hire — AGG-Compliant Recruitment",
+      "submitted_by": "HR Manager: Petra Kessler",
+      "hr_request": "We are posting a job for a Senior Sales Manager. Draft review: 'We are looking for a dynamic and energetic Sales Manager (m/w/d) with 5–8 years of experience. Ideal candidate is a native German speaker, max. 40 years old, and available immediately. Recent university graduates especially welcome.'",
+      "expected_classification": {
+        "scenario": "SCEN-12",
+        "scenario_name": "AGG-Compliant Hiring Process",
+        "legally_significant": true,
+        "escalation_required": false,
+        "issues_identified": [
+          {
+            "issue": "Age cap: 'max. 40 years old'",
+            "legal_problem": "Direct age discrimination under AGG § 1 — age is a protected characteristic",
+            "fix": "Remove entirely"
+          },
+          {
+            "issue": "Age hint: 'Recent university graduates especially welcome'",
+            "legal_problem": "Indirect age discrimination — implies preference for younger candidates",
+            "fix": "Remove or replace with 'We welcome applications from candidates at all career stages'"
+          },
+          {
+            "issue": "Native German speaker requirement",
+            "legal_problem": "May constitute discrimination based on ethnic origin or nationality (AGG § 1) unless native-level German is objectively required",
+            "fix": "Replace with 'Business-fluent German (C1 level or equivalent)' if language proficiency is genuinely required"
+          }
+        ],
+        "correct_revised_excerpt": "We are looking for a Senior Sales Manager (m/w/d) with 5–8 years of experience in B2B sales. Business-fluent German (C1 or equivalent) is required. We welcome applications from candidates at all career stages and backgrounds.",
+        "hidden_complexity": null
+      }
+    },
+    {
+      "id": "HR-009",
+      "title": "Works Council Member — Conduct Dismissal",
+      "submitted_by": "COO: Markus Frey",
+      "hr_request": "Works Council member Elke Hofmann has been consistently disrupting team meetings by challenging every management decision in front of junior staff. Markus says her behavior is undermining management authority. He wants her dismissed for conduct.",
+      "employee": {
+        "name": "Elke Hofmann",
+        "start_date": "2018-03-01",
+        "position": "Senior Engineer",
+        "tenure_years": 8,
+        "works_council_role": "Betriebsratsmitglied (full member)",
+        "prior_warnings": 0
+      },
+      "expected_classification": {
+        "scenario": "SCEN-02",
+        "scenario_name": "Ordinary Conduct Dismissal",
+        "kschg_applies": true,
+        "legally_significant": true,
+        "protection_check_result": "⛔ CRITICAL — Works Council member. Ordinary dismissal of a Works Council member is prohibited during their mandate and for 1 year after (§ 15 KSchG). Only extraordinary dismissal is possible, which requires Works Council consent or labor court authorization.",
+        "works_council_required": false,
+        "works_council_note": "The Works Council cannot consent to its own member's dismissal in the usual sense — § 103 BetrVG requires the full Works Council (excluding the affected member) to consent to an extraordinary dismissal. Ordinary dismissal is simply not available.",
+        "escalation_required": true,
+        "correct_steps": [
+          "⛔ STOP immediately — Works Council member has absolute protection against ordinary dismissal during mandate and 1 year after",
+          "Escalate to Legal",
+          "Assess: is the conduct serious enough to constitute an extraordinary dismissal reason under § 626 BGB?",
+          "Additional assessment: is the conduct actually related to Elke's Works Council role (challenging management decisions is arguably protected Works Council activity)?",
+          "If extraordinary dismissal is considered: Legal must apply to the Works Council for consent under § 103 BetrVG, or apply to the labor court for authorization",
+          "Consider: is this a Works Council conflict rather than an employment law matter? Mediation or Einigungsstelle may be more appropriate"
+        ],
+        "hidden_complexity": "Two layers: (1) ordinary dismissal of a Works Council member is legally impossible — only extraordinary dismissal is available, and the bar is very high; (2) the conduct described (challenging management decisions, speaking up for employees) may be exactly what a Works Council member is legally entitled and obligated to do. Dismissing a Works Council member for exercising their legal mandate is a serious violation and may constitute obstruction of Works Council activities (§ 119 BetrVG — criminal offense). The COO's request could expose TechForward to criminal liability.",
+        "trap": true,
+        "trap_description": "The most legally dangerous case in the dataset. The requesting manager has no idea that ordinary dismissal is impossible, and that the conduct may be protected Works Council activity. The tool must immediately flag the Works Council membership, explain the legal constraints, and stop all dismissal steps while escalating to Legal."
+      }
+    },
+    {
+      "id": "HR-010",
+      "title": "Part-Time Request During Elternzeit",
+      "submitted_by": "HR Manager: Petra Kessler",
+      "hr_request": "Employee Jonas Braun is on parental leave (Elternzeit) until December 2026. He has asked to work 20 hours per week during Elternzeit from April 2026 onwards. Can we refuse? We are short-staffed.",
+      "employee": {
+        "name": "Jonas Braun",
+        "start_date": "2020-07-01",
+        "position": "UX Designer",
+        "elternzeit_start": "2025-10-01",
+        "elternzeit_end": "2026-12-31",
+        "part_time_request_hours": 20,
+        "part_time_request_start": "2026-04-01",
+        "request_submitted_weeks_before": 7
+      },
+      "expected_classification": {
+        "scenario": "SCEN-14",
+        "scenario_name": "Employee Requests Reduction to Part-Time",
+        "special_note": "Part-time during Elternzeit is governed by BEEG § 15 Abs. 4–7, which is more employee-friendly than TzBfG § 8.",
+        "legally_significant": true,
+        "escalation_required": true,
+        "correct_steps": [
+          "Identify that this is a part-time request during Elternzeit — BEEG § 15 applies, not TzBfG § 8",
+          "Under BEEG § 15 Abs. 7: employer can only refuse the part-time request during Elternzeit for urgent operational reasons",
+          "The refusal grounds under BEEG are stricter than TzBfG — 'being short-staffed' is generally not sufficient as an urgent operational reason",
+          "Jonas submitted the request 7 weeks before the intended start — under BEEG § 15 Abs. 7, the request must be submitted at least 7 weeks before the start for Elternzeit up to 3 years. This is borderline — check the exact date",
+          "Employer has 4 weeks to respond after receipt of the request",
+          "If refusing: the refusal must be based on documented urgent operational reasons — escalate to Legal to assess whether the reason is sufficient",
+          "Note: Jonas is also protected against dismissal during Elternzeit — do not conflate the part-time discussion with any performance discussions"
+        ],
+        "hidden_complexity": "HR asked if they can refuse. The honest answer: probably not, unless the operational reasons are genuinely urgent and well-documented. 'Being short-staffed' is a common situation, not an extraordinary one — courts have consistently held this is insufficient. If TechForward refuses and Jonas challenges at the Arbeitsgericht, TechForward is likely to lose and be ordered to allow the part-time arrangement. The tool should advise accepting or escalating to Legal for a careful assessment of the operational reasons.",
+        "trap": false
+      }
+    }
+  ]
+}
