@@ -67,6 +67,7 @@ Each challenge has its own folder with a detailed brief and mock data to get you
 | 10 | **Regulatory Horizon Map** | Executives, Legal teams | [challenge-10](./challenge-10-regulatory-horizon-map/) |
 | 11 | **Contract Bottleneck & Deal Velocity Dashboard** | Sales, Legal, CFO | [challenge-11](./challenge-11-contract-bottleneck-dashboard/) |
 | 12 | **Sales Contract Review Playbook** | Sales, Legal | [challenge-12](./challenge-12-sales-contract-playbook/) |
+| 13 | **Customer Complaint Resolution Assistant** | Customer Care, Legal, Compliance | [challenge-13](./challenge-13-customer-complaint-assistant/) |
 
 ---
 
@@ -195,7 +196,10 @@ legalhackathon/
 ├── challenge-11-contract-bottleneck-dashboard/
 │   ├── CHALLENGE.md
 │   └── mock-data/
-└── challenge-12-sales-contract-playbook/
+├── challenge-12-sales-contract-playbook/
+│   ├── CHALLENGE.md
+│   └── mock-data/
+└── challenge-13-customer-complaint-assistant/
     ├── CHALLENGE.md
     └── mock-data/
 ```
