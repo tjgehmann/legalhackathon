@@ -1,0 +1,316 @@
+{
+  "description": "10 realistic customer complaints for testing the complaint resolution assistant. Some contain hidden legal significance that a well-built tool should detect.",
+  "complaints": [
+    {
+      "id": "COMP-001",
+      "received_date": "2026-02-10",
+      "channel": "email",
+      "customer": {
+        "name": "Markus Bauer",
+        "company": "Bauer Logistics GmbH",
+        "tier": "Professional",
+        "annual_contract_value_eur": 36000,
+        "account_manager": "Sarah Klein"
+      },
+      "subject": "Invoice query — February 2026",
+      "message": "Hi, I just received invoice INV-2026-0892 for EUR 3,850. This doesn't match what we agreed. Our Order Form says EUR 3,000 per month. Can you explain the difference? Thanks, Markus",
+      "expected_classification": {
+        "category": "CAT-01",
+        "category_name": "Billing Dispute",
+        "severity": "medium",
+        "legally_significant": false,
+        "sla_first_response_hours": 24,
+        "suggested_template": "Template 1A",
+        "agent_actions": [
+          "Pull invoice INV-2026-0892 and compare to Order Form",
+          "Check if EUR 850 difference matches any add-on or overage charge",
+          "If billing error: issue credit note (within agent authority at EUR 850)",
+          "If correct: explain with Order Form reference"
+        ],
+        "hidden_complexity": null
+      }
+    },
+    {
+      "id": "COMP-002",
+      "received_date": "2026-02-12",
+      "channel": "support_ticket",
+      "customer": {
+        "name": "Dr. Petra Hoffmann",
+        "company": "Hoffmann Medical Supplies AG",
+        "tier": "Enterprise",
+        "annual_contract_value_eur": 120000,
+        "account_manager": "Thomas Weber"
+      },
+      "subject": "Platform outage — production system affected",
+      "message": "Your platform was completely unavailable from 14:30 to 19:15 yesterday (February 11). This is 4 hours and 45 minutes of downtime. Our production scheduling system runs on your platform and we had to halt a production line. I need to know what happened, when it will be fixed for good, and what credits we are entitled to under our SLA. This is unacceptable.",
+      "expected_classification": {
+        "category": "CAT-02",
+        "category_name": "SLA Breach Claim",
+        "severity": "high",
+        "legally_significant": true,
+        "sla_first_response_hours": 8,
+        "suggested_template": "Template 2A",
+        "agent_actions": [
+          "Acknowledge within SLA — do not dispute downtime claim",
+          "Pull infrastructure incident log for Feb 11, 14:30–19:15",
+          "Calculate SLA credit: 4h45m downtime on 99.5% SLA (threshold = ~3.6h/month) — credits apply",
+          "Credit = 5% of monthly fee per 0.5% below SLA. Monthly fee = EUR 10,000. Calculate and confirm",
+          "Enterprise customer — escalate to Account Manager Thomas Weber",
+          "Prepare Root Cause Analysis within 5 business days"
+        ],
+        "hidden_complexity": "Enterprise customer with large contract. If SLA breach persists, termination right may be triggered. Account Manager must be looped in."
+      }
+    },
+    {
+      "id": "COMP-003",
+      "received_date": "2026-02-14",
+      "channel": "email",
+      "customer": {
+        "name": "Jan Kowalski",
+        "company": "Kowalski & Partner GmbH",
+        "tier": "Basic",
+        "annual_contract_value_eur": 9600,
+        "account_manager": "Lena Fischer"
+      },
+      "subject": "Please delete all our data",
+      "message": "Hello, we have decided to move to a different provider. I would like you to delete all data we have stored on your system, including all user accounts, documents, and logs. Please confirm when this has been done. Also, one of my employees, Anna Nowak, would like to know what personal data you hold about her specifically. Kind regards, Jan Kowalski",
+      "expected_classification": {
+        "category": "CAT-04",
+        "category_name": "GDPR Data Subject Request (DSR)",
+        "severity": "critical",
+        "legally_significant": true,
+        "sla_first_response_hours": 4,
+        "suggested_template": "Template 4A",
+        "agent_actions": [
+          "IMMEDIATELY log receipt date — 1-month GDPR clock starts today (2026-02-14)",
+          "Identify TWO separate DSR types: (1) erasure request (Art. 17) from company, (2) access request (Art. 15) from Anna Nowak",
+          "Route to DPO within 4 hours",
+          "Acknowledge receipt to customer within 24 hours",
+          "Note: erasure may conflict with contract data retention obligations — DPO to assess",
+          "Verify identity of Anna Nowak before processing her individual request (separate from company request)"
+        ],
+        "hidden_complexity": "This appears to be a simple cancellation but contains TWO GDPR DSRs buried in the message: (1) a company data erasure request and (2) an individual access request (Art. 15) from a named employee. A naive agent might treat this as just a cancellation. The GDPR obligations have strict deadlines."
+      }
+    },
+    {
+      "id": "COMP-004",
+      "received_date": "2026-02-15",
+      "channel": "email",
+      "customer": {
+        "name": "Sandra Müller",
+        "company": "Müller Consulting GmbH",
+        "tier": "Professional",
+        "annual_contract_value_eur": 24000,
+        "account_manager": "Lena Fischer"
+      },
+      "subject": "Cancellation",
+      "message": "Hi, I want to cancel my subscription. We're not happy with the product. Please confirm cancellation. Sandra",
+      "expected_classification": {
+        "category": "CAT-03",
+        "category_name": "Cancellation / Termination Request",
+        "severity": "high",
+        "legally_significant": true,
+        "sla_first_response_hours": 24,
+        "suggested_template": "Template 3A",
+        "agent_actions": [
+          "Pull the contract to determine: initial term, auto-renewal status, notice period",
+          "Classify cancellation type: convenience (no specific reason given)",
+          "Calculate: 90-day notice period starts from date of this email (2026-02-15), last day of service = 2026-05-16",
+          "Confirm: prepaid fees are non-refundable",
+          "Offer save conversation (customer is not invoking a legal right — save attempt is appropriate)",
+          "Loop in Account Manager Lena Fischer for save attempt",
+          "Acknowledge cancellation in writing to start the notice clock"
+        ],
+        "hidden_complexity": "Simple convenience cancellation. However, the notice period must be acknowledged in writing as this starts the contractual clock. Do not ignore this step."
+      }
+    },
+    {
+      "id": "COMP-005",
+      "received_date": "2026-02-17",
+      "channel": "email",
+      "customer": {
+        "name": "Rechtsanwältin Claudia Bergmann",
+        "company": "Kanzlei Bergmann & Söhne (acting for: TechCorp Solutions GmbH)",
+        "tier": "Enterprise",
+        "annual_contract_value_eur": 240000,
+        "account_manager": "Thomas Weber"
+      },
+      "subject": "Formal Notice of Material Breach — Contract No. TC-2024-0043",
+      "message": "We act on behalf of TechCorp Solutions GmbH in relation to Contract No. TC-2024-0043 dated 1 March 2024. We hereby formally notify TechForward Solutions GmbH of a material breach of the above agreement arising from the repeated failure to meet the uptime SLA commitments set out in Section 5.1. Our client has experienced five separate outages exceeding the monthly SLA threshold in the period October 2025 to January 2026. Pursuant to Section 4.3 of the contract, our client is entitled to terminate for cause and to seek damages for losses incurred as a result of the service failures. Our client intends to exercise the termination right unless TechForward provides a formal remediation plan with binding commitments within 14 days of this notice. All further correspondence should be directed to this office. Claudia Bergmann, Rechtsanwältin",
+      "expected_classification": {
+        "category": "CAT-10",
+        "category_name": "Legal Threat / Formal Notice",
+        "severity": "critical",
+        "legally_significant": true,
+        "sla_first_response_hours": 2,
+        "suggested_template": "Template 10A",
+        "agent_actions": [
+          "DO NOT send any substantive response",
+          "Send Template 10A (receipt acknowledgment only) within 2 hours",
+          "Forward immediately to Legal team lead and Account Manager Thomas Weber",
+          "Log receipt timestamp — 14-day response deadline starts today (2026-02-17), deadline = 2026-03-03",
+          "Preserve all records related to TC-2024-0043 and the five cited outages",
+          "Do NOT contact the customer directly — all correspondence goes through the law firm"
+        ],
+        "hidden_complexity": "This is a formal legal notice from a lawyer. The 14-day remediation deadline is contractually significant. If TechForward does not respond by 2026-03-03, the customer may be entitled to terminate immediately. This is extremely time-sensitive and must reach Legal within hours, not days."
+      }
+    },
+    {
+      "id": "COMP-006",
+      "received_date": "2026-02-18",
+      "channel": "support_ticket",
+      "customer": {
+        "name": "Florian Brandt",
+        "company": "Brandt Retail GmbH",
+        "tier": "Professional",
+        "annual_contract_value_eur": 48000,
+        "account_manager": "Sarah Klein"
+      },
+      "subject": "Login not working since yesterday",
+      "message": "My login stopped working yesterday afternoon around 3pm. I've tried resetting my password three times but I still can't get in. The reset email isn't arriving either. I've got a board presentation in 2 hours that needs data from the platform. Please fix this urgently.",
+      "expected_classification": {
+        "category": "CAT-09",
+        "category_name": "Account Access / Locked Out",
+        "severity": "medium",
+        "legally_significant": false,
+        "sla_first_response_hours": 4,
+        "suggested_template": "Template 9A",
+        "agent_actions": [
+          "Treat as URGENT due to 2-hour deadline — escalate to technical support immediately",
+          "Verify identity before making account changes",
+          "Check: (1) is account active in admin console, (2) is email system delivering reset emails, (3) is account flagged for any reason",
+          "If technical issue: engage on-call engineer immediately",
+          "Provide interim workaround if possible (e.g., read-only link, temporary access)",
+          "Follow up to confirm access is restored before the presentation"
+        ],
+        "hidden_complexity": "Time-critical due to the 2-hour presentation deadline. Standard SLA (4 hours first response) would be too slow. Agent should treat this as a P1 urgency situation and escalate engineering immediately."
+      }
+    },
+    {
+      "id": "COMP-007",
+      "received_date": "2026-02-19",
+      "channel": "email",
+      "customer": {
+        "name": "Ingrid Larsson",
+        "company": "Larsson Nordic AB",
+        "tier": "Enterprise",
+        "annual_contract_value_eur": 180000,
+        "account_manager": "Thomas Weber"
+      },
+      "subject": "Strange emails — possible security issue",
+      "message": "Hi, I want to flag something odd. Several of my employees have received emails this morning that look like they come from TechForward but have a slightly different sender domain (techf0rward.com instead of techforward.com). The emails are asking them to log in and verify their credentials. None of my staff clicked the links. Could this be a phishing attack using our data somehow? Has there been any kind of breach on your end? Very concerned.",
+      "expected_classification": {
+        "category": "CAT-05",
+        "category_name": "Suspected Data Breach Notification (Inbound)",
+        "severity": "critical",
+        "legally_significant": true,
+        "sla_first_response_hours": 1,
+        "suggested_template": "Template 5A",
+        "agent_actions": [
+          "Escalate to SIRT IMMEDIATELY — within 15 minutes",
+          "Send Template 5A only — no other response, no speculation",
+          "Log exact timestamp: 2026-02-19 [time received] — potential 72-hour GDPR clock may start now",
+          "Do NOT confirm or deny whether a breach occurred",
+          "Do NOT investigate independently",
+          "SIRT to determine: (a) is techf0rward.com domain related to TechForward systems, (b) is customer data involved in a potential exfiltration, (c) GDPR notification obligation assessment"
+        ],
+        "hidden_complexity": "A customer-facing phishing campaign using a lookalike domain may indicate that customer email data was exposed in a breach. Even if TechForward systems are not compromised, the GDPR clock may start from when the customer reports this to TechForward. Time-critical escalation required."
+      }
+    },
+    {
+      "id": "COMP-008",
+      "received_date": "2026-02-20",
+      "channel": "email",
+      "customer": {
+        "name": "Patrick Weiss",
+        "company": "Weiss Consulting AG",
+        "tier": "Basic",
+        "annual_contract_value_eur": 14400,
+        "account_manager": "Lena Fischer"
+      },
+      "subject": "Refund — I signed up by mistake",
+      "message": "Hi, I signed up for your platform on February 18th but this was a mistake — my colleague was supposed to sign up but used my account and payment details. I haven't used the platform at all. I would like a full refund please. Thanks, Patrick",
+      "expected_classification": {
+        "category": "CAT-08",
+        "category_name": "Refund Request",
+        "severity": "medium",
+        "legally_significant": true,
+        "sla_first_response_hours": 24,
+        "suggested_template": "Template 3B",
+        "agent_actions": [
+          "Check contract signature date: February 18, 2026",
+          "Check today's date: February 20, 2026 — 2 days since signing",
+          "Assess cooling-off eligibility: B2B contracts — check if contractual cooling-off applies (some TechForward B2B contracts include a 14-day cooling-off clause)",
+          "If cooling-off applies: process full refund, cancel subscription, Template 3B",
+          "If no contractual cooling-off and customer has not activated the service: consider goodwill refund (within agent authority up to EUR 200; above that requires Finance)",
+          "Annual contract value = EUR 14,400; monthly = EUR 1,200 — above agent authority for full refund",
+          "Escalate to Finance for approval if full refund needed"
+        ],
+        "hidden_complexity": "Customer signed 2 days ago and hasn't used the platform. A 14-day cooling-off period may apply depending on the contract type. Even if not contractually required, a goodwill approach may be appropriate for a basic tier customer who hasn't activated. Agent cannot approve full refund without Finance sign-off."
+      }
+    },
+    {
+      "id": "COMP-009",
+      "received_date": "2026-02-21",
+      "channel": "email",
+      "customer": {
+        "name": "Maria Fernandez",
+        "company": "Fernandez & Asociados SL",
+        "tier": "Professional",
+        "annual_contract_value_eur": 42000,
+        "account_manager": "Sarah Klein"
+      },
+      "subject": "Your employee was very rude",
+      "message": "I want to make a formal complaint. I had a support call this morning with someone called 'Jonas' and he was extremely rude and dismissive. When I explained my issue he told me I was 'probably doing it wrong' and hung up on me before I finished explaining. I have been a customer for 3 years and have never been treated like this. I expect an apology and I want to make sure this doesn't happen again. Maria",
+      "expected_classification": {
+        "category": "CAT-11",
+        "category_name": "Complaint About a TechForward Employee",
+        "severity": "high",
+        "legally_significant": true,
+        "sla_first_response_hours": 4,
+        "suggested_template": "Template 11A",
+        "agent_actions": [
+          "Acknowledge with genuine empathy — do not minimize or defend",
+          "Do NOT name, identify, or make any statement about 'Jonas'",
+          "Do NOT investigate or promise a specific disciplinary outcome",
+          "Route to Customer Care Manager and HR within 4 hours",
+          "Ensure Jonas does not contact this customer pending review",
+          "Confirm to Maria that her complaint has been registered and the appropriate team will follow up within 3 business days",
+          "Note: Maria is a 3-year customer — high retention risk. Ensure Account Manager Sarah Klein is also informed"
+        ],
+        "hidden_complexity": "Long-standing customer with high retention value. The complaint has HR and employment law implications — cannot be handled by an agent. The agent's role is to acknowledge and route, not investigate. Risk of losing a loyal customer if handled poorly."
+      }
+    },
+    {
+      "id": "COMP-010",
+      "received_date": "2026-02-24",
+      "channel": "email",
+      "customer": {
+        "name": "Klaus Hartmann",
+        "company": "Hartmann Elektro GmbH",
+        "tier": "Professional",
+        "annual_contract_value_eur": 36000,
+        "account_manager": "Sarah Klein"
+      },
+      "subject": "We are very unhappy",
+      "message": "Hello. We have been using TechForward for about 8 months now and to be honest we are not very happy with it. The platform works most of the time but there have been a few crashes, the interface is confusing, the reporting module doesn't do what we need, and the onboarding wasn't great. We expected more. We're not sure if we want to continue after the contract ends. What can you do for us? Klaus",
+      "expected_classification": {
+        "category": "CAT-12",
+        "category_name": "General Dissatisfaction / Vague Complaint",
+        "severity": "low",
+        "legally_significant": false,
+        "sla_first_response_hours": 24,
+        "suggested_template": null,
+        "agent_actions": [
+          "Read carefully for any hidden specific complaint — note: 'a few crashes' may be a CAT-07 (bug) or CAT-02 (SLA) issue worth investigating separately",
+          "Acknowledge the overall frustration genuinely",
+          "Ask one clarifying question: which of the issues is causing the most day-to-day impact?",
+          "Offer to arrange a review call with Account Manager Sarah Klein to address the reporting module gap",
+          "Log feedback themes in CRM: (1) UI/UX confusion, (2) reporting capability gap, (3) onboarding quality — valuable for product team",
+          "Assess retention risk: customer is 8 months in, contract may renew in 4 months — flag to Account Manager"
+        ],
+        "hidden_complexity": "Vague on the surface but contains at least 3 distinct issues: (1) 'a few crashes' — potential SLA claim worth investigating; (2) reporting module gap — potential product feedback or custom requirement; (3) onboarding complaint — potential warranty/SOW issue. The agent must read carefully and may need to re-classify part of this complaint."
+      }
+    }
+  ]
+}

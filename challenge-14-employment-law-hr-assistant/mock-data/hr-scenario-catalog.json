@@ -1,0 +1,646 @@
+{
+  "version": "1.0",
+  "company": "TechForward Solutions GmbH",
+  "jurisdiction": "Germany",
+  "catalog_note": "All scenarios assume German employment law. Always check for collective agreements (Tarifverträge) that may provide greater employee protections than statutory minimums.",
+  "hr_scenarios": [
+    {
+      "id": "SCEN-01",
+      "name": "Dismissal During Probation Period (Probezeit)",
+      "description": "Employer wishes to dismiss an employee who is still within the agreed probationary period (maximum 6 months under § 622 Abs. 3 BGB).",
+      "legal_basis": ["§ 622 Abs. 3 BGB", "§ 1 KSchG"],
+      "kschg_applies": false,
+      "kschg_note": "KSchG does not apply during the first 6 months of employment — the employee has no unfair dismissal protection. However, general protections (AGG, MuSchG, BetrVG) still apply.",
+      "notice_period": {
+        "statutory_days": 14,
+        "notes": "2 weeks notice during probation. Check contract and any applicable Tarifvertrag for longer periods."
+      },
+      "works_council_consultation_required": true,
+      "works_council_note": "Even during probation, Works Council must be consulted under § 102 BetrVG before the dismissal is issued. Failure renders the dismissal void.",
+      "protected_employee_check_required": true,
+      "escalation_triggers": [
+        "Employee is pregnant or has notified pregnancy within the last 2 weeks",
+        "Employee is on or has applied for parental leave (Elternzeit)",
+        "Employee has a recognized severe disability (GdB ≥ 50) or pending application",
+        "Employee is a Works Council member",
+        "Employee has filed a complaint (e.g., discrimination, whistleblower) in the last 6 months",
+        "Dismissal reason could be seen as relating to a protected characteristic (§ 1 AGG)"
+      ],
+      "required_steps": [
+        "1. Confirm the probation period: check the employment contract for start date and agreed probation length (max 6 months)",
+        "2. Run the protected employee check (pregnancy, Elternzeit, severe disability, Works Council membership)",
+        "3. If any protection applies: STOP — escalate to Legal before proceeding",
+        "4. Prepare the Works Council consultation notice (§ 102 BetrVG): name, employment date, position, reason for dismissal, notice period",
+        "5. Submit the consultation notice to the Works Council — they have 1 week to respond for an ordinary dismissal",
+        "6. Wait for the Works Council response or expiry of the 1-week window before issuing the dismissal letter",
+        "7. Issue the written dismissal letter (Kündigungsschreiben) — must be signed in wet ink (§ 623 BGB), no email",
+        "8. Arrange personal handover of the letter or send by registered post with acknowledgment of receipt",
+        "9. Document everything: consultation notice, Works Council response (or non-response), delivery confirmation",
+        "10. Update the employee record in HR system"
+      ],
+      "hr_authority": {
+        "can_proceed_without_legal": true,
+        "conditions": "Only if no protected employee status applies and Works Council consultation is completed",
+        "requires_legal_if": "Any escalation trigger is present"
+      },
+      "common_mistakes": [
+        "Issuing the dismissal before the Works Council consultation window has expired",
+        "Sending the dismissal letter by email (legally void under § 623 BGB)",
+        "Forgetting to check for pregnancy — an employee who notified pregnancy AFTER the dismissal letter was prepared but BEFORE it was handed over is still protected",
+        "Assuming no Works Council exists — verify this; a Works Council can be formed at any time"
+      ]
+    },
+    {
+      "id": "SCEN-02",
+      "name": "Ordinary Conduct Dismissal (Verhaltensbedingte Kündigung)",
+      "description": "Employer wishes to dismiss an employee for conduct reasons (e.g., repeated tardiness, insubordination, policy violations, verbal misconduct). KSchG applies.",
+      "legal_basis": ["§ 1 KSchG", "§ 102 BetrVG", "§ 622 BGB", "§ 623 BGB"],
+      "kschg_applies": true,
+      "kschg_note": "For conduct dismissal to be socially justified under KSchG, a prior written warning (Abmahnung) is almost always required unless the conduct is so serious that the employee could not reasonably have expected to keep their job (e.g., theft, fraud).",
+      "notice_period": {
+        "statutory_min_weeks": 4,
+        "notes": "Minimum 4 weeks to the 15th or end of month. Increases with tenure — see notice period table in legal-escalation-and-compliance.md."
+      },
+      "works_council_consultation_required": true,
+      "works_council_note": "§ 102 BetrVG: Works Council must be fully informed and consulted before issuing any dismissal. Insufficient consultation information renders the dismissal void.",
+      "protected_employee_check_required": true,
+      "prerequisite": "At least one written warning (Abmahnung) for the same or closely related type of conduct must have been issued and documented, unless the conduct makes continuation of employment unreasonable.",
+      "escalation_triggers": [
+        "No prior written warning has been issued for this type of conduct",
+        "The incident that triggered the dismissal is more than 2 years old",
+        "Employee is in a protected category (pregnancy, Elternzeit, severe disability, BetrVG mandate)",
+        "Employee has filed a grievance, discrimination complaint, or whistleblower report in the last 12 months",
+        "The conduct involves potential criminal activity (theft, fraud, assault) — extraordinary dismissal may be more appropriate",
+        "Employee is subject to a collective agreement with stricter dismissal requirements",
+        "Company has fewer than 11 full-time equivalent employees — KSchG may not apply, but caution still required"
+      ],
+      "required_steps": [
+        "1. Confirm KSchG applies: employee has been employed for more than 6 months AND the company employs more than 10 full-time equivalent employees",
+        "2. Run the protected employee check",
+        "3. If any protection applies: STOP — escalate to Legal",
+        "4. Verify that at least one written Abmahnung has been issued for the same or related conduct — locate it in the employee file",
+        "5. If no Abmahnung exists and the conduct is not severe enough to skip the warning step: issue an Abmahnung first and allow a reasonable period before considering dismissal",
+        "6. Assess whether the conduct is sufficiently serious and recent to justify dismissal (documented incidents from last 12–24 months)",
+        "7. Prepare the full Works Council consultation package: name, date of employment, dismissal type (ordinary/conduct), notice period, summary of incidents, and copies of prior warnings",
+        "8. Submit to Works Council — they have 1 week to respond for ordinary dismissal",
+        "9. After Works Council response or expiry of window: issue the written dismissal letter with correct notice period",
+        "10. Hand-deliver or send by registered post — do not email",
+        "11. Document the full process in the employee file"
+      ],
+      "hr_authority": {
+        "can_proceed_without_legal": false,
+        "conditions": "Conduct dismissals under KSchG carry significant litigation risk — Legal should review the case before the dismissal is issued",
+        "requires_legal_if": "KSchG applies — Legal review recommended in all cases"
+      },
+      "common_mistakes": [
+        "Skipping the Abmahnung step and going straight to dismissal",
+        "Writing an Abmahnung that is too vague ('attitude problems') rather than describing specific behavior",
+        "Providing incomplete information to the Works Council — they must receive all facts that the employer is relying on",
+        "Using incidents in the dismissal letter that were not included in the Works Council consultation (those incidents cannot be relied upon)",
+        "Dismissing during or shortly after a protected leave — creates appearance of retaliation"
+      ]
+    },
+    {
+      "id": "SCEN-03",
+      "name": "Ordinary Performance Dismissal (Personenbedingte Kündigung)",
+      "description": "Employer wishes to dismiss an employee due to persistent underperformance, incapacity, or long-term illness. Distinct from conduct dismissal — no fault or warning required, but the bar is high.",
+      "legal_basis": ["§ 1 KSchG", "§ 102 BetrVG", "§ 622 BGB"],
+      "kschg_applies": true,
+      "kschg_note": "Performance/person-based dismissal must be proportionate. Employer must show: (1) the performance deficit is persistent and unlikely to improve, (2) less severe measures (retraining, role change) have been considered or tried, (3) the business impact is concrete.",
+      "notice_period": {
+        "statutory_min_weeks": 4,
+        "notes": "Same as conduct — increases with tenure."
+      },
+      "works_council_consultation_required": true,
+      "protected_employee_check_required": true,
+      "escalation_triggers": [
+        "Employee has been on sick leave for more than 6 weeks in the last 12 months — long-term illness dismissal has additional hurdles (betriebliches Eingliederungsmanagement / BEM required)",
+        "Employee has a disability or chronic illness that may be causing the underperformance — dismissal may conflict with SGB IX and AGG",
+        "No documented performance management process has taken place (no targets set, no feedback given, no support offered)",
+        "Employee is in a protected category",
+        "Employer has not offered a BEM (Betriebliches Eingliederungsmanagement) where sick leave exceeded 6 weeks in 12 months"
+      ],
+      "required_steps": [
+        "1. Confirm KSchG applies",
+        "2. Run the protected employee check",
+        "3. Check sick leave record: if employee has been off more than 6 consecutive weeks OR more than 6 weeks cumulative in the last 12 months, a BEM (§ 167 Abs. 2 SGB IX) must have been offered — if not, proceed to BEM before dismissal",
+        "4. Review the documented performance management history: targets set, reviews held, feedback given, support offered",
+        "5. If no adequate performance management process: do not proceed to dismissal yet — implement PIP or performance review process first",
+        "6. Assess whether alternative placement in a different role is possible",
+        "7. Prepare the Works Council consultation package including full performance history",
+        "8. Submit to Works Council — 1 week response window",
+        "9. Issue written dismissal with correct notice period after Works Council window",
+        "10. Document all steps in the employee file"
+      ],
+      "hr_authority": {
+        "can_proceed_without_legal": false,
+        "requires_legal_if": "Always — performance dismissals are heavily litigated in German employment courts"
+      },
+      "common_mistakes": [
+        "Issuing a performance dismissal without any prior performance management process",
+        "Forgetting the BEM requirement for employees with significant sick leave history",
+        "Conflating performance issues with conduct issues — choose the right dismissal type",
+        "Not exploring role transfers or reasonable adjustments before dismissal"
+      ]
+    },
+    {
+      "id": "SCEN-04",
+      "name": "Extraordinary / Immediate Dismissal (Außerordentliche Kündigung fristlos)",
+      "description": "Employer dismisses an employee with immediate effect for serious cause — no notice period. Typically used for theft, fraud, serious assault, deliberate sabotage, serious breach of confidentiality.",
+      "legal_basis": ["§ 626 BGB", "§ 102 BetrVG"],
+      "kschg_applies": true,
+      "kschg_note": "The bar for extraordinary dismissal is very high. The conduct must be so serious that continuing the employment relationship — even for the notice period — is unreasonable. Courts scrutinize these closely.",
+      "notice_period": {
+        "statutory_days": 0,
+        "notes": "No notice period. However, a social compensation payment (Abfindung) is sometimes agreed in settlement even for extraordinary dismissals."
+      },
+      "hard_deadline": {
+        "description": "§ 626 Abs. 2 BGB: The extraordinary dismissal must be issued within 2 weeks of the employer becoming aware of the facts justifying it. This deadline is absolute — missing it makes the extraordinary dismissal void.",
+        "deadline_weeks": 2,
+        "clock_starts": "Date the authorized HR/management decision-maker first learned of the facts"
+      },
+      "works_council_consultation_required": true,
+      "works_council_note": "Works Council consultation for extraordinary dismissal: only 3 days (not 1 week). This is because of the 2-week overall deadline. The consultation package must be submitted immediately.",
+      "protected_employee_check_required": true,
+      "protected_employee_note": "Even for extraordinary dismissal, special protections apply. For pregnant employees and Works Council members, an extraordinary dismissal requires specific additional steps (Works Council consent for Works Council members; state authority approval for pregnant employees).",
+      "escalation_triggers": [
+        "Any protected employee category — immediate Legal escalation",
+        "The employee is a Works Council member — extraordinary dismissal requires Works Council consent (§ 103 BetrVG) or labor court authorization",
+        "Criminal conduct is involved — coordinate with legal and potentially law enforcement",
+        "The 2-week deadline is at risk of being missed",
+        "The facts are disputed or unclear — do not issue until facts are established"
+      ],
+      "required_steps": [
+        "1. Establish and document the exact date the relevant decision-maker first learned of the incident — the 2-week clock starts here",
+        "2. Assess whether the facts are sufficiently clear and serious to justify immediate dismissal",
+        "3. Run the protected employee check — CRITICAL for this dismissal type",
+        "4. If employee is a Works Council member: STOP — Works Council consent under § 103 BetrVG required first, or labor court authorization needed — escalate to Legal immediately",
+        "5. Consider whether to suspend the employee pending investigation (paid garden leave) while facts are established — do this before the 2-week clock runs out",
+        "6. Prepare the Works Council consultation package: full facts, date of incident, reason for extraordinary dismissal — submit immediately (3-day response window)",
+        "7. After Works Council response or expiry of 3-day window: issue the extraordinary dismissal letter",
+        "8. Ensure the letter is delivered within the 2-week deadline from awareness date",
+        "9. Hand-deliver if at all possible — get signed acknowledgment",
+        "10. Document timeline meticulously — courts will scrutinize every date"
+      ],
+      "hr_authority": {
+        "can_proceed_without_legal": false,
+        "requires_legal_if": "Always — extraordinary dismissal is the highest-risk employment action. Legal must be involved from the moment the facts are known."
+      },
+      "common_mistakes": [
+        "Missing the 2-week § 626 deadline — this is the single most common reason extraordinary dismissals fail in court",
+        "Not consulting the Works Council in time due to the compressed 3-day window",
+        "Issuing an extraordinary dismissal without sufficient evidence — 'we think he did it' is not enough",
+        "Forgetting that a Works Council member cannot be extraordinarily dismissed without the Works Council's consent or a court order"
+      ]
+    },
+    {
+      "id": "SCEN-05",
+      "name": "Operational Redundancy (Betriebsbedingte Kündigung)",
+      "description": "Employee's role is eliminated due to operational, structural, or economic reasons. The decision is business-driven, not employee-driven.",
+      "legal_basis": ["§ 1 KSchG", "§ 102 BetrVG", "§§ 111-113 BetrVG (Interessenausgleich/Sozialplan for mass redundancies)", "§ 17 KSchG (mass dismissal notification)"],
+      "kschg_applies": true,
+      "kschg_note": "Operational redundancy must be socially justified. The employer must: (1) have a genuine operational reason, (2) perform a Sozialauswahl (social selection) among comparable employees, (3) check for alternative placement. Sozialauswahl criteria: length of service, age, maintenance obligations, severe disability.",
+      "notice_period": {
+        "statutory_min_weeks": 4,
+        "notes": "Increases with tenure. Redundancy packages (Abfindung) are common in practice but not legally required unless agreed."
+      },
+      "works_council_consultation_required": true,
+      "works_council_note": "For individual redundancies: standard § 102 BetrVG consultation. For collective redundancies (≥5 employees in companies of 21–59 employees, or ≥10% in larger companies): § 17 KSchG notification to the Agentur für Arbeit AND potential Interessenausgleich/Sozialplan obligation with the Works Council.",
+      "protected_employee_check_required": true,
+      "sozialauswahl_required": true,
+      "sozialauswahl_criteria": [
+        "Length of service (Betriebszugehörigkeit)",
+        "Age (Lebensalter)",
+        "Maintenance obligations (Unterhaltspflichten) — dependent children, non-working spouse",
+        "Severe disability status (Schwerbehinderung)"
+      ],
+      "escalation_triggers": [
+        "Any protected employee is included in or affected by the redundancy pool",
+        "More than 5 employees are being made redundant — collective redundancy rules may apply",
+        "The operational reason is not clearly documented or may not withstand scrutiny",
+        "The Sozialauswahl has not been formally conducted",
+        "Employee's role has been or will soon be refilled — undermines the operational reason claim",
+        "Company has a Works Council and no Interessenausgleich discussion has been initiated"
+      ],
+      "required_steps": [
+        "1. Confirm and document the operational reason: restructuring decision, cost reduction, technology replacement — decision must be made and documented before the dismissal",
+        "2. Define the comparable employee pool for Sozialauswahl (same or similar roles, interchangeability)",
+        "3. Apply the four Sozialauswahl criteria to all employees in the pool — document scores",
+        "4. Identify which employee(s) have the lowest social protection score and therefore can be dismissed",
+        "5. Check whether any of the selected employees are in a protected category",
+        "6. Check whether the role can be filled by the employee elsewhere in the company (alternative placement obligation)",
+        "7. Check whether mass redundancy thresholds are met — if yes, escalate to Legal immediately",
+        "8. Prepare Works Council consultation package including the Sozialauswahl documentation",
+        "9. For larger restructurings: initiate Interessenausgleich negotiations with the Works Council",
+        "10. Issue dismissal letters with correct notice periods after Works Council process",
+        "11. File notification with Agentur für Arbeit if mass redundancy thresholds are met"
+      ],
+      "hr_authority": {
+        "can_proceed_without_legal": false,
+        "requires_legal_if": "Always for redundancies — Sozialauswahl errors are the most common basis for successful wrongful dismissal claims"
+      },
+      "common_mistakes": [
+        "Selecting who to make redundant before conducting a formal Sozialauswahl",
+        "Refilling the role within 12 months — this makes the operational reason appear pretextual",
+        "Forgetting to check for comparable roles elsewhere in the company",
+        "Missing the mass redundancy notification obligation to the Agentur für Arbeit"
+      ]
+    },
+    {
+      "id": "SCEN-06",
+      "name": "Issuing a Written Warning (Abmahnung)",
+      "description": "HR issues a formal written warning to an employee for misconduct or poor performance, as a prerequisite to a subsequent conduct or performance dismissal.",
+      "legal_basis": ["§ 314 BGB (Abmahnung principle derived from case law)", "BAG established doctrine"],
+      "kschg_applies": false,
+      "kschg_note": "An Abmahnung itself is not a dismissal, so KSchG does not directly apply. However, it becomes the evidentiary foundation for a later KSchG-governed dismissal.",
+      "notice_period": {
+        "statutory_days": 0,
+        "notes": "An Abmahnung does not carry a notice period — it is a warning, not a dismissal."
+      },
+      "works_council_consultation_required": false,
+      "works_council_note": "No Works Council consultation required before issuing an Abmahnung. However, the employee has the right to attach a written response to their personnel file.",
+      "protected_employee_check_required": false,
+      "works_council_note_for_protected": "For Works Council members, issuing an Abmahnung for activities within their Works Council role is prohibited.",
+      "escalation_triggers": [
+        "The employee is a Works Council member and the Abmahnung relates to activities connected to their Works Council role",
+        "The conduct being warned about could be basis for an immediate extraordinary dismissal — consider whether Abmahnung or termination is the right response",
+        "The employee has already received 2+ Abmahnungen for similar conduct — consider whether dismissal is now appropriate"
+      ],
+      "required_steps": [
+        "1. Identify the specific conduct or performance issue to be warned about",
+        "2. Verify that the incident is sufficiently recent (stale incidents lose their warning effect over time — typically 2–3 years)",
+        "3. Draft the Abmahnung with all required elements (see template in employment-law-playbooks.md)",
+        "4. Have the Abmahnung reviewed by HR management before issuing",
+        "5. Issue to the employee in writing — obtain written acknowledgment of receipt",
+        "6. Inform the employee they have the right to respond in writing and have their response attached to their personnel file",
+        "7. File the signed Abmahnung in the employee's personnel file",
+        "8. Set a calendar reminder: if no repeat conduct within 12–24 months, the Abmahnung loses some of its weight for subsequent dismissal — reassess"
+      ],
+      "abmahnung_required_elements": [
+        "Full name and position of the employee",
+        "Specific description of the conduct (what happened, when, where, who witnessed it) — must be precise, not generic",
+        "Statement that the conduct violates the employment contract or company policy (cite specific obligation)",
+        "Clear instruction to desist from this conduct in future",
+        "Warning that repetition may result in dismissal (Kündigung) without further warning",
+        "Date and signature of authorized HR representative"
+      ],
+      "hr_authority": {
+        "can_proceed_without_legal": true,
+        "conditions": "HR can issue Abmahnungen independently. Escalate to Legal if the employee is a Works Council member or if the conduct is serious enough to consider immediate dismissal instead."
+      },
+      "common_mistakes": [
+        "Vague language: 'your attitude needs to improve' — an Abmahnung must describe a specific incident",
+        "Not warning of the dismissal consequence — without the warning, the Abmahnung cannot support a later dismissal",
+        "Issuing an Abmahnung for a Works Council member's Works Council activities",
+        "Forgetting to give the employee the right to respond in writing"
+      ]
+    },
+    {
+      "id": "SCEN-07",
+      "name": "Fixed-Term Contract (Befristeter Arbeitsvertrag)",
+      "description": "Employer wishes to hire an employee on a time-limited contract, or extend an existing fixed-term contract.",
+      "legal_basis": ["TzBfG §§ 14–16", "§ 623 BGB"],
+      "notice_period": {
+        "statutory_days": 0,
+        "notes": "A fixed-term contract ends automatically on the agreed end date — no notice of dismissal required. However, if the employee is dismissed before the end date, normal dismissal rules apply."
+      },
+      "works_council_consultation_required": true,
+      "works_council_note": "Hiring decisions, including fixed-term hires, require Works Council involvement under § 99 BetrVG in companies with 20+ employees (Zustimmung zur Einstellung).",
+      "protected_employee_check_required": false,
+      "befristung_types": [
+        {
+          "type": "Sachgrundlose Befristung (no objective reason)",
+          "rules": [
+            "Maximum total duration: 2 years",
+            "Maximum number of extensions: 3",
+            "Prohibited if the employee has previously worked for the same employer in any capacity (Vorbeschäftigungsverbot) — this applies for life per BAG 2011 ruling (with some caveats after BVerfG 2018)",
+            "Each extension must be agreed in writing before the current term expires — a late signature converts the contract to permanent employment"
+          ]
+        },
+        {
+          "type": "Sachgrundbefristung (with objective reason)",
+          "rules": [
+            "No maximum duration — as long as the objective reason exists",
+            "Objective reasons (§ 14 Abs. 1 TzBfG): temporary business need, replacing an absent employee, trial period, employee-requested, funding contingency, court settlement, nature of the work",
+            "The objective reason must genuinely exist and be documented at the time the contract is signed",
+            "If the objective reason is found to be pretextual, the contract becomes permanent"
+          ]
+        }
+      ],
+      "escalation_triggers": [
+        "Employee has previously worked for TechForward in any capacity — prior employment check required before sachgrundlose Befristung",
+        "The contract is approaching or would exceed the 2-year maximum for sachgrundlose Befristung",
+        "A third extension is being proposed — this is the maximum; any further extension requires a Sachgrund or the contract becomes permanent",
+        "The Sachgrund being cited may not be legally sufficient — Legal to review",
+        "The extension agreement was not signed before the current term expired"
+      ],
+      "required_steps": [
+        "1. Decide whether there is an objective reason (Sachgrund) or whether sachgrundlose Befristung will be used",
+        "2. If sachgrundlose: check prior employment history with TechForward — any prior employment in any role blocks sachgrundlose Befristung",
+        "3. Calculate total fixed-term duration — ensure it does not exceed 2 years for sachgrundlose",
+        "4. Count the number of extensions proposed — ensure they do not exceed 3 for sachgrundlose",
+        "5. Draft the contract or extension agreement in writing (§ 14 Abs. 4 TzBfG: must be in writing before employment begins, or before the extension takes effect)",
+        "6. If company has 20+ employees: submit to Works Council for Zustimmung under § 99 BetrVG",
+        "7. Both parties sign before the start date / extension effective date",
+        "8. Set a calendar reminder 3 months before the contract end date to decide: extend, convert to permanent, or allow to lapse"
+      ],
+      "hr_authority": {
+        "can_proceed_without_legal": true,
+        "conditions": "Standard sachgrundlose Befristung within limits. Escalate to Legal for Sachgrundbefristung or any edge cases."
+      },
+      "common_mistakes": [
+        "Signing the extension agreement after the current term has expired — the contract becomes permanent immediately upon expiry without a timely written extension",
+        "Using sachgrundlose Befristung for an employee who previously worked at TechForward",
+        "Exceeding 2 years total or 3 extensions under sachgrundlose Befristung",
+        "Not getting Works Council consent for new hires in companies with 20+ employees"
+      ]
+    },
+    {
+      "id": "SCEN-08",
+      "name": "Dismissal of a Severely Disabled Employee (Schwerbehinderter Arbeitnehmer)",
+      "description": "Employer wishes to dismiss an employee with a recognized severe disability (Grad der Behinderung ≥ 50, or ≥ 30 with equal treatment status).",
+      "legal_basis": ["§§ 168–175 SGB IX", "§ 1 KSchG", "§ 102 BetrVG", "AGG § 7"],
+      "kschg_applies": true,
+      "special_protection": "Integrationsamt (now: Inklusionsamt) approval required before any dismissal. This is a mandatory precondition — the dismissal is void without it.",
+      "integrationsamt_process": {
+        "application_required": true,
+        "typical_duration_weeks": "4–6 weeks",
+        "decision_types": ["Approval granted", "Approval granted with conditions", "Approval refused"],
+        "approval_generally_granted_for": "Operational redundancy, incapacity unrelated to disability",
+        "approval_generally_refused_for": "Dismissal where the reason is related to the disability, dismissal during BEM process"
+      },
+      "works_council_consultation_required": true,
+      "protected_employee_check_required": true,
+      "escalation_triggers": [
+        "Always — this scenario must always involve Legal",
+        "Employee's disability status is pending recognition (GdB application in progress) — protection may still apply",
+        "The dismissal reason is related to illness or performance that may be connected to the disability",
+        "BEM (Betriebliches Eingliederungsmanagement) has not been offered or completed"
+      ],
+      "required_steps": [
+        "1. Confirm disability status: check for Schwerbehindertenausweis or pending GdB application — protection applies if employer knows or should know of the disability",
+        "2. STOP — escalate to Legal immediately",
+        "3. Legal will apply to the Integrationsamt for approval (must happen before Works Council consultation for the dismissal can proceed)",
+        "4. Await Integrationsamt decision — typically 4–6 weeks",
+        "5. If approved: Legal prepares Works Council consultation package",
+        "6. Works Council consultation (1 week ordinary / 3 days extraordinary)",
+        "7. Issue dismissal only after both Integrationsamt approval and Works Council process are complete"
+      ],
+      "hr_authority": {
+        "can_proceed_without_legal": false,
+        "requires_legal_if": "Always — do not take any action without Legal involvement"
+      },
+      "common_mistakes": [
+        "Proceeding with dismissal without Integrationsamt approval — the dismissal is automatically void",
+        "Not realizing that protection applies when a GdB application is pending and the employer is aware of the disability",
+        "Dismissing an employee for reasons related to their disability — this is both a KSchG violation and an AGG violation"
+      ]
+    },
+    {
+      "id": "SCEN-09",
+      "name": "Dismissal During Pregnancy or Maternity Protection (Schwangerschaft / Mutterschutz)",
+      "description": "Employer becomes aware that an employee is pregnant or is within 4 months of giving birth and wishes to proceed with or maintain a dismissal.",
+      "legal_basis": ["§ 17 MuSchG", "§ 18 MuSchG"],
+      "special_protection": "Absolute dismissal prohibition from the start of pregnancy until 4 months after birth (§ 17 MuSchG). Employer cannot dismiss — period. The only exception is approval by the state authority (Aufsichtsbehörde / Landesamt für Arbeitsschutz) for exceptional circumstances entirely unrelated to the pregnancy.",
+      "works_council_consultation_required": false,
+      "works_council_note": "No Works Council consultation can substitute for Aufsichtsbehörde approval. Even with Works Council approval, the dismissal is void without state authority approval.",
+      "protected_employee_check_required": true,
+      "escalation_triggers": [
+        "Always — the moment pregnancy becomes known, any pending dismissal must be stopped and Legal consulted",
+        "Employee notifies pregnancy AFTER a dismissal has been issued but BEFORE it takes legal effect — protection is retroactive (§ 17 Abs. 1 S. 2 MuSchG) if the employee notifies within 2 weeks of receiving the dismissal"
+      ],
+      "required_steps": [
+        "1. STOP immediately — do not issue or proceed with any dismissal",
+        "2. Escalate to Legal immediately",
+        "3. If a dismissal has already been issued: check whether the employee notified pregnancy within 2 weeks — if so, the dismissal is void and must be withdrawn",
+        "4. Legal will assess whether the circumstances meet the narrow exception requiring state authority approval",
+        "5. If dismissal is still intended: Legal applies to the Aufsichtsbehörde — this is a high bar",
+        "6. Document all steps carefully — do not allow informal communication suggesting dismissal intent"
+      ],
+      "hr_authority": {
+        "can_proceed_without_legal": false,
+        "requires_legal_if": "Always — no exceptions"
+      },
+      "common_mistakes": [
+        "Proceeding with a dismissal that was planned before pregnancy was disclosed — protection applies retroactively if employee notifies within 2 weeks",
+        "Assuming the employee must have known about the pregnancy and chosen not to disclose — the protection period can extend back to conception"
+      ]
+    },
+    {
+      "id": "SCEN-10",
+      "name": "Dismissal During or After Parental Leave (Elternzeit)",
+      "description": "Employer wishes to dismiss an employee who is currently on Elternzeit or has recently returned from parental leave.",
+      "legal_basis": ["§ 18 BEEG", "§ 1 KSchG"],
+      "special_protection": "Dismissal prohibition applies from the date the employee applies for Elternzeit until its end (§ 18 BEEG). Exception: state authority (zuständige Behörde — typically Gewerbeaufsicht or Landesamt) must approve in extraordinary circumstances.",
+      "works_council_consultation_required": false,
+      "works_council_note": "State authority approval is a prerequisite — Works Council consultation cannot substitute.",
+      "protected_employee_check_required": true,
+      "escalation_triggers": [
+        "Any employee currently on or having applied for Elternzeit",
+        "Redundancy affects an employee on Elternzeit — Sozialauswahl must treat them as if still at work"
+      ],
+      "required_steps": [
+        "1. STOP — escalate to Legal immediately",
+        "2. Legal assesses whether an extraordinary circumstance justifies applying to the state authority",
+        "3. If proceeding: Legal applies for state authority approval",
+        "4. Do not issue dismissal without approval"
+      ],
+      "hr_authority": {
+        "can_proceed_without_legal": false,
+        "requires_legal_if": "Always"
+      },
+      "common_mistakes": [
+        "Including an employee on Elternzeit in a redundancy without state authority approval",
+        "Failing to check whether Elternzeit has been applied for (application, not commencement, triggers protection)"
+      ]
+    },
+    {
+      "id": "SCEN-11",
+      "name": "Works Council Consultation (§ 102 BetrVG) — Standalone Process",
+      "description": "Step-by-step guide to the Works Council consultation process required before any dismissal.",
+      "legal_basis": ["§ 102 BetrVG"],
+      "kschg_applies": false,
+      "kschg_note": "§ 102 BetrVG applies regardless of whether KSchG applies. Even for employees with no unfair dismissal protection, Works Council must be consulted.",
+      "consultation_windows": {
+        "ordinary_dismissal_days": 7,
+        "extraordinary_dismissal_days": 3,
+        "note": "The window starts when the Works Council receives the full consultation package, not when the dismissal is intended. If the Works Council raises objections, they must state reasons — the dismissal can still proceed but the employee gains additional rights."
+      },
+      "works_council_responses": [
+        {
+          "response": "No objection (Zustimmung / Schweigen)",
+          "effect": "Employer may proceed with dismissal"
+        },
+        {
+          "response": "Concerns raised (Bedenken)",
+          "effect": "Employer may proceed but must attach Works Council's concerns to the dismissal letter"
+        },
+        {
+          "response": "Formal objection (Widerspruch) for ordinary dismissal",
+          "effect": "Employer may still proceed BUT the employee gains the right to continue working (Weiterbeschäftigungsanspruch) pending any Arbeitsgericht proceedings"
+        }
+      ],
+      "required_consultation_content": [
+        "Employee's full name and date of birth",
+        "Date employment began",
+        "Employee's position and department",
+        "Type of dismissal (ordinary / extraordinary / redundancy)",
+        "Intended date of dismissal / notice period end date",
+        "Dismissal reason — all facts the employer intends to rely on must be disclosed; facts not disclosed cannot be used in court",
+        "For redundancy: Sozialauswahl process and result",
+        "Whether the employee is subject to special protection (and if so, how it has been addressed)"
+      ],
+      "void_conditions": [
+        "Dismissal issued before the consultation window has expired",
+        "Works Council received incomplete or inaccurate information",
+        "No Works Council exists but one should — verify (threshold: ≥ 5 permanent employees)"
+      ],
+      "hr_authority": {
+        "can_proceed_without_legal": true,
+        "conditions": "HR can manage the § 102 process. Legal should review the consultation package for conduct and performance dismissals."
+      }
+    },
+    {
+      "id": "SCEN-12",
+      "name": "AGG-Compliant Hiring Process",
+      "description": "HR is running a recruitment process and needs to ensure it complies with the Allgemeines Gleichbehandlungsgesetz (AGG) to avoid discrimination claims.",
+      "legal_basis": ["AGG §§ 1–22", "§ 611a BGB"],
+      "protected_characteristics": ["Race / ethnic origin", "Gender / gender identity", "Religion / belief", "Disability", "Age", "Sexual orientation"],
+      "works_council_consultation_required": true,
+      "works_council_note": "In companies with 20+ employees, Works Council co-determination right under § 99 BetrVG applies to all hires.",
+      "escalation_triggers": [
+        "A rejected candidate explicitly references a protected characteristic or uses the word 'discrimination'",
+        "A job posting uses language that excludes a protected group",
+        "A hiring manager gives a rejection reason that references a protected characteristic",
+        "A candidate requests to see the documents related to the hiring decision within 2 months of the rejection"
+      ],
+      "required_steps": [
+        "1. Review job posting for AGG-compliant language (no age preferences, gender-neutral, no discriminatory requirements)",
+        "2. Ensure all interviewers are briefed: questions about pregnancy, family planning, religion, disability are prohibited",
+        "3. Document the selection criteria before reviewing applications — objective criteria only",
+        "4. Document rejection reasons in writing using only objective, role-related criteria",
+        "5. Retain recruitment documentation for 2 months after rejection notification (AGG § 15 Abs. 4 limitation period)",
+        "6. If a candidate alleges discrimination: escalate to Legal immediately — AGG § 22 reverses the burden of proof if the candidate can demonstrate prima facie evidence of discrimination",
+        "7. Works Council consent under § 99 BetrVG before the candidate starts"
+      ],
+      "hr_authority": {
+        "can_proceed_without_legal": true,
+        "conditions": "Standard recruitment. Escalate if discrimination claim is made."
+      },
+      "prohibited_interview_questions": [
+        "Are you pregnant or planning to become pregnant?",
+        "Do you have children or plan to have children?",
+        "What religion do you practice?",
+        "Do you have any disabilities or chronic illnesses?",
+        "How old are you? (where not relevant to the role)",
+        "What is your nationality or country of origin?",
+        "What is your sexual orientation or gender identity?"
+      ]
+    },
+    {
+      "id": "SCEN-13",
+      "name": "Betriebliches Eingliederungsmanagement (BEM)",
+      "description": "An employee has been unable to work for more than 6 weeks in the last 12 months. The employer must offer BEM (occupational integration management) before any illness-related dismissal.",
+      "legal_basis": ["§ 167 Abs. 2 SGB IX"],
+      "kschg_applies": false,
+      "kschg_note": "BEM is not a dismissal scenario — it is a mandatory preventive process. However, failure to offer BEM significantly weakens any subsequent illness-related dismissal in court.",
+      "works_council_consultation_required": true,
+      "works_council_note": "Works Council must be involved in the BEM process if the employee consents (§ 167 Abs. 2 S. 5 SGB IX).",
+      "trigger": "Employee has been unable to work (sick) for more than 6 weeks cumulatively in the last 12 months (not necessarily consecutive).",
+      "required_steps": [
+        "1. Monitor sick leave records — flag when any employee reaches 6 weeks in 12 months",
+        "2. Send a written BEM invitation to the employee — explain what BEM is, that participation is voluntary, and how their data will be used",
+        "3. If the employee declines: document the refusal and keep on file. No further BEM obligation for this cycle.",
+        "4. If the employee accepts: schedule a BEM conversation including HR, the employee, their line manager (optional), and Works Council representative (if employee consents)",
+        "5. Identify causes of the absence (without requiring detailed medical information)",
+        "6. Agree and document measures: workplace adjustments, phased return, role modification, occupational health referral",
+        "7. Follow up on agreed measures and document progress",
+        "8. If illness continues and dismissal becomes necessary: Legal will rely on the completed BEM record to show the employer made genuine efforts"
+      ],
+      "hr_authority": {
+        "can_proceed_without_legal": true,
+        "conditions": "HR manages BEM. Escalate to Legal only if the BEM process reveals information that changes the employment situation (e.g., disability requiring Integrationsamt involvement) or if dismissal becomes the next step."
+      },
+      "common_mistakes": [
+        "Not offering BEM before an illness-related dismissal — courts regularly void such dismissals",
+        "Treating BEM as a box-ticking exercise with no genuine engagement",
+        "Pressuring the employee to disclose detailed medical information during BEM — this is not required and may be an AGG violation if disability-related"
+      ]
+    },
+    {
+      "id": "SCEN-14",
+      "name": "Employee Requests Reduction to Part-Time (Teilzeit)",
+      "description": "An employee requests a reduction in working hours under the statutory part-time right.",
+      "legal_basis": ["TzBfG § 8", "BEEG § 15 (part-time during Elternzeit)"],
+      "kschg_applies": false,
+      "notice_period": {
+        "statutory_days": 0,
+        "notes": "No notice — this is a right to request, not a dismissal scenario."
+      },
+      "works_council_consultation_required": true,
+      "works_council_note": "Works Council co-determination on working time arrangements under § 87 Abs. 1 Nr. 2 BetrVG.",
+      "statutory_right_conditions": [
+        "Employee has been employed for more than 6 months",
+        "The employer has more than 15 employees",
+        "Request must be made in writing at least 3 months before the desired start date",
+        "Employee must specify the desired working time and its distribution"
+      ],
+      "employer_refusal_grounds": [
+        "Compelling operational reasons (dringende betriebliche Gründe)",
+        "Examples: the reduced schedule cannot be covered, the role requires full-time presence for client or operational reasons",
+        "Refusal must be in writing and clearly justified — a vague 'operational need' is not sufficient"
+      ],
+      "escalation_triggers": [
+        "Employer wishes to refuse — Legal must assess whether the refusal grounds are sufficient",
+        "Employee is requesting part-time in connection with Elternzeit — different rules apply under BEEG § 15",
+        "The request would affect a team disproportionately and raises discrimination concerns"
+      ],
+      "required_steps": [
+        "1. Acknowledge the request in writing within 1 month of receipt",
+        "2. Engage in good-faith discussions about the arrangement",
+        "3. If agreeing: document the new working time in a written amendment to the employment contract; involve Works Council",
+        "4. If refusing: assess whether compelling operational grounds exist — document in writing; if uncertain, escalate to Legal",
+        "5. Communicate the decision in writing before the start of the 1-month discussion window ends",
+        "6. Note: if the employer does not respond within 1 month, the employee's requested arrangement is deemed approved"
+      ],
+      "hr_authority": {
+        "can_proceed_without_legal": true,
+        "conditions": "Approval of part-time request. Escalate to Legal for refusals."
+      },
+      "common_mistakes": [
+        "Not responding within the 1-month window — silence equals approval",
+        "Refusing without adequate documented operational justification"
+      ]
+    },
+    {
+      "id": "SCEN-15",
+      "name": "Reference Letter (Arbeitszeugnis)",
+      "description": "Employee requests a reference letter upon leaving — either a simple confirmation (einfaches Zeugnis) or a qualified reference (qualifiziertes Zeugnis).",
+      "legal_basis": ["§ 630 BGB", "§ 109 GewO"],
+      "kschg_applies": false,
+      "works_council_consultation_required": false,
+      "employee_rights": [
+        "Employee has a legal right to a Zeugnis upon request",
+        "Employee can request either a simple Zeugnis (dates and role) or a qualified Zeugnis (includes conduct and performance assessment)",
+        "The Zeugnis must be truthful but formulated benevolently (wohlwollend) — it must not prevent the employee from finding new work",
+        "Employee has the right to challenge a Zeugnis they believe is unfair at the Arbeitsgericht"
+      ],
+      "coded_language_warning": "German reference letters use a well-known coded language system. Seemingly positive phrases can carry negative meanings. Example: 'He tried his best' (Er war stets bemüht) = very poor performance. Agents should be aware of this when drafting.",
+      "escalation_triggers": [
+        "Employee is challenging the content of a Zeugnis at the Arbeitsgericht",
+        "The honest assessment of the employee is very negative — Legal should review wording to ensure compliance with Wahrheitspflicht without creating unnecessary liability"
+      ],
+      "required_steps": [
+        "1. Employee requests Zeugnis — note the type requested (simple or qualified)",
+        "2. Gather performance and conduct assessments from the line manager",
+        "3. Draft the Zeugnis using standard compliant language",
+        "4. Issue the Zeugnis promptly — unreasonable delay is a violation of the employer's obligation",
+        "5. Issue on company letterhead with wet-ink signature of an authorized representative"
+      ],
+      "hr_authority": {
+        "can_proceed_without_legal": true,
+        "conditions": "Standard Zeugnis drafting. Escalate to Legal if the employee challenges the content."
+      }
+    }
+  ]
+}

@@ -1,0 +1,373 @@
+{
+  "scenarios": [
+    {
+      "id": "S001",
+      "name": "SMB SaaS — Fast Close",
+      "customer": {
+        "name": "StartupOps GmbH",
+        "type": "SMB",
+        "industry": "HR Technology",
+        "employees": 85,
+        "jurisdiction": "Germany",
+        "public": false
+      },
+      "deal": {
+        "annual_contract_value_eur": 24000,
+        "total_contract_value_eur": 24000,
+        "term_months": 12,
+        "product": "SaaS Platform — Basic Tier",
+        "professional_services": false,
+        "close_date_target": "2026-03-15"
+      },
+      "customer_requested_changes": [
+        {
+          "clause": "3.3 Payment Due",
+          "change": "Net 45 instead of Net 30"
+        },
+        {
+          "clause": "4.4 Termination for Convenience",
+          "change": "60-day notice instead of 90-day notice, pro-rata refund of prepaid fees"
+        },
+        {
+          "clause": "5.1 Uptime SLA",
+          "change": "No change — customer accepts 99.5%"
+        }
+      ],
+      "context": "Startup on a tight budget. Decision-maker is the CFO who has approved the deal but wants minor commercial tweaks. Sales rep has authority to close without legal review if total risk is low. Customer is not in a regulated industry.",
+      "sales_priority": "Speed — deal needs to close this month for Q1 revenue recognition",
+      "legal_review_required": false,
+      "approval_thresholds": {
+        "max_deal_size_no_legal_review_eur": 50000,
+        "pre_approved_concessions": [
+          "Net 45 payment terms for deals under EUR 50K",
+          "60-day convenience termination notice (non-refundable fees remain)",
+          "Remove auto-renewal with explicit renewal clause instead"
+        ]
+      }
+    },
+    {
+      "id": "S002",
+      "name": "Mid-Market — Regulated Industry",
+      "customer": {
+        "name": "MedDevice Solutions AG",
+        "type": "Mid-Market",
+        "industry": "Medical Devices (regulated — MDR, ISO 13485)",
+        "employees": 1200,
+        "jurisdiction": "Austria",
+        "public": false
+      },
+      "deal": {
+        "annual_contract_value_eur": 96000,
+        "total_contract_value_eur": 192000,
+        "term_months": 24,
+        "product": "SaaS Platform — Professional Tier + Implementation Services",
+        "professional_services": true,
+        "professional_services_value_eur": 45000,
+        "close_date_target": "2026-04-01"
+      },
+      "customer_requested_changes": [
+        {
+          "clause": "5.1 Uptime SLA",
+          "change": "99.9% availability — platform is used for batch release documentation"
+        },
+        {
+          "clause": "8.3 Subprocessors",
+          "change": "60-day notice, approval (not just objection) required for each subprocessor"
+        },
+        {
+          "clause": "8.4 Data Breach Notification",
+          "change": "24 hours notification — regulatory requirement under MDR"
+        },
+        {
+          "clause": "7.2 Liability Cap",
+          "change": "24-month fee cap instead of 12-month — customer processes safety-critical documentation"
+        },
+        {
+          "clause": "NEW — Audit Rights",
+          "change": "Customer requires right to audit TechForward's information security controls annually, or upon a security incident, at Customer's cost with 30 days' notice"
+        }
+      ],
+      "context": "Medical device company subject to EU MDR regulation. Their use of the platform involves documentation required by law to be accurate and available. A platform outage during a batch release could cause a regulatory violation. Customer's legal team has involvement. Austrian law preferred but German law acceptable.",
+      "sales_priority": "Compliance confidence — customer needs to justify the purchase to their quality manager",
+      "legal_review_required": true,
+      "legal_review_reason": "Regulated industry, elevated liability ask, audit rights request",
+      "approval_thresholds": {
+        "max_liability_cap_months": 24,
+        "regulated_industry_special_terms": [
+          "99.9% SLA is available as an add-on (EUR 8,000/year uplift — confirm pricing with sales ops)",
+          "24-hour breach notification is operationally feasible — pre-approved",
+          "Audit rights are accepted with: max 1 per year, 30-day notice, scope limited to information security controls, TechForward may propose alternative assurance (SOC 2 report) in lieu"
+        ]
+      }
+    },
+    {
+      "id": "S003",
+      "name": "Enterprise — Full Negotiation",
+      "customer": {
+        "name": "GlobalManufacturing AG",
+        "type": "Enterprise",
+        "industry": "Manufacturing",
+        "employees": 12000,
+        "jurisdiction": "Germany",
+        "public": true,
+        "stock_exchange": "Frankfurt Stock Exchange (MDAX)"
+      },
+      "deal": {
+        "annual_contract_value_eur": 480000,
+        "total_contract_value_eur": 1440000,
+        "term_months": 36,
+        "product": "SaaS Platform — Enterprise Tier + Managed Services + Custom Integrations",
+        "professional_services": true,
+        "professional_services_value_eur": 220000,
+        "close_date_target": "2026-04-30"
+      },
+      "customer_requested_changes": "See customer-redlines-enterprise-deal.md for full redline set",
+      "context": "This is TechForward's largest deal this year. Customer is a publicly listed manufacturing company with a sophisticated legal and procurement team. Deal involves custom integrations into their SAP environment. Platform will be used for real-time production scheduling — any outage has direct operational impact. Legal review is mandatory. CFO sign-off required for any liability cap above EUR 720K.",
+      "sales_priority": "Deal is strategic — acceptable to spend 2–3 weeks negotiating. Revenue impact of delay: EUR 40K/month.",
+      "legal_review_required": true,
+      "legal_review_reason": "Enterprise deal above EUR 500K, complex redlines including liability, IP escrow, MFC clause",
+      "approval_thresholds": {
+        "pre_approved_without_legal": [],
+        "requires_legal_review": "All redlines",
+        "requires_cfo_approval": [
+          "Liability cap above 24 months of fees",
+          "Refund of prepaid fees on convenience termination",
+          "Most Favored Customer clause"
+        ],
+        "deal_breakers": [
+          "Most Favored Customer clause — TechForward does not offer MFC commitments",
+          "Liability cap above 36 months of fees"
+        ]
+      }
+    },
+    {
+      "id": "S004",
+      "name": "Public Sector — Government Procurement",
+      "customer": {
+        "name": "Bundesanstalt für Digitale Infrastruktur (BDI)",
+        "type": "Public Sector",
+        "industry": "Federal Government Agency",
+        "employees": 3400,
+        "jurisdiction": "Germany (federal)",
+        "public": true,
+        "procurement_framework": "EVB-IT / VOL-B"
+      },
+      "deal": {
+        "annual_contract_value_eur": 180000,
+        "total_contract_value_eur": 540000,
+        "term_months": 36,
+        "product": "SaaS Platform — Enterprise Tier (on-premise hybrid deployment)",
+        "professional_services": true,
+        "professional_services_value_eur": 80000,
+        "close_date_target": "2026-06-30"
+      },
+      "customer_requested_changes": [
+        {
+          "clause": "Entire Contract",
+          "change": "Customer insists on using EVB-IT SaaS standard terms rather than TechForward's standard contract"
+        },
+        {
+          "clause": "8 — Data Protection",
+          "change": "Data must reside exclusively on servers in Germany (data sovereignty requirement) — no cloud subprocessors outside Germany"
+        },
+        {
+          "clause": "10.2 Dispute Resolution",
+          "change": "German administrative courts have jurisdiction — not commercial courts"
+        },
+        {
+          "clause": "3.6 Price Adjustments",
+          "change": "Price is fixed for the entire 3-year contract term — no adjustments permitted under public procurement rules"
+        },
+        {
+          "clause": "NEW — Security Clearance",
+          "change": "TechForward and all subprocessors must hold BSI IT-Grundschutz certification or equivalent within 12 months of contract signing"
+        }
+      ],
+      "context": "Federal agency with strict data sovereignty, security certification, and procurement law requirements. Procurement is governed by German public procurement law (GWB/VgV). Contract must follow EVB-IT terms which differ significantly from TechForward's standard. Legal and public sector specialist review is mandatory. TechForward's product team must confirm German-only hosting is technically feasible.",
+      "sales_priority": "Strategic — government reference customer. Revenue is secondary to partnership value.",
+      "legal_review_required": true,
+      "legal_review_reason": "Public sector contract — entirely different legal framework (EVB-IT), data sovereignty requirements, BSI certification",
+      "approval_thresholds": {
+        "pre_approved_without_legal": [],
+        "requires_specialist_review": [
+          "Public procurement law specialist",
+          "Data protection officer (DPO)",
+          "Product / infrastructure team for Germany-only hosting feasibility",
+          "BSI certification assessment"
+        ],
+        "deal_breakers": [
+          "EVB-IT terms must be evaluated — TechForward has not previously contracted on EVB-IT",
+          "BSI IT-Grundschutz certification timeline may not be achievable within 12 months"
+        ]
+      }
+    },
+    {
+      "id": "S005",
+      "name": "US-Based Customer — Cross-Border Deal",
+      "customer": {
+        "name": "NovaTech Inc.",
+        "type": "Enterprise",
+        "industry": "Software / SaaS",
+        "employees": 2500,
+        "jurisdiction": "United States (Delaware incorporation, operations in NY and CA)",
+        "public": false,
+        "vc_backed": true
+      },
+      "deal": {
+        "annual_contract_value_eur": 240000,
+        "total_contract_value_eur": 720000,
+        "term_months": 36,
+        "product": "SaaS Platform — Enterprise Tier",
+        "professional_services": false,
+        "close_date_target": "2026-05-15"
+      },
+      "customer_requested_changes": [
+        {
+          "clause": "10.1 Governing Law",
+          "change": "New York law instead of German law"
+        },
+        {
+          "clause": "10.2 Dispute Resolution",
+          "change": "JAMS arbitration in New York instead of Berlin courts"
+        },
+        {
+          "clause": "3.3 Payment Due",
+          "change": "Net 45 in USD (request to convert deal to USD denomination)"
+        },
+        {
+          "clause": "8 — Data Protection",
+          "change": "Replace GDPR-focused DPA with a US-centric privacy addendum covering CCPA/CPRA only — customer believes GDPR does not apply as they are a US entity"
+        },
+        {
+          "clause": "7.2 Liability Cap",
+          "change": "Cap limited to fees paid in last 6 months — 'industry standard for SaaS' per customer's legal team"
+        },
+        {
+          "clause": "6.3 Feedback",
+          "change": "Customer accepts TechForward's standard language"
+        }
+      ],
+      "context": "US customer that processes data of EU-based end users through TechForward's platform, making GDPR applicable to TechForward as the processor regardless of where NovaTech is incorporated. Customer's legal team is unfamiliar with GDPR. Governing law and jurisdiction need careful handling — some compromise may be possible but German mandatory law provisions cannot be waived.",
+      "sales_priority": "Close before quarter end — customer has budget expiry on June 1.",
+      "legal_review_required": true,
+      "legal_review_reason": "Cross-border deal, governing law compromise required, GDPR applicability dispute, currency change requires finance approval",
+      "approval_thresholds": {
+        "pre_approved": [
+          "Net 45 payment terms for enterprise deals",
+          "New York law as an alternative governing law (with German mandatory law carve-out) — pre-approved for US customers"
+        ],
+        "requires_legal_review": [
+          "GDPR applicability determination — DPO must confirm EU data subject involvement",
+          "JAMS arbitration — acceptable in principle but seat should remain in EU if possible",
+          "6-month liability cap — below minimum acceptable (12 months)"
+        ],
+        "deal_breakers": [
+          "Replacing GDPR DPA with CCPA-only addendum if EU personal data is processed — non-negotiable"
+        ]
+      }
+    },
+    {
+      "id": "S006",
+      "name": "Renewal + Upsell — Existing Customer",
+      "customer": {
+        "name": "Hartmann Logistics GmbH",
+        "type": "Mid-Market",
+        "industry": "Logistics / Supply Chain",
+        "employees": 650,
+        "jurisdiction": "Germany",
+        "public": false,
+        "existing_customer": true,
+        "customer_since": "2022-03-01",
+        "current_acv_eur": 72000
+      },
+      "deal": {
+        "type": "Renewal + Upsell",
+        "new_annual_contract_value_eur": 108000,
+        "total_contract_value_eur": 324000,
+        "term_months": 36,
+        "product": "SaaS Platform — Professional Tier (upgrade from Basic) + AI Analytics Module",
+        "professional_services": true,
+        "professional_services_value_eur": 28000,
+        "close_date_target": "2026-04-15"
+      },
+      "customer_requested_changes": [
+        {
+          "clause": "3.6 Price Adjustments",
+          "change": "Price freeze for 3 years — no increases allowed (customer cites 50% price increase from Basic to Professional as justification)"
+        },
+        {
+          "clause": "4.2 Auto-Renewal",
+          "change": "Remove auto-renewal — replace with explicit renewal process"
+        },
+        {
+          "clause": "5.1 Uptime SLA",
+          "change": "99.9% — customer experienced 3 outages in prior contract that affected operations"
+        },
+        {
+          "clause": "NEW — Service Continuity Credit",
+          "change": "Customer requests retroactive service credit of EUR 8,500 for 3 outages in the prior contract period before signing the renewal"
+        }
+      ],
+      "context": "Longstanding customer with good payment history. Upgrading to a more expensive tier and extending to 3 years. Customer had genuine service disruptions in the prior term. Retaining this customer is important for ARR targets. Sales rep has asked whether the retroactive credit can be offered as a goodwill gesture as part of the renewal package.",
+      "sales_priority": "Retention — losing this customer to a competitor would reduce ARR by EUR 108K.",
+      "legal_review_required": false,
+      "approval_thresholds": {
+        "pre_approved": [
+          "Remove auto-renewal with explicit renewal clause — pre-approved",
+          "Price freeze for term (no annual increases) for renewals above EUR 100K/year — pre-approved with VP Sales approval",
+          "99.9% SLA is available as an add-on — confirm uplift pricing with sales ops",
+          "Goodwill service credit up to EUR 10,000 for prior documented outages — requires VP Customer Success approval"
+        ],
+        "requires_vp_approval": [
+          "Price freeze for 3-year term",
+          "Retroactive service credit over EUR 5,000"
+        ]
+      }
+    }
+  ],
+  "global_approval_thresholds": {
+    "sales_rep_can_accept_without_approval": {
+      "max_deal_value_eur": 50000,
+      "pre_approved_concessions": [
+        "Net 30 to Net 45 payment terms",
+        "Reduce late payment interest from 1.5% to 1% per month",
+        "Extend invoice dispute window from 21 to 30 days",
+        "Remove auto-renewal (replace with explicit renewal clause)",
+        "Reduce convenience termination notice from 90 to 60 days (fees remain non-refundable)",
+        "Extend data export period from 45 to 90 days"
+      ]
+    },
+    "requires_vp_sales_approval": {
+      "deal_value_range_eur": "50,000 – 200,000",
+      "additional_concessions": [
+        "Net 45 to Net 60 payment terms",
+        "Price freeze for contract term on renewals",
+        "99.9% SLA (with uplift pricing confirmation from sales ops)",
+        "24-hour data breach notification (requires ops confirmation)",
+        "Arbitration as alternative to Berlin courts (seat in EU)"
+      ]
+    },
+    "requires_legal_review": {
+      "deal_value_threshold_eur": 200000,
+      "mandatory_triggers": [
+        "Customer proposes their own contract template instead of TechForward's",
+        "Liability cap below 12 months or above 24 months of fees",
+        "Any carve-out from the liability cap exclusions",
+        "IP ownership changes or source code escrow requests",
+        "Regulated industry with compliance-specific requirements (MDR, financial services, defense)",
+        "Cross-border deal with non-EU governing law",
+        "Most Favored Customer clause",
+        "Audit rights requests"
+      ]
+    },
+    "absolute_deal_breakers": [
+      "Most Favored Customer (MFC) pricing clause — TechForward policy does not permit MFC commitments",
+      "Liability cap below 6 months of fees",
+      "Waiving GDPR DPA obligations where EU personal data is processed",
+      "Customer ownership of TechForward's Background IP or core platform",
+      "Perpetual, irrevocable right to use TechForward IP post-termination without ongoing payment",
+      "Liquidated damages clauses above 2x annual contract value",
+      "Mandatory compliance with EVB-IT or other government procurement terms without legal specialist review"
+    ]
+  }
+}

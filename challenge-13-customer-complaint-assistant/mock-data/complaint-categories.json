@@ -1,0 +1,373 @@
+{
+  "version": "1.0",
+  "company": "TechForward Solutions GmbH",
+  "complaint_categories": [
+    {
+      "id": "CAT-01",
+      "name": "Billing Dispute",
+      "description": "Customer disputes an invoice amount, questions a charge, or believes they were billed incorrectly.",
+      "severity": "medium",
+      "sla_first_response_hours": 24,
+      "sla_resolution_business_days": 5,
+      "legally_significant": false,
+      "escalation_triggers": [
+        "Customer mentions chargeback or credit card dispute",
+        "Disputed amount exceeds EUR 5,000",
+        "Customer claims they never signed the contract",
+        "Customer uses the word 'fraud' or 'scam'",
+        "Second dispute from the same customer in 90 days"
+      ],
+      "required_actions": [
+        "Acknowledge receipt within SLA",
+        "Pull the invoice and contract from CRM",
+        "Verify whether the charge matches the agreed Order Form",
+        "If billing error confirmed: issue credit note and corrected invoice within 5 business days",
+        "If billing is correct: explain the charge with reference to the specific Order Form line item",
+        "Document resolution outcome in CRM"
+      ],
+      "agent_authority": {
+        "can_issue_credit_note": true,
+        "max_credit_without_approval_eur": 500,
+        "requires_finance_approval_above_eur": 500
+      },
+      "tone_guidance": "Empathetic and efficient. Customer is stressed about money. Acknowledge the concern first, then explain or resolve. Never sound defensive."
+    },
+    {
+      "id": "CAT-02",
+      "name": "SLA Breach Claim",
+      "description": "Customer claims TechForward failed to meet the uptime or response time SLA commitments in the contract.",
+      "severity": "high",
+      "sla_first_response_hours": 8,
+      "sla_resolution_business_days": 3,
+      "legally_significant": true,
+      "legal_significance_reason": "SLA breaches may entitle the customer to service credits under contract Section 5.2, and repeated breaches may trigger termination rights.",
+      "escalation_triggers": [
+        "Customer explicitly requests service credits",
+        "Customer mentions termination or cancellation as a result of the outage",
+        "Claimed downtime exceeds 24 consecutive hours",
+        "Customer is an enterprise or public sector account",
+        "Incident affects multiple customers simultaneously (systemic incident)"
+      ],
+      "required_actions": [
+        "Acknowledge within SLA — do not dispute the claim in the first response",
+        "Pull the incident log from the infrastructure team to verify uptime data",
+        "Calculate any applicable service credits per the contract SLA formula",
+        "If credits apply: confirm in writing with a credit note, reference the contract clause",
+        "If termination right triggered: escalate immediately to Legal and Account Management",
+        "Send a Root Cause Analysis (RCA) summary within 5 business days of resolution"
+      ],
+      "agent_authority": {
+        "can_confirm_service_credits": true,
+        "max_credit_without_approval_eur": 2000,
+        "requires_legal_if_termination_threatened": true
+      },
+      "tone_guidance": "Professional and accountable. Do not minimize the impact. Acknowledge the disruption, commit to resolution, and provide a timeline. Never make excuses."
+    },
+    {
+      "id": "CAT-03",
+      "name": "Cancellation / Termination Request",
+      "description": "Customer requests to cancel their subscription or terminate the contract.",
+      "severity": "high",
+      "sla_first_response_hours": 24,
+      "sla_resolution_business_days": 5,
+      "legally_significant": true,
+      "legal_significance_reason": "Termination requests must be classified as: (a) within cooling-off period — full refund required; (b) termination for cause — legal review required; (c) termination for convenience — subject to notice period and fee obligations.",
+      "escalation_triggers": [
+        "Customer invokes a specific contract clause as justification for termination",
+        "Customer is terminating due to an alleged TechForward breach",
+        "Deal value of the contract exceeds EUR 50,000 per year",
+        "Customer is within the statutory cooling-off period (14 days from contract signature for B2C, check contract for B2B)",
+        "Customer is a public sector account"
+      ],
+      "required_actions": [
+        "Classify the termination type: cooling-off, for-cause, or for-convenience",
+        "Pull the contract to determine: notice period, refund obligations, and any termination fees",
+        "Acknowledge the request in writing — this is important for calculating notice periods",
+        "For for-convenience termination: confirm notice period start date and any applicable fees",
+        "For for-cause termination: escalate to Legal immediately — do not accept or reject the cause claim",
+        "For cooling-off: confirm refund eligibility and initiate refund process with Finance",
+        "Offer a save conversation (retention attempt) only if customer has not explicitly invoked a legal right to terminate"
+      ],
+      "agent_authority": {
+        "can_process_convenience_termination": true,
+        "can_accept_for_cause_termination": false,
+        "can_offer_retention_discount_percent": 10,
+        "requires_legal_for_for_cause": true,
+        "requires_account_manager_for_enterprise": true
+      },
+      "tone_guidance": "Respectful and calm. Do not pressure or guilt the customer. Understand their reason. If there's a save opportunity, make it naturally. If they have a legal right to leave, honor it professionally — the goal is a clean exit that doesn't become a dispute."
+    },
+    {
+      "id": "CAT-04",
+      "name": "GDPR Data Subject Request (DSR / DSAR)",
+      "description": "Customer or individual user exercises a GDPR right: access (Art. 15), rectification (Art. 16), erasure (Art. 17), portability (Art. 20), objection (Art. 21), or restriction of processing (Art. 18).",
+      "severity": "critical",
+      "sla_first_response_hours": 4,
+      "sla_resolution_business_days": 30,
+      "legally_significant": true,
+      "legal_significance_reason": "GDPR mandates a response within 1 calendar month (extendable by 2 months for complex requests). Failure to respond is a regulatory violation. Maximum fine: EUR 20M or 4% of global annual turnover.",
+      "escalation_triggers": [
+        "Any complaint that explicitly or implicitly invokes GDPR rights",
+        "Erasure request ('right to be forgotten') — may conflict with contract data retention obligations",
+        "Request from a person who is not the contract signatory (e.g., individual employee of a corporate customer)",
+        "Request that appears to be from a lawyer or data protection authority",
+        "Request that could affect ongoing legal proceedings"
+      ],
+      "required_actions": [
+        "IMMEDIATELY log the request date — the 1-month clock starts on the date of receipt",
+        "Verify the identity of the requestor before processing (cannot release data to unverified parties)",
+        "Classify the request type (access, erasure, portability, etc.)",
+        "Route to the Data Protection Officer (DPO) within 4 hours of receipt",
+        "Acknowledge receipt to the customer within 24 hours, including expected response timeline",
+        "Do NOT attempt to resolve the DSR without DPO involvement",
+        "Log in the GDPR DSR register (maintained by Legal/DPO)"
+      ],
+      "agent_authority": {
+        "can_resolve_independently": false,
+        "must_route_to_dpo": true,
+        "can_acknowledge_receipt": true
+      },
+      "tone_guidance": "Formal and precise. Acknowledge the request clearly. Use correct GDPR terminology. Do not make any commitments about what data will or will not be deleted until the DPO has assessed the request. Do not be dismissive — these are legal rights."
+    },
+    {
+      "id": "CAT-05",
+      "name": "Suspected Data Breach Notification (Inbound)",
+      "description": "Customer reports that they believe there has been a data breach involving their data, or reports suspicious activity in their TechForward account.",
+      "severity": "critical",
+      "sla_first_response_hours": 1,
+      "sla_resolution_business_days": 3,
+      "legally_significant": true,
+      "legal_significance_reason": "GDPR Art. 33 requires notification to supervisory authority within 72 hours of TechForward becoming aware of a breach. If customer notifies us, the clock starts. Internal incident response must activate immediately.",
+      "escalation_triggers": [
+        "Any mention of unauthorized access to data",
+        "Any mention of data appearing in unexpected places",
+        "Any mention of suspicious logins, emails, or activity",
+        "Customer reports that their customer data (not just their TechForward account data) may have been exposed"
+      ],
+      "required_actions": [
+        "IMMEDIATELY escalate to the Security Incident Response Team (SIRT) — do not investigate independently",
+        "Do NOT confirm or deny whether a breach has occurred — this must come from the SIRT",
+        "Acknowledge receipt to the customer within 1 hour: 'We take this very seriously and our security team is investigating'",
+        "Log the report with exact timestamp, customer ID, and description",
+        "Do NOT discuss the incident details with anyone outside the SIRT and Legal",
+        "SIRT will notify the DPO; DPO will assess GDPR notification obligation (72-hour clock to supervisory authority)"
+      ],
+      "agent_authority": {
+        "can_resolve_independently": false,
+        "must_escalate_to_sirt": true,
+        "can_acknowledge_receipt": true,
+        "must_not_confirm_or_deny_breach": true
+      },
+      "tone_guidance": "Calm, serious, and immediate. The customer is alarmed. Acknowledge their report seriously without speculating. Do not downplay the concern. Do not say 'it's probably nothing.' Give them a clear next step and timeline."
+    },
+    {
+      "id": "CAT-06",
+      "name": "Onboarding / Delivery Failure",
+      "description": "Customer reports that implementation, configuration, or professional services deliverables were not delivered on time, incompletely, or not to the agreed specification.",
+      "severity": "high",
+      "sla_first_response_hours": 8,
+      "sla_resolution_business_days": 5,
+      "legally_significant": true,
+      "legal_significance_reason": "Delivery failures may constitute a contract breach, triggering the 30-day cure period under the contract. If not remedied, customer may have termination rights.",
+      "escalation_triggers": [
+        "Customer explicitly invokes contract breach or threatens termination",
+        "Delay exceeds 30 days beyond agreed milestone date",
+        "Customer has already given a cure notice (any previous written complaint about the same issue)",
+        "Professional services value exceeds EUR 20,000",
+        "Failure is causing the customer measurable business harm (financial loss, regulatory penalty)"
+      ],
+      "required_actions": [
+        "Acknowledge within SLA — validate the customer's experience",
+        "Pull the SOW and project timeline from the project management system",
+        "Identify whether the delay is on TechForward's side or due to customer dependencies",
+        "Engage the project delivery team within 24 hours to get a revised timeline",
+        "If TechForward at fault: issue a formal cure plan with specific dates and commitments",
+        "If customer dependencies are the cause: document clearly in writing (this is important for liability purposes)",
+        "Escalate to Legal if the customer has given written notice of breach (cure period has started)"
+      ],
+      "agent_authority": {
+        "can_extend_project_timeline": false,
+        "must_involve_delivery_manager": true,
+        "can_offer_goodwill_credit_eur": 500
+      },
+      "tone_guidance": "Accountable and proactive. Do not deflect blame immediately — even if the customer is partly responsible. Acknowledge the frustration. Commit to concrete next steps with dates. Follow up before the customer has to ask again."
+    },
+    {
+      "id": "CAT-07",
+      "name": "Product Bug / Feature Complaint",
+      "description": "Customer reports a software bug, unexpected behavior, missing feature, or deterioration in platform performance.",
+      "severity": "medium",
+      "sla_first_response_hours": 8,
+      "sla_resolution_business_days": 10,
+      "legally_significant": false,
+      "escalation_triggers": [
+        "Bug causes complete inability to use core platform features (Priority 1)",
+        "Bug causes data loss or data corruption",
+        "Bug affects regulatory compliance features (audit trail, export, data deletion)",
+        "Customer has raised the same bug 3 or more times without resolution",
+        "Customer is an enterprise or premium SLA account (different response SLA applies)"
+      ],
+      "required_actions": [
+        "Acknowledge the report and assign a ticket number",
+        "Reproduce or verify the bug with the technical support team",
+        "Classify bug severity: P1 (critical/data loss), P2 (core feature broken), P3 (inconvenient), P4 (cosmetic)",
+        "P1 bugs: escalate to engineering on-call immediately; update customer every 2 hours",
+        "P2 bugs: engineering team response within 1 business day; fix timeline within 5 days",
+        "P3/P4 bugs: add to backlog; keep customer informed of target release",
+        "Send a resolution confirmation when fixed and deployed"
+      ],
+      "agent_authority": {
+        "can_issue_workaround_guidance": true,
+        "can_offer_goodwill_credit_for_p1_eur": 200,
+        "can_offer_goodwill_credit_for_p2_eur": 100,
+        "must_involve_engineering_for_p1_p2": true
+      },
+      "tone_guidance": "Technically empathetic. The customer is frustrated that something doesn't work. Validate the frustration, provide a clear ticket reference so they feel heard, and give realistic timelines. Avoid 'this is working as designed' as a dismissal — understand their workflow first."
+    },
+    {
+      "id": "CAT-08",
+      "name": "Refund Request",
+      "description": "Customer requests a full or partial refund of fees paid.",
+      "severity": "medium",
+      "sla_first_response_hours": 24,
+      "sla_resolution_business_days": 5,
+      "legally_significant": true,
+      "legal_significance_reason": "Refund eligibility depends on contract type, termination clause, and whether there was a service failure. Standard subscription contracts are non-refundable for convenience termination. Refunds triggered by TechForward's breach require Legal review.",
+      "escalation_triggers": [
+        "Refund requested is above EUR 1,000",
+        "Refund is claimed due to TechForward's breach (not customer's choice to cancel)",
+        "Customer is within statutory cooling-off period",
+        "Customer has initiated a credit card chargeback",
+        "Refund request accompanies a threat of legal action"
+      ],
+      "required_actions": [
+        "Pull the contract to determine the applicable refund policy (Section 4.4)",
+        "Classify the refund basis: cooling-off, service failure, or convenience",
+        "Cooling-off (within 14 days of signature, B2C or where contractually agreed): process full refund",
+        "Service failure refunds: escalate to Legal to assess contract breach and refund obligation",
+        "Convenience termination: prepaid fees are non-refundable per standard contract — explain clearly and without apology",
+        "Document the decision with the contract clause reference in CRM"
+      ],
+      "agent_authority": {
+        "can_issue_goodwill_refund_eur": 200,
+        "requires_finance_approval_above_eur": 200,
+        "requires_legal_for_breach_based_refund": true
+      },
+      "tone_guidance": "Empathetic but clear. If the contract says no refund, explain why plainly — don't invent excuses. If a refund is due, confirm it quickly and give a payment timeline. Customers who are told 'no' clearly and respectfully accept it better than customers who feel stalled."
+    },
+    {
+      "id": "CAT-09",
+      "name": "Account Access / Locked Out",
+      "description": "Customer cannot access their TechForward account — locked out, credentials lost, MFA issues, or access revoked incorrectly.",
+      "severity": "medium",
+      "sla_first_response_hours": 4,
+      "sla_resolution_business_days": 1,
+      "legally_significant": false,
+      "escalation_triggers": [
+        "Account was disabled by TechForward (not user error) — check if related to payment dispute",
+        "Customer claims access was revoked without notice",
+        "Access issue is affecting a live production system (enterprise customer)",
+        "Suspicious login activity reported alongside access issue (treat as potential breach — see CAT-05)"
+      ],
+      "required_actions": [
+        "Verify customer identity before taking any action on the account",
+        "Check account status in the admin console: active / suspended / disabled",
+        "If suspended due to non-payment: confirm with Finance before restoring access",
+        "If technical lockout: technical support to resolve within SLA",
+        "Document the action taken and reason in the audit log",
+        "Follow up to confirm access is restored"
+      ],
+      "agent_authority": {
+        "can_restore_access": true,
+        "must_verify_identity_first": true,
+        "cannot_restore_if_suspended_for_non_payment": true
+      },
+      "tone_guidance": "Fast and practical. The customer is blocked from doing their job. Acknowledge immediately, give them a reference number, and resolve as quickly as possible. If it takes more than 1 hour, provide an interim update."
+    },
+    {
+      "id": "CAT-10",
+      "name": "Legal Threat / Formal Notice",
+      "description": "Customer sends a formal complaint, pre-litigation letter, lawyer correspondence, or explicitly threatens legal action.",
+      "severity": "critical",
+      "sla_first_response_hours": 2,
+      "sla_resolution_business_days": 2,
+      "legally_significant": true,
+      "legal_significance_reason": "Any formal legal notice or pre-litigation communication must be handled by Legal. Anything the agent says can be used in subsequent proceedings. No substantive response should be sent without Legal approval.",
+      "escalation_triggers": [
+        "Email mentions 'legal action', 'litigation', 'court', 'solicitor', 'Rechtsanwalt', 'claim', 'damages', or 'lawsuit'",
+        "Email is sent from a law firm or legal representative",
+        "Email references a specific statutory right or contract clause as the basis for a claim",
+        "Customer says they have already filed a complaint with a regulatory authority (Datenschutzbehörde, BaFin, etc.)",
+        "Email requests that all communication be directed to their legal representative"
+      ],
+      "required_actions": [
+        "Do NOT send any substantive response without Legal sign-off",
+        "Acknowledge receipt only: 'Thank you for your message. We are reviewing it and will respond shortly.'",
+        "Forward immediately to the Legal team lead and the relevant Account Manager",
+        "Log the date and time of receipt — this may be the start of a legal deadline",
+        "Preserve all related correspondence and do not delete any records",
+        "Legal team will take over the response within 2 business days"
+      ],
+      "agent_authority": {
+        "can_respond_substantively": false,
+        "can_acknowledge_receipt": true,
+        "must_route_to_legal_immediately": true
+      },
+      "tone_guidance": "Neutral and non-committal. The acknowledgment should be polite but contain no admissions, no apologies, and no statements about what TechForward will or will not do. Just: 'We have received your message and are reviewing it.'"
+    },
+    {
+      "id": "CAT-11",
+      "name": "Complaint About a TechForward Employee",
+      "description": "Customer complains about the conduct, behavior, or communication of a TechForward employee or contractor.",
+      "severity": "high",
+      "sla_first_response_hours": 4,
+      "sla_resolution_business_days": 3,
+      "legally_significant": true,
+      "legal_significance_reason": "Employee conduct complaints may have HR, employment law, and liability implications. They must not be investigated or dismissed by the customer care agent.",
+      "escalation_triggers": [
+        "Any complaint about employee behavior",
+        "Allegation of harassment, discrimination, or misconduct",
+        "Complaint about communication from a named individual"
+      ],
+      "required_actions": [
+        "Acknowledge the complaint with sincerity — do not minimize or dismiss",
+        "Do NOT name, identify, or defend the employee in question",
+        "Do NOT investigate or promise an outcome",
+        "Route to the Customer Care Manager and HR within 4 hours",
+        "Confirm to the customer that the complaint has been registered and will be reviewed by the appropriate team",
+        "Ensure no further contact from the named employee with that customer pending investigation"
+      ],
+      "agent_authority": {
+        "can_investigate": false,
+        "must_route_to_hr_and_manager": true,
+        "can_acknowledge_and_apologize_for_experience": true
+      },
+      "tone_guidance": "Empathetic and non-defensive. The customer felt uncomfortable or mistreated. Validate their experience without making factual claims about what happened. 'We take feedback about our team very seriously' is the right tone."
+    },
+    {
+      "id": "CAT-12",
+      "name": "General Dissatisfaction / Vague Complaint",
+      "description": "Customer expresses frustration, dissatisfaction, or disappointment without a specific actionable complaint — or a complaint that doesn't fit another category.",
+      "severity": "low",
+      "sla_first_response_hours": 24,
+      "sla_resolution_business_days": 5,
+      "legally_significant": false,
+      "escalation_triggers": [
+        "Complaint becomes specific and fits another category on closer reading — re-classify",
+        "Customer has submitted the same vague complaint more than twice",
+        "Customer is a high-value account (enterprise tier)"
+      ],
+      "required_actions": [
+        "Read carefully for any hidden specific complaint — re-classify if found",
+        "Ask one clarifying question to understand what resolution the customer is looking for",
+        "Offer to connect the customer with their Account Manager for a review call",
+        "Document the complaint and any feedback themes in CRM for product/service improvement tracking"
+      ],
+      "agent_authority": {
+        "can_offer_account_manager_call": true,
+        "can_offer_goodwill_gesture_eur": 100
+      },
+      "tone_guidance": "Curious and warm. The customer is unhappy but doesn't know how to articulate it. Ask open questions, show you care, and try to find the real issue. Don't close the ticket without understanding what they actually wanted."
+    }
+  ]
+}
