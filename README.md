@@ -66,6 +66,7 @@ Each challenge has its own folder with a detailed brief and mock data to get you
 | 9 | **AGB & Einkaufsbedingungen Review Tool** | Legal teams, Procurement | [challenge-09](./challenge-09-agb-review-tool/) |
 | 10 | **Regulatory Horizon Map** | Executives, Legal teams | [challenge-10](./challenge-10-regulatory-horizon-map/) |
 | 11 | **Contract Bottleneck & Deal Velocity Dashboard** | Sales, Legal, CFO | [challenge-11](./challenge-11-contract-bottleneck-dashboard/) |
+| 12 | **Sales Contract Review Playbook** | Sales, Legal | [challenge-12](./challenge-12-sales-contract-playbook/) |
 
 ---
 
@@ -191,7 +192,10 @@ legalhackathon/
 ├── challenge-10-regulatory-horizon-map/
 │   ├── CHALLENGE.md
 │   └── mock-data/
-└── challenge-11-contract-bottleneck-dashboard/
+├── challenge-11-contract-bottleneck-dashboard/
+│   ├── CHALLENGE.md
+│   └── mock-data/
+└── challenge-12-sales-contract-playbook/
     ├── CHALLENGE.md
     └── mock-data/
 ```
