@@ -1,0 +1,386 @@
+{
+  "version": "1.0",
+  "company": "NetHost GmbH",
+  "jurisdiction": "Germany",
+  "catalog_note": "All request types assume German law. Foreign authority requests require MLAT/EIO process — see REQ-TYPE-08.",
+  "request_types": [
+    {
+      "id": "REQ-TYPE-01",
+      "name": "Bestandsdatenauskunft",
+      "description": "Request for customer identity and account data: name, address, email, payment data, contract details, assigned IP addresses. Does NOT include communication content or traffic data.",
+      "typical_phrasing": [
+        "Wer ist Inhaber der Domain example.com?",
+        "Wer nutzte die IP-Adresse 1.2.3.4 zum Zeitpunkt X?",
+        "Übermitteln Sie die Bestandsdaten des Kunden mit Kundennummer 12345",
+        "Mitteilen, wer Inhaber des Hostingaccounts zu example.com ist"
+      ],
+      "legal_basis": {
+        "primary": ["§ 174 TKG (für TK-Dienstleister)", "§ 22 TTDSG (für Telemediendienste)"],
+        "stpo_basis": ["§ 161 Abs. 1 StPO (Staatsanwaltschaft)", "§ 163 Abs. 1 StPO (Polizei mit StA-Auftrag)"],
+        "dsgvo": "Art. 6 Abs. 1 lit. c DSGVO — Verarbeitung zur Erfüllung einer rechtlichen Verpflichtung"
+      },
+      "court_order_required": false,
+      "court_order_note": "Kein richterlicher Beschluss erforderlich. Ausreichend ist eine schriftliche Anfrage der Staatsanwaltschaft oder der Polizei im Rahmen eines konkreten Ermittlungsverfahrens.",
+      "authorized_issuers": [
+        "Staatsanwaltschaft (immer)",
+        "Polizei mit schriftlichem Auftrag der Staatsanwaltschaft",
+        "Polizei im Rahmen eigener Gefahrenabwehrzuständigkeit (polizeirechtliche Grundlage, nicht StPO)"
+      ],
+      "unauthorized_issuers": [
+        "Ausländische Behörden (kein direkter Auskunftsanspruch — MLAT/EIO erforderlich)",
+        "Polizei ohne erkennbaren Ermittlungsauftrag (informelle Anfrage)"
+      ],
+      "data_in_scope": [
+        "Name und Anschrift des Kunden",
+        "E-Mail-Adresse und Telefonnummer",
+        "Kundennummer und Vertragsdaten",
+        "Zahlungsmittel und Zahlungshistorie (soweit erfasst)",
+        "Registrierungsdatum",
+        "Aktuell zugeordnete IP-Adressen (statisch)",
+        "Domain-Registrierungsdaten (Registrant-Daten)"
+      ],
+      "data_out_of_scope": [
+        "Verbindungsdaten / Verkehrsdaten (IP-Logs, Zeitstempel — § 100g StPO erforderlich)",
+        "Kommunikationsinhalte (E-Mail-Inhalte, gespeicherte Dateien — Beschlagnahme erforderlich)",
+        "Passwörter oder Zugangsdaten im Klartext"
+      ],
+      "formal_requirements_checklist": [
+        "Schriftliche Anfrage (Fax, Post oder verschlüsselte E-Mail — informelle E-Mail nicht ausreichend)",
+        "Bezeichnung der ermittelnden Behörde mit Aktenzeichen",
+        "Name und Dienstbezeichnung des Sachbearbeiters",
+        "Konkrete Bezeichnung des Ermittlungsverfahrens oder der Verdachtslage",
+        "Spezifizierung, welche Bestandsdaten angefordert werden",
+        "Angabe des Verwendungszwecks (Strafverfolgung, Gefahrenabwehr)"
+      ],
+      "response_action": "COMPLY",
+      "response_deadline_hours": 72,
+      "response_deadline_note": "72 Stunden als Standard; bei Gefahr im Verzug unverzüglich (i.d.R. innerhalb von 2 Stunden)",
+      "data_preservation_required": false,
+      "customer_notification": {
+        "required": false,
+        "basis": "§ 174 Abs. 5 TKG — Unternehmen darf ohne gesonderte Anordnung keine Auskunft an Betroffene erteilen, wenn Ermittlungsgefährdung droht. Praxis: keine Benachrichtigung während laufender Ermittlungen. Nach Abschluss: DSGVO Art. 34 im Schadensfall, sonst keine gesetzliche Pflicht."
+      },
+      "billing_note": "§ 174 Abs. 7 TKG: Aufwendungsersatz kann geltend gemacht werden (JVEG-Sätze). In der Praxis selten geltend gemacht.",
+      "escalation_triggers": [
+        "Anfrage kommt von ausländischer Behörde",
+        "Anfrage ist informell (kein Aktenzeichen, kein Briefkopf)",
+        "Angeforderte Daten gehen über Bestandsdaten hinaus (Inhaltsdaten, Verkehrsdaten)"
+      ]
+    },
+    {
+      "id": "REQ-TYPE-02",
+      "name": "Postfachbeschlagnahme / Beschlagnahme von E-Mail-Inhalten",
+      "description": "Anordnung zur Sicherung und Herausgabe gespeicherter E-Mail-Inhalte aus einem Postfach. Betrifft die Inhalte gespeicherter Nachrichten, nicht die Kommunikation in Echtzeit.",
+      "typical_phrasing": [
+        "Beschlagnahme aller gespeicherter E-Mails im Postfach user@example.com",
+        "Sicherstellung und Herausgabe aller E-Mails im Zeitraum 01.01.2025 bis 31.03.2025",
+        "Gemäß beiliegendem Beschluss des Amtsgerichts X ist das Postfach Y zu sichern und der Inhalt herauszugeben"
+      ],
+      "legal_basis": {
+        "primary": ["§ 99 StPO (Postbeschlagnahme, analog auf E-Mail angewendet)", "§ 94 StPO (Sicherstellung von Beweismitteln)"],
+        "constitutional": "Art. 10 GG — Fernmeldegeheimnis schützt E-Mail-Inhalte auch beim Provider",
+        "dsgvo": "Art. 6 Abs. 1 lit. c DSGVO i.V.m. § 23 TTDSG — Herausgabe auf richterliche Anordnung"
+      },
+      "court_order_required": true,
+      "court_order_note": "Richterlicher Beschluss zwingend erforderlich (§ 100 Abs. 1 StPO). Ausnahme: Gefahr im Verzug — dann kann Staatsanwaltschaft anordnen, muss aber unverzüglich (innerhalb von 3 Werktagen) richterliche Bestätigung einholen. Ohne gerichtliche Bestätigung ist die Maßnahme rechtswidrig.",
+      "authorized_issuers": [
+        "Richter (Amts- oder Landgericht) — Regelfall",
+        "Staatsanwaltschaft bei Gefahr im Verzug (mit nachfolgender richterlicher Bestätigung)"
+      ],
+      "unauthorized_issuers": [
+        "Polizei allein (ohne staatsanwaltliche oder richterliche Anordnung)",
+        "Ausländische Behörden ohne MLAT/EIO",
+        "Staatsanwaltschaft ohne Eilkompetenz-Begründung"
+      ],
+      "data_in_scope": [
+        "Gespeicherte E-Mail-Inhalte (alle Ordner: Eingang, Ausgang, Entwürfe, Gelöschtes)",
+        "Anhänge",
+        "Metadaten der E-Mails (Absender, Empfänger, Datum, Betreff) — nur soweit im Beschluss umfasst"
+      ],
+      "data_out_of_scope": [
+        "E-Mails außerhalb des im Beschluss genannten Zeitraums",
+        "Postfächer anderer Kunden, die nicht im Beschluss genannt sind",
+        "Echtzeit-Kommunikation (erfordert § 100a StPO TKÜ-Beschluss)"
+      ],
+      "formal_requirements_checklist": [
+        "Original oder beglaubigte Kopie des Gerichtsbeschlusses (Amtsgericht oder Landgericht)",
+        "Beschluss benennt das konkrete Postfach (E-Mail-Adresse)",
+        "Beschluss benennt Zeitraum oder ist zeitlich unbegrenzt und aktuell",
+        "Beschluss ist nicht abgelaufen (Datum prüfen — ggf. Verlängerung erforderlich)",
+        "Beschluss ist unterschrieben und mit Dienststempel versehen",
+        "Begleitung durch Vollstreckungsauftrag der Staatsanwaltschaft bei polizeilicher Vollstreckung",
+        "Richtiger Adressat: NetHost GmbH als Diensteanbieter"
+      ],
+      "response_action": "COMPLY_WITH_VERIFICATION",
+      "response_deadline_hours": 24,
+      "response_deadline_note": "In der Regel unverzüglich nach Verifikation; laut Beschluss spezifiziert. Bei Gefahr im Verzug: sofort.",
+      "data_preservation_required": true,
+      "data_preservation_note": "Bei Eingang eines Beschlusses: sofortige Sperrung des Postfachs gegen Löschung (Legal Hold). Keine Mitteilung an den Kunden bis zur Freigabe durch Ermittlungsbehörde.",
+      "customer_notification": {
+        "required": false,
+        "basis": "§ 101 StPO: Benachrichtigungspflicht der Ermittlungsbehörden gegenüber dem Betroffenen — NICHT NetHost. NetHost darf den Kunden nicht informieren, solange die Ermittlungsbehörde keine Freigabe erteilt (Gefährdung des Ermittlungszwecks)."
+      },
+      "escalation_triggers": [
+        "Kein Gerichtsbeschluss vorhanden — nur mündliche/telefonische Anfrage",
+        "Beschluss ist abgelaufen",
+        "Beschluss nennt kein konkretes Postfach",
+        "Angeforderte Daten gehen über den Beschlussumfang hinaus",
+        "Anfrage kommt direkt von Polizei ohne StA-Auftrag"
+      ]
+    },
+    {
+      "id": "REQ-TYPE-03",
+      "name": "Allgemeine Datenbeschlagnahme (§ 94 StPO)",
+      "description": "Sicherstellung und Beschlagnahme gespeicherter Daten als Beweismittel — z.B. Dateien, Datenbanken, Webseiteninhalte, gespeicherte Backups eines Hosting-Accounts.",
+      "typical_phrasing": [
+        "Gemäß Beschluss des AG X sind sämtliche gespeicherten Daten des Accounts 12345 sicherzustellen",
+        "Herausgabe aller auf den Servern von NetHost gespeicherten Daten der Domain example.com",
+        "Sicherstellung aller Backups des VPS mit der ID 789"
+      ],
+      "legal_basis": {
+        "primary": ["§ 94 StPO (Sicherstellung von Beweisgegenständen)", "§ 98 StPO (Beschlagnahmebeschluss des Richters)"],
+        "dsgvo": "Art. 6 Abs. 1 lit. c DSGVO"
+      },
+      "court_order_required": true,
+      "court_order_note": "Richterlicher Beschluss erforderlich (§ 98 Abs. 1 StPO). Ausnahme: Gefahr im Verzug — Staatsanwaltschaft oder Polizei können sicherstellen, müssen aber unverzüglich richterliche Bestätigung erwirken. Polizeiliche Sicherstellung ohne StA-Auftrag und ohne Eilbegründung: nicht compliant.",
+      "authorized_issuers": [
+        "Richter (Regelfall)",
+        "Staatsanwaltschaft bei Gefahr im Verzug",
+        "Polizei bei Gefahr im Verzug mit anschließender StA/Gerichtsbefassung"
+      ],
+      "data_in_scope": [
+        "Alle im Beschluss spezifizierten Daten (Account-ID, Domain, Server-ID)",
+        "Backups soweit im Beschluss erwähnt",
+        "Datenbankinhalt, Dateisysteminhalt, Konfigurationsdaten"
+      ],
+      "data_out_of_scope": [
+        "Daten anderer Kunden auf gemeinsam genutzter Infrastruktur",
+        "Metadaten von NetHost-internen Systemen, die nicht im Beschluss genannt sind"
+      ],
+      "formal_requirements_checklist": [
+        "Richterlicher oder staatsanwaltlicher Beschluss mit Aktenzeichen",
+        "Konkreter Bezeichnung des betroffenen Accounts / der Domain / Server-ID",
+        "Zeitliche Spezifizierung oder aktueller Beschluss ohne Ablaufdatum",
+        "Unterschrift des ausstellenden Richters oder Staatsanwalts",
+        "Amtsstempel der Behörde"
+      ],
+      "response_action": "COMPLY_WITH_VERIFICATION",
+      "response_deadline_hours": 24,
+      "data_preservation_required": true,
+      "data_preservation_note": "Sofortiger Legal Hold auf den betroffenen Account. Keine Löschung, keine Veränderung, keine Mitteilung an den Kunden.",
+      "customer_notification": {
+        "required": false,
+        "basis": "Wie bei Postfachbeschlagnahme — Benachrichtigung obliegt der Ermittlungsbehörde."
+      },
+      "escalation_triggers": [
+        "Kein Beschluss vorhanden",
+        "Beschluss zu unbestimmt (kein konkreter Account benannt)",
+        "Umfang überschreitet was im Beschluss steht",
+        "Daten anderer Kunden betroffen"
+      ]
+    },
+    {
+      "id": "REQ-TYPE-04",
+      "name": "Verkehrsdatenauskunft (§ 100g StPO)",
+      "description": "Anfrage nach Verkehrs- und Verbindungsdaten: welche IP-Adresse hatte ein Nutzer zu einem bestimmten Zeitpunkt, welche Verbindungen wurden von einem Account hergestellt.",
+      "typical_phrasing": [
+        "Welchem Kunden war die IP-Adresse 1.2.3.4 am 15.02.2025 um 14:32 Uhr UTC zugewiesen?",
+        "Übermitteln Sie alle Verbindungslogs des Accounts 12345 für den Zeitraum Januar–März 2025",
+        "Gemäß beiliegendem Beschluss des AG X sind die Verkehrsdaten gemäß § 100g StPO zu erheben"
+      ],
+      "legal_basis": {
+        "primary": ["§ 100g StPO (Erhebung von Verkehrsdaten)", "§ 101a StPO (Verfahren bei Verkehrsdaten)"],
+        "dsgvo": "Art. 6 Abs. 1 lit. c DSGVO"
+      },
+      "court_order_required": true,
+      "court_order_note": "Richterlicher Beschluss zwingend erforderlich (§ 101a Abs. 1 StPO). Keine Eilkompetenz der Staatsanwaltschaft für Verkehrsdaten — anders als bei Beschlagnahme.",
+      "authorized_issuers": [
+        "Richter ausschließlich — keine Ausnahme"
+      ],
+      "unauthorized_issuers": [
+        "Staatsanwaltschaft allein (keine Eilkompetenz)",
+        "Polizei allein",
+        "Ausländische Behörden"
+      ],
+      "data_in_scope": [
+        "IP-Adress-Zuordnung zu Zeitpunkten",
+        "Verbindungsprotokolle (Login-Timestamps, Logout)",
+        "Übermittelte Datenmengen (ohne Inhalt)"
+      ],
+      "data_out_of_scope": [
+        "Kommunikationsinhalte (erfordert § 99/94 StPO Beschluss)",
+        "Daten, die nicht gespeichert sind (VDS-Problem)",
+        "Echtzeit-Überwachung (erfordert § 100a StPO)"
+      ],
+      "vds_note": "KRITISCH: Die Vorratsdatenspeicherung (VDS) in Deutschland ist nach EuGH-Urteilen (C-793/19, C-794/19, April 2022) nicht mehr mit Unionsrecht vereinbar. Das TDDDG-Gesetz sieht keine anlasslose Vorratsdatenspeicherung mehr vor. NetHost ist NICHT zur anlasslosen Speicherung von Verkehrsdaten verpflichtet. Wenn die angeforderten Daten nicht mehr vorhanden sind, ist dies ausdrücklich in der Antwort mitzuteilen.",
+      "formal_requirements_checklist": [
+        "Richterlicher Beschluss — zwingend, keine Ausnahme",
+        "Beschluss benennt konkrete IP-Adresse(n) oder Account-ID",
+        "Beschluss benennt konkreten Zeitraum",
+        "Beschluss benennt die zu erhebenden Verkehrsdatenarten",
+        "Straftatenbezug muss schwere Straftat (§ 100g Abs. 1 oder 2 StPO) sein"
+      ],
+      "response_action": "COMPLY_WITH_VERIFICATION",
+      "response_deadline_hours": 48,
+      "data_preservation_required": true,
+      "data_preservation_note": "Legal Hold. Außerdem prüfen, ob die Daten überhaupt noch vorhanden sind — NetHost behält Verbindungsdaten nur entsprechend der Datenschutzrichtlinie.",
+      "customer_notification": {
+        "required": false,
+        "basis": "§ 101a Abs. 6 StPO: Ermittlungsbehörde benachrichtigt Betroffene nach Abschluss der Maßnahme."
+      },
+      "escalation_triggers": [
+        "Kein richterlicher Beschluss — kein Ermessensspielraum, Ablehnung",
+        "Nur staatsanwaltliche Anordnung vorhanden",
+        "Straftat im Beschluss ist kein Katalogdelikt gem. § 100g Abs. 1 S. 1 StPO",
+        "Zeitraum ist unverhältnismäßig lang",
+        "Angeforderte Daten existieren nicht mehr (VDS-Problem)"
+      ]
+    },
+    {
+      "id": "REQ-TYPE-05",
+      "name": "Telekommunikationsüberwachung — TKÜ (§ 100a StPO)",
+      "description": "Anordnung zur Echtzeit-Überwachung und Aufzeichnung laufender Telekommunikation — z.B. Mitschnitt eingehender und ausgehender E-Mails in Echtzeit.",
+      "typical_phrasing": [
+        "Gemäß Beschluss des LG X sind ab sofort alle Telekommunikationsvorgänge des Anschlusses user@example.com zu überwachen und aufzuzeichnen",
+        "TKÜ-Maßnahme gemäß § 100a StPO — Bereitstellung einer Schnittstelle für Echtzeit-Ableitung"
+      ],
+      "legal_basis": {
+        "primary": ["§ 100a StPO (Überwachung der Telekommunikation)", "§§ 170–176 TKG (Technische Mitwirkungspflicht)"],
+        "dsgvo": "Art. 6 Abs. 1 lit. c DSGVO, Art. 23 DSGVO"
+      },
+      "court_order_required": true,
+      "court_order_note": "Richterlicher Beschluss zwingend und immer erforderlich (§ 100b StPO). Keine Ausnahmen. In der Regel Landgericht (nicht Amtsgericht) für schwere Delikte.",
+      "tku_scope_assessment": {
+        "question": "Ist NetHost für diesen Dienst technisch und rechtlich zur TKÜ verpflichtet?",
+        "explanation": "Die Mitwirkungspflicht nach § 170 TKG gilt nur für 'öffentlich zugängliche Telekommunikationsdienste'. Shared Hosting und Webhosting ohne eigenen E-Mail-Dienst sind i.d.R. KEIN öffentlicher TK-Dienst. E-Mail-Hosting (Postfächer für externe Kunden) kann als öffentlicher TK-Dienst eingestuft werden. VPS/Dedicated Server: unklar, hängt von der Nutzungsart ab.",
+        "escalate_to_legal": true
+      },
+      "formal_requirements_checklist": [
+        "Richterlicher Beschluss (i.d.R. Landgericht) mit Aktenzeichen",
+        "Beschluss benennt konkrete Anschlusskennung (E-Mail-Adresse, Kontonummer)",
+        "Zeitlich begrenzte Maßnahme (§ 100b Abs. 2 StPO: max. 3 Monate, verlängerbar)",
+        "Katalogsdelikt gemäß § 100a Abs. 2 StPO muss vorliegen",
+        "Verhältnismäßigkeitsprüfung im Beschluss ersichtlich"
+      ],
+      "response_action": "ESCALATE_TO_LEGAL",
+      "response_deadline_hours": 4,
+      "response_deadline_note": "Sofort an Legal-Team eskalieren. TKÜ-Maßnahmen erfordern technische Vorbereitung und rechtliche Prüfung. Deadline für Compliance-Beginn laut Beschluss beachten.",
+      "data_preservation_required": true,
+      "customer_notification": {
+        "required": false,
+        "basis": "§ 101 StPO: Benachrichtigung nach Abschluss der Maßnahme durch Ermittlungsbehörde, nicht NetHost."
+      },
+      "escalation_triggers": [
+        "Immer — TKÜ ist die eingriffsintensivste Maßnahme, immer Legal einbeziehen",
+        "Kein richterlicher Beschluss: sofortige Ablehnung",
+        "Beschluss von Amtsgericht (i.d.R. nicht zuständig für TKÜ — LG ist Regelgericht)",
+        "NetHost hat möglicherweise keine TKÜ-Schnittstelle — technische Vorabklärung erforderlich"
+      ]
+    },
+    {
+      "id": "REQ-TYPE-06",
+      "name": "Domain-Daten und WHOIS-Auskunft",
+      "description": "Anfrage nach Domain-Registrierungsdaten: Inhaber, Registrant-Kontaktdaten, Registrierungsdatum, DNS-Konfiguration.",
+      "typical_phrasing": [
+        "Wer ist der Registrant der Domain example.com?",
+        "Übermitteln Sie die Registrierungsdaten der Domain example.de",
+        "Welche Nameserver sind für die Domain xyz.net eingetragen? Wann wurde sie registriert?"
+      ],
+      "legal_basis": {
+        "primary": ["§ 174 TKG (Bestandsdatenauskunft)", "ICANN Registrar Accreditation Agreement (RAA) Section 3.7.7"],
+        "secondary": ["§ 22 TTDSG", "§ 161 StPO"]
+      },
+      "court_order_required": false,
+      "court_order_note": "Kein richterlicher Beschluss erforderlich. Bestandsdaten-Level-Anfrage. ICANN-Verfahren parallel zu deutschen Rechtspflichten.",
+      "authorized_issuers": [
+        "Staatsanwaltschaft",
+        "Polizei im Ermittlungsverfahren",
+        "ICANN-anerkannte LEA-Prozesse (für gTLDs)",
+        "Bundesamt für Sicherheit in der Informationstechnik (BSI) für Sicherheitsbelange"
+      ],
+      "data_in_scope": [
+        "Registrant-Name und Adresse (soweit in der Registrierung angegeben)",
+        "Registrant-E-Mail und Telefonnummer",
+        "Registrierungsdatum und Ablaufdatum",
+        "Aktuell konfigurierte Nameserver",
+        "Administrative und technische Kontakte"
+      ],
+      "data_out_of_scope": [
+        "Login-Daten des Kundenaccounts",
+        "Zahlungsinformationen (nur bei expliziter Bestandsdatenanfrage mit erweitertem Umfang)",
+        "DNS-Abfrage-Logs (Verkehrsdaten — erfordert § 100g StPO)"
+      ],
+      "formal_requirements_checklist": [
+        "Schriftliche Anfrage mit Aktenzeichen",
+        "Konkrete Domain-Bezeichnung",
+        "Ermittlungsbehörde und Sachbearbeiter erkennbar",
+        "Für ICANN-gTLDs: Compliance mit RDSAP-Verfahren"
+      ],
+      "response_action": "COMPLY",
+      "response_deadline_hours": 48,
+      "data_preservation_required": false,
+      "customer_notification": {
+        "required": false
+      },
+      "escalation_triggers": [
+        "Anfrage von ausländischer Behörde ohne MLAT",
+        "Anfrage bezieht sich auf Daten, die über Domain-Bestandsdaten hinausgehen"
+      ]
+    },
+    {
+      "id": "REQ-TYPE-07",
+      "name": "Informelle Polizeianfrage (ohne Rechtsgrundlage)",
+      "description": "Telefonische oder informelle E-Mail-Anfrage von Polizeibeamten ohne förmliches Aktenzeichen, ohne Dienstbriefkopf oder ohne klare Rechtsgrundlage.",
+      "typical_phrasing": [
+        "Guten Tag, ich bin Polizeibeamter Meier von der Kripo München. Könnten Sie mir kurz sagen, wem die IP 1.2.3.4 gehört?",
+        "Hi, ich ermittle in einem dringenden Fall und brauche schnell die Kontaktdaten des Kunden hinter example.com",
+        "Dringende Anfrage: Bitte nennen Sie uns ohne förmliches Auskunftsersuchen die Inhaberdaten von Account 12345"
+      ],
+      "legal_basis": {
+        "primary": "KEINE — informelle Anfragen begründen keine Auskunftspflicht",
+        "note": "§ 161/163 StPO setzt eine formelle schriftliche Anfrage voraus. § 174 TKG setzt eine 'auf Grund eines Gesetzes' bestehende Pflicht voraus, die durch informelle Anfragen nicht entsteht."
+      },
+      "court_order_required": false,
+      "compliance_obligation": false,
+      "response_action": "REFUSE_AND_REDIRECT",
+      "response_text": "Wir können ohne förmliches schriftliches Auskunftsersuchen der Staatsanwaltschaft keine Kundendaten herausgeben. Bitte wenden Sie sich an die zuständige Staatsanwaltschaft für ein förmliches Auskunftsersuchen nach §§ 161 StPO, 174 TKG.",
+      "dsgvo_note": "Eine Herausgabe ohne rechtliche Grundlage wäre eine unrechtmäßige Verarbeitung (Offenbarung) personenbezogener Daten gemäß Art. 5 Abs. 1 lit. a, Art. 6 DSGVO — Bußgeld bis EUR 20 Mio.",
+      "escalation_triggers": [
+        "Polizeibeamter übt Druck aus oder behauptet, es handle sich um einen Notfall",
+        "Der beschriebene Fall deutet auf unmittelbare Lebensgefahr hin — in diesem Fall Legal sofort kontaktieren für Einzelfallbeurteilung"
+      ],
+      "emergency_exception_note": "Ausnahme möglich bei konkreter Lebensgefahr (z.B. Suizidankündigung, Entführung) — jedoch nur nach Einzelfallprüfung durch Legal. Auch dann dokumentieren und DSGVO-Rechenschaft sicherstellen.",
+      "formal_requirements_checklist": [
+        "Keine formellen Anforderungen erfüllbar — informelle Anfragen werden grundsätzlich nicht complied"
+      ]
+    },
+    {
+      "id": "REQ-TYPE-08",
+      "name": "Anfrage ausländischer Behörden",
+      "description": "Direkte Anfrage einer nicht-deutschen Behörde (z.B. US-DOJ, FBI, Europol, andere EU-Mitgliedstaaten) ohne MLAT-Verfahren oder Europäische Ermittlungsanordnung.",
+      "typical_phrasing": [
+        "This is the FBI. Please provide customer data for IP address 1.2.3.4.",
+        "Europol — urgent request for account data associated with domain example.com",
+        "Wir sind die österreichische Polizei und ersuchen um Auskunft über Ihren Kunden..."
+      ],
+      "legal_basis": {
+        "primary": "KEINE direkte Auskunftspflicht gegenüber ausländischen Behörden",
+        "eu_members": "EU-Mitgliedstaaten: Europäische Ermittlungsanordnung (EEA/EIO) nach RL 2014/41/EU — muss über deutsche Staatsanwaltschaft vollstreckt werden",
+        "non_eu": "Drittstaaten: Rechtshilfeverfahren (MLAT — Mutual Legal Assistance Treaty) — US-Anfragen via DOJ und deutsches Bundesjustizministerium",
+        "cloud_act": "CLOUD Act (USA): betrifft US-amerikanische Unternehmen mit Daten in der EU. Für deutsche Unternehmen keine direkte Pflicht. DSGVO-Konflikt möglich."
+      },
+      "compliance_obligation": false,
+      "response_action": "REFUSE_AND_REDIRECT",
+      "response_text": "NetHost GmbH unterliegt deutschem Recht. Für Datenanfragen aus dem Ausland verweisen wir auf das einschlägige Rechtshilfeverfahren (für EU-Mitgliedstaaten: Europäische Ermittlungsanordnung nach RL 2014/41/EU; für Drittstaaten: MLAT-Verfahren über das Bundesministerium der Justiz). Direktanfragen können wir ohne Einschaltung der deutschen Behörden nicht entsprechen.",
+      "dsgvo_note": "Übermittlung personenbezogener Daten in Drittstaaten (außerhalb EU/EWR) ohne Rechtsgrundlage ist nach Art. 44 ff. DSGVO unzulässig und kann zu Bußgeldern führen.",
+      "escalation_triggers": [
+        "Immer — ausländische Behördenanfragen immer an Legal eskalieren",
+        "US-Anfragen: CLOUD Act-Analyse durch Legal erforderlich",
+        "Anfrage bezieht sich auf Daten, die bereits Gegenstand einer deutschen Ermittlung sind"
+      ],
+      "formal_requirements_checklist": [
+        "Keine formellen Anforderungen — alle direkten Auslandsanfragen werden abgelehnt und umgeleitet"
+      ]
+    }
+  ]
+}
