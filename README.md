@@ -1,29 +1,189 @@
-# Legal Hackathon: AI-Powered Solutions for Everyday Legal Challenges
+# Legal Hackathon: Build the Future of Legal Work — Today
+
+> **You don't need to be a developer. You just need curiosity and a problem worth solving.**
+
+Welcome! Today is your day to experiment, explore, and experience firsthand what AI can do for legal work. This is not a coding exam. It's a playground. There are no wrong answers, no failed attempts — only learning and building.
+
+So take a deep breath, pick a challenge that excites you, and let's have fun.
+
+---
 
 ## What Is This Hackathon About?
 
-Legal departments everywhere face the same problem: too much work, not enough time. Meanwhile, business teams wait days for answers to simple legal questions, contracts sit in review queues, and repetitive tasks eat into time that could be spent on high-value strategic work.
+Legal teams deal with a daily overload of repetitive, time-consuming work — contract reviews, compliance checks, policy questions, document summaries. At the same time, AI tools have reached a point where they can genuinely help with all of this, right now, today, without writing a single line of code.
 
-This hackathon brings together legal professionals, business analysts, and anyone curious about legal tech to build **practical, AI-powered solutions** that solve real everyday legal problems — in just one day.
-
-No prior coding experience is required. The tools available today (Claude, Gemini, ChatGPT, and others) allow you to build working prototypes using natural language alone.
+This hackathon gives you a structured day to **explore that potential hands-on**. Pick a real-world legal challenge, use the AI tools available to you, and build something — anything — that demonstrates an idea worth sharing.
 
 ---
 
-## Who Should Participate?
+## Every Output Counts
 
-- **Legal professionals** (lawyers, paralegals, legal ops) who want to automate repetitive parts of their work
-- **Business professionals** (procurement, HR, sales, compliance) who regularly interact with legal and want self-service tools
-- **Anyone** interested in making legal work faster, more accessible, and less painful
+Here's the most important thing to understand: **there is no single correct format for your deliverable.**
+
+You don't need to build a working app. You don't need to write code. What matters is that you explored a challenge, used AI tools to tackle it, and have something to show.
+
+Accepted outputs include — but are not limited to:
+
+| Format | What it looks like |
+|--------|--------------------|
+| **PowerPoint / Slides** | A presentation walking through the problem, your approach, and a demo of your AI interactions |
+| **Process Description** | A written or visual description of how an AI-powered workflow would work in practice |
+| **Prompt Prototype** | A polished, well-documented prompt (or prompt chain) that reliably solves the challenge |
+| **MVP / Working Demo** | A simple app, form, or interactive tool built with AI assistance |
+| **Working Paper** | A structured analysis of the challenge with AI-generated content, findings, and recommendations |
+| **Hybrid** | Any combination of the above — a slide deck with a live demo, a working paper with an embedded prototype, etc. |
+
+The goal is to **think, experiment, and learn** — not to ship production software.
 
 ---
 
-## How the Hackathon Works
+## The Tools at Your Disposal
 
-### Format
-- **Duration:** 1 day (8 hours of working time)
-- **Team size:** 1–4 people per team
-- **Output:** A working prototype or proof-of-concept that demonstrates your solution
+You have access to incredibly powerful AI tools today. Here's how to use each one:
+
+---
+
+### Claude Code — Desktop App or IDE Extension
+
+**Claude Code** is Anthropic's AI coding agent that can build entire applications through conversation. You don't need to know how to code — you describe what you want, and Claude builds it.
+
+**Two ways to use it:**
+
+**Desktop App** — Download from [claude.ai/download](https://claude.ai/download). Open a folder, describe your idea, and Claude writes the code, runs it, fixes errors, and iterates — all from a simple chat interface.
+
+**IDE Extension** — If you have VS Code or a JetBrains IDE, install the Claude Code extension. Claude works alongside you in your editor, reading and writing files, running tests, and explaining every step.
+
+**What you can build with Claude Code:**
+- A web app that lets users upload a contract and get an instant risk summary
+- A form-based NDA generator that produces a ready-to-send PDF
+- An interactive checklist tool for compliance workflows
+- A document classifier that sorts and tags uploaded legal files
+
+**Getting started:** Just say what you want to build. For example:
+> *"Build a simple web app where I can paste a contract and get a structured review of liability clauses, data privacy risks, and missing standard terms. Make it look professional and easy to use."*
+
+---
+
+### Claude — Web App with Artifacts
+
+**[claude.ai](https://claude.ai)** — The browser-based Claude is perfect for document analysis, legal reasoning, and building interactive artifacts without installing anything.
+
+**What makes it great for this hackathon:**
+- Upload contracts, PDFs, and documents and chat with them directly
+- Create **Artifacts** — live HTML/CSS/JavaScript apps that run right in the browser
+- Use **Projects** to store documents and maintain context across multiple conversations
+- Extended thinking mode for deep multi-step analysis
+
+**Ideas:**
+- Paste a contract and ask Claude to generate a structured risk table
+- Ask Claude to build a working HTML form for an NDA generator — it runs live in the chat
+- Use Projects to upload all your mock data files, then query them in one conversation
+
+---
+
+### Antigravity — No-Code App Builder
+
+**Antigravity** is a no-code platform that lets you build and deploy real web applications through conversation — no installation, no setup, no code.
+
+**Why use it:** If you want a polished, shareable prototype that looks like a real product, Antigravity is the fastest path. Describe your legal tool, and it builds, styles, and hosts the app for you.
+
+**Ideas:**
+- A branded contract review dashboard with a file upload and analysis panel
+- A self-service NDA generator with a clean intake form
+- An internal legal FAQ chatbot with a chat interface
+
+**Getting started:** Describe your vision in plain language:
+> *"Build a legal FAQ tool for HR teams. They should be able to type a question about employment law, and get a clear, plain-language answer. The interface should be simple and professional."*
+
+---
+
+### Gemini Canvas — Google's Interactive AI Workspace
+
+**[gemini.google.com](https://gemini.google.com)** with the **Canvas** feature gives you an interactive document editor powered by AI.
+
+**What makes it great:**
+- Canvas lets you collaboratively draft, edit, and refine documents with AI in real time
+- Native integration with Google Docs and Sheets
+- Great for producing polished written deliverables: playbooks, policy documents, working papers
+- Can generate and run code snippets inside the canvas
+
+**Ideas:**
+- Draft a complete sales contract playbook with AI — then refine it clause by clause in Canvas
+- Create a compliance checklist document that auto-populates based on user inputs
+- Build a regulatory summary document and iterate on the structure with Gemini
+
+---
+
+## General Tips: How to Get the Most Out of AI Tools
+
+These tips work regardless of which tool you use:
+
+### 1. Start with a system prompt
+Before asking your first question, set the context. Tell the AI who it is and what it should do:
+```
+You are a contract review assistant for a mid-size technology company in Germany.
+Your role is to review vendor contracts and flag:
+- Unusual liability or indemnification clauses
+- Missing standard protections (IP ownership, confidentiality, limitation of liability)
+- Terms that deviate from our standard positions
+Always output findings as a structured table with: Clause | Risk Level | Recommendation
+```
+
+### 2. Upload your mock data
+Every challenge folder contains realistic mock data — contracts, templates, case files. Upload them directly into your AI tool. The more context the AI has, the better the output.
+
+### 3. Iterate, don't restart
+If the output isn't quite right, tell the AI what to improve:
+> *"The liability analysis is too vague. Be more specific about which party bears the risk and cite the exact clause number."*
+
+### 4. Break complex tasks into steps
+Instead of *"Review this entire contract"*, try:
+- Step 1: *"Extract all clauses related to liability and indemnification"*
+- Step 2: *"Assess each clause: does it favor us, the vendor, or is it neutral?"*
+- Step 3: *"Flag clauses that deviate from German market standard terms"*
+
+### 5. Ask for structured output
+AI tools produce more useful results when you specify the format:
+> *"Output your findings as a table with columns: Clause Number | Topic | Risk Level | Our Recommendation"*
+
+### 6. Use AI to help you use AI
+If you're stuck, just ask:
+> *"Help me write a system prompt for an NDA generator that works for a German company"*
+> *"What's the best way to structure a prompt for comparing two contract versions?"*
+
+### 7. Combine tools
+There's no rule that says you have to use only one tool. You might:
+- Use **Claude** to analyze a contract and extract key clauses
+- Use **Gemini Canvas** to turn those findings into a polished report
+- Use **Claude Code** or **Antigravity** to wrap it all in a working web interface
+
+---
+
+## The Challenges
+
+Each challenge has its own folder with a detailed brief and mock data. Pick the one that excites your team most — or come up with your own variation.
+
+| # | Challenge | Who Benefits | Folder |
+|---|-----------|-------------|--------|
+| 1 | **Contract Review Assistant** | Legal teams | [challenge-01](./challenge-01-contract-review-assistant/) |
+| 2 | **Self-Service NDA Generator** | Sales, Partnerships | [challenge-02](./challenge-02-self-service-nda-generator/) |
+| 3 | **Legal FAQ Bot for Non-Legal Teams** | All departments | [challenge-03](./challenge-03-legal-faq-bot/) |
+| 4 | **Clause Library & Comparison Tool** | Legal teams | [challenge-04](./challenge-04-clause-library/) |
+| 5 | **Compliance Checklist Generator** | Product, Marketing, HR | [challenge-05](./challenge-05-compliance-checklist-generator/) |
+| 6 | **Legal Document Summarizer & Risk Flagger** | Legal, Management | [challenge-06](./challenge-06-legal-document-summarizer/) |
+| 7 | **German Court Case Checker** | Legal teams, Management | [challenge-07](./challenge-07-german-court-case-checker/) |
+| 8 | **Vendor Due Diligence Screener** | Compliance, Procurement | [challenge-08](./challenge-08-vendor-due-diligence-screener/) |
+| 9 | **AGB & Einkaufsbedingungen Review Tool** | Legal, Procurement | [challenge-09](./challenge-09-agb-review-tool/) |
+| 10 | **Regulatory Horizon Map** | Executives, Legal | [challenge-10](./challenge-10-regulatory-horizon-map/) |
+| 11 | **Contract Bottleneck & Deal Velocity Dashboard** | Sales, Legal, CFO | [challenge-11](./challenge-11-contract-bottleneck-dashboard/) |
+| 12 | **Sales Contract Review Playbook** | Sales, Legal | [challenge-12](./challenge-12-sales-contract-playbook/) |
+| 13 | **Customer Complaint Resolution Assistant** | Customer Care, Legal | [challenge-13](./challenge-13-customer-complaint-assistant/) |
+| 14 | **Employment Law Self-Service Assistant for HR** | HR, Legal | [challenge-14](./challenge-14-employment-law-hr-assistant/) |
+| 15 | **Law Enforcement Request Compliance Assistant** | Legal, Compliance, IT | [challenge-15](./challenge-15-law-enforcement-compliance/) |
+
+---
+
+## How the Day Works
 
 ### Schedule
 
@@ -37,10 +197,16 @@ No prior coding experience is required. The tools available today (Claude, Gemin
 | 16:30 – 17:00 | Final polish & prep |
 | 17:00 – 18:00 | Presentations & judging |
 
+### Who Should Participate
+- **Lawyers and legal professionals** — you know the problems best. You don't need to know how to code.
+- **Paralegals and legal ops** — you live in the workflows. You know exactly where the bottlenecks are.
+- **Business professionals** (HR, procurement, sales, compliance) — you interact with legal constantly. What would make your life easier?
+- **Anyone curious** — this is a day for exploration. No prerequisites required.
+
 ### Judging Criteria
 
-| Criterion | Weight | Description |
-|-----------|--------|-------------|
+| Criterion | Weight | What We're Looking For |
+|-----------|--------|-----------------------|
 | **Practical Impact** | 30% | Does this solve a real, recurring problem? Would people actually use it? |
 | **Quality of Output** | 25% | How good are the results the solution produces? |
 | **Creativity** | 20% | Is the approach novel or surprisingly effective? |
@@ -49,114 +215,22 @@ No prior coding experience is required. The tools available today (Claude, Gemin
 
 ---
 
-## The Challenges
+## Getting Started in 5 Steps
 
-Each challenge has its own folder with a detailed brief and mock data to get you started. Pick the one that excites your team the most.
-
-| # | Challenge | Who Benefits | Folder |
-|---|-----------|-------------|--------|
-| 1 | **Contract Review Assistant** | Legal teams | [challenge-01](./challenge-01-contract-review-assistant/) |
-| 2 | **Self-Service NDA Generator** | Business teams (Sales, Partnerships) | [challenge-02](./challenge-02-self-service-nda-generator/) |
-| 3 | **Legal FAQ Bot for Non-Legal Teams** | All departments | [challenge-03](./challenge-03-legal-faq-bot/) |
-| 4 | **Clause Library & Comparison Tool** | Legal teams | [challenge-04](./challenge-04-clause-library/) |
-| 5 | **Compliance Checklist Generator** | Product, Marketing, HR | [challenge-05](./challenge-05-compliance-checklist-generator/) |
-| 6 | **Legal Document Summarizer & Risk Flagger** | Legal teams, Management | [challenge-06](./challenge-06-legal-document-summarizer/) |
-| 7 | **German Court Case Checker** | Legal teams, Management | [challenge-07](./challenge-07-german-court-case-checker/) |
-| 8 | **Vendor Due Diligence Screener** | Compliance, Procurement | [challenge-08](./challenge-08-vendor-due-diligence-screener/) |
-| 9 | **AGB & Einkaufsbedingungen Review Tool** | Legal teams, Procurement | [challenge-09](./challenge-09-agb-review-tool/) |
-| 10 | **Regulatory Horizon Map** | Executives, Legal teams | [challenge-10](./challenge-10-regulatory-horizon-map/) |
-| 11 | **Contract Bottleneck & Deal Velocity Dashboard** | Sales, Legal, CFO | [challenge-11](./challenge-11-contract-bottleneck-dashboard/) |
-| 12 | **Sales Contract Review Playbook** | Sales, Legal | [challenge-12](./challenge-12-sales-contract-playbook/) |
-| 13 | **Customer Complaint Resolution Assistant** | Customer Care, Legal, Compliance | [challenge-13](./challenge-13-customer-complaint-assistant/) |
-| 14 | **Employment Law Self-Service Assistant for HR** | HR, Legal | [challenge-14](./challenge-14-employment-law-hr-assistant/) |
-| 15 | **Law Enforcement Request Compliance Assistant** | Legal, Compliance, IT | [challenge-15](./challenge-15-law-enforcement-compliance/) |
+1. **Browse the challenges** — scan the list above and pick the one that resonates with you
+2. **Form your team** — 1 to 4 people; solo is fine too
+3. **Read the challenge brief** in the folder and explore the mock data
+4. **Choose your tool(s)** — Claude Code, claude.ai, Antigravity, Gemini Canvas, or any combination
+5. **Start small and build up** — get one thing working, then improve it
 
 ---
 
-## How to Use AI Tools to Build Your Solution
+## Rules
 
-You don't need to be a developer. Modern AI tools let you build real prototypes through conversation. Here's how to get the most out of them.
-
-### Recommended Tools
-
-#### Claude (by Anthropic) — [claude.ai](https://claude.ai)
-- **Best for:** Long document analysis, nuanced legal reasoning, structured output, building apps with artifacts
-- **Key strengths:** Handles very long documents (up to 200K tokens), strong at following complex instructions, excellent at generating structured formats (JSON, Markdown, tables)
-- **Pro tips:**
-  - Use Claude's **Projects** feature to upload your mock data and reference documents, then chat with them across multiple conversations
-  - Ask Claude to create **artifacts** — it can build interactive HTML/CSS/JS applications, dashboards, and forms right in the chat
-  - For complex prompts, ask Claude to help you write the prompt first: *"Help me write a system prompt for a contract review assistant that flags risky clauses"*
-  - Use the **extended thinking** toggle for tasks that require deep analysis or multi-step reasoning
-
-#### Gemini (by Google) — [gemini.google.com](https://gemini.google.com)
-- **Best for:** Integration with Google Workspace, multimodal analysis, web-grounded responses
-- **Key strengths:** Can work with Google Docs/Sheets natively, good at processing tables and spreadsheets, access to current web information
-- **Pro tips:**
-  - Use Gemini within **Google Docs** to draft, review, and refine legal content directly
-  - Upload PDFs and images for analysis — useful for scanned contracts or legacy documents
-  - Ask Gemini to create **Google Apps Script** automations that connect Sheets, Docs, and Forms
-
-#### ChatGPT (by OpenAI) — [chat.openai.com](https://chat.openai.com)
-- **Best for:** Custom GPTs, code generation, broad general knowledge
-- **Key strengths:** Custom GPT builder for creating shareable tools, strong code interpreter, large plugin ecosystem
-- **Pro tips:**
-  - Build a **Custom GPT** as your deliverable — it's a ready-to-share tool with instructions and uploaded knowledge
-  - Use **Code Interpreter** to analyze CSV data, generate charts, or process documents programmatically
-
-### General Tips for All Tools
-
-1. **Start with a system prompt.** Define the role, rules, and output format before asking your first question.
-   ```
-   You are a contract review assistant for a mid-size technology company.
-   Your role is to review vendor contracts and flag:
-   - Unusual liability clauses
-   - Missing standard protections
-   - Terms that deviate from our standard positions
-   Always output your findings as a structured table.
-   ```
-
-2. **Provide examples.** Show the AI what good output looks like. Include a sample input and your expected output.
-
-3. **Iterate, don't start over.** If the output isn't right, tell the AI what to fix: *"The liability analysis is too vague — be more specific about which party bears the risk and reference the exact clause number."*
-
-4. **Break complex tasks into steps.** Instead of *"Review this entire contract"*, try:
-   - Step 1: *"Extract all clauses related to liability and indemnification"*
-   - Step 2: *"For each clause, assess whether it favors our company, the vendor, or is neutral"*
-   - Step 3: *"Flag any clauses that deviate from market standard terms"*
-
-5. **Use structured output formats.** Ask for tables, JSON, bullet points, or checklists rather than free-form text. Structured output is easier to integrate into workflows.
-
-6. **Upload your mock data.** Every challenge folder contains realistic mock data. Upload it to your AI tool of choice and build your solution around it.
-
-### What Your Deliverable Could Look Like
-
-Your prototype can take many forms — pick what makes sense for your solution:
-
-- **A well-crafted prompt or prompt chain** that reliably produces high-quality output (with a demo)
-- **An interactive artifact** built inside Claude (HTML/JS applications, forms, dashboards)
-- **A Custom GPT** with uploaded knowledge and instructions
-- **A Google Workspace automation** powered by Gemini
-- **A Jupyter notebook** or script that processes documents using an AI API
-- **A workflow diagram + demo** showing how AI fits into an existing process
-
----
-
-## Getting Started
-
-1. **Browse the challenges** in the folders below and pick one
-2. **Form your team** (or go solo — that's fine too)
-3. **Read the challenge brief** and explore the mock data
-4. **Choose your AI tool(s)** — you can combine multiple tools
-5. **Start building!** Begin with the simplest version that works, then improve it
-
----
-
-## Rules & Guidelines
-
-- You may use any publicly available AI tool (Claude, Gemini, ChatGPT, open-source models, etc.)
-- All mock data provided is fictional — do not use real client data, privileged information, or confidential documents
-- Solutions should be designed with data privacy in mind — explain how your approach would handle sensitive information in production
-- Have fun, ask for help, and learn something new
+- Use any publicly available AI tool — Claude, Gemini, ChatGPT, open-source models, or any combination
+- All mock data is fictional — do not use real client data, privileged information, or confidential documents
+- Think about data privacy — be ready to explain how your solution would handle sensitive data in production
+- Most importantly: **have fun, ask for help, and be open to surprises**
 
 ---
 
@@ -212,4 +286,6 @@ legalhackathon/
     └── mock-data/
 ```
 
-Good luck — go build something that makes legal work better for everyone.
+---
+
+Now go build something. You might surprise yourself with what's possible in a single day.
