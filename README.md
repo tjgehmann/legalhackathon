@@ -49,7 +49,7 @@ You have access to incredibly powerful AI tools. That can be requested through G
 
 **Two ways to use it:**
 
-**Desktop App** — Request a licence via Global IT Support. Download the desktop app from the company software portal (or claude.ai directly if you have a selfmanaged device). Open a folder, describe your idea, and Claude writes the code, runs it, fixes errors, and iterates — all from a simple chat interface.
+**Desktop App** — Request a license via Global IT Support. Download the desktop app from the company software portal (or claude.ai directly if you have a selfmanaged device). Open a folder, describe your idea, and Claude writes the code, runs it, fixes errors, and iterates — all from a simple chat interface.
 
 **IDE Extension** — If you have Visiual Studio Code or a JetBrains IDE, install the Claude Code extension. Claude works alongside you in your editor, reading and writing files, running tests, and explaining every step.
 
