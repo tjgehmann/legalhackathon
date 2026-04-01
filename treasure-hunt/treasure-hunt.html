@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Hackathon — AI Treasure Hunt</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1a1a2e 100%);
+            border-bottom: 1px solid #334155;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .intro-box {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .intro-box h2 {
+            color: #60a5fa;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .intro-box p {
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        .station {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .station:hover {
+            border-color: #475569;
+        }
+
+        .station.completed {
+            border-color: #22c55e;
+        }
+
+        .station-header {
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            user-select: none;
+        }
+
+        .station-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            transition: background 0.3s;
+        }
+
+        .station.completed .station-number {
+            background: #22c55e;
+            color: #0f172a;
+        }
+
+        .station-title {
+            flex: 1;
+        }
+
+        .station-title h3 {
+            font-size: 1.1rem;
+            color: #f1f5f9;
+        }
+
+        .station-title .tool-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            background: #3b82f620;
+            color: #60a5fa;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+
+        .station-chevron {
+            font-size: 1.2rem;
+            color: #64748b;
+            transition: transform 0.3s;
+        }
+
+        .station.open .station-chevron {
+            transform: rotate(180deg);
+        }
+
+        .station-body {
+            display: none;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .station.open .station-body {
+            display: block;
+        }
+
+        .task-description {
+            background: #0f172a;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            border-left: 3px solid #60a5fa;
+        }
+
+        .task-description h4 {
+            color: #60a5fa;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .task-description p, .task-description ol {
+            color: #cbd5e1;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .task-description ol {
+            padding-left: 1.25rem;
+        }
+
+        .task-description li {
+            margin-bottom: 0.4rem;
+        }
+
+        .task-description code {
+            background: #334155;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #a78bfa;
+        }
+
+        .hint-toggle {
+            background: none;
+            border: 1px solid #475569;
+            color: #94a3b8;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            transition: all 0.2s;
+        }
+
+        .hint-toggle:hover {
+            border-color: #64748b;
+            color: #e2e8f0;
+        }
+
+        .hint-text {
+            display: none;
+            background: #1a1a2e;
+            border-radius: 6px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            color: #a78bfa;
+            font-size: 0.9rem;
+            border: 1px solid #a78bfa30;
+        }
+
+        .hint-text.visible {
+            display: block;
+        }
+
+        .answer-row {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .answer-input {
+            flex: 1;
+            background: #0f172a;
+            border: 1px solid #475569;
+            color: #f1f5f9;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .answer-input:focus {
+            border-color: #60a5fa;
+        }
+
+        .answer-input::placeholder {
+            color: #64748b;
+        }
+
+        .submit-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+
+        .submit-btn:hover {
+            background: #2563eb;
+        }
+
+        .submit-btn:disabled {
+            background: #22c55e;
+            cursor: default;
+        }
+
+        .feedback {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            min-height: 1.4em;
+        }
+
+        .feedback.success { color: #22c55e; }
+        .feedback.error { color: #f87171; }
+
+        /* Final unlock section */
+        .final-section {
+            background: linear-gradient(135deg, #1e293b, #1a1a2e);
+            border: 2px solid #334155;
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 2rem;
+            transition: border-color 0.5s;
+        }
+
+        .final-section.unlocked {
+            border-color: #22c55e;
+            background: linear-gradient(135deg, #0f2a1e, #1a1a2e);
+        }
+
+        .final-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .final-section p {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+
+        .lock-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            background: #334155;
+            border-radius: 99px;
+            height: 8px;
+            max-width: 300px;
+            margin: 1rem auto;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            height: 100%;
+            border-radius: 99px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .progress-label {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .repo-link {
+            display: none;
+            margin-top: 1.5rem;
+        }
+
+        .repo-link.visible {
+            display: block;
+        }
+
+        .repo-link a {
+            display: inline-block;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px #22c55e30;
+        }
+
+        .repo-link a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px #22c55e50;
+        }
+
+        .confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .scrambled-email {
+            background: #0f172a;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            font-style: italic;
+            border: 1px solid #334155;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .container { padding: 1rem; }
+            .answer-row { flex-direction: column; }
+            .submit-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>AI Treasure Hunt</h1>
+    <p>Complete 4 stations using Gemini & Google Workspace. Collect the code words. Unlock the hackathon challenges.</p>
+</div>
+
+<div class="container">
+
+    <div class="intro-box">
+        <h2>How It Works</h2>
+        <p>
+            Each station teaches you an AI skill you'll use during the hackathon.
+            Complete the task at each station to discover a <strong>code word</strong>.
+            Once you have all 4 code words, enter them below to unlock the link to the hackathon challenge repository.
+        </p>
+    </div>
+
+    <!-- Station 1 -->
+    <div class="station" id="station1">
+        <div class="station-header" onclick="toggleStation(1)">
+            <div class="station-number">1</div>
+            <div class="station-title">
+                <h3>The Hidden Penalties</h3>
+                <span class="tool-badge">Gemini in Google Docs</span>
+            </div>
+            <div class="station-chevron">&#9660;</div>
+        </div>
+        <div class="station-body">
+            <div class="task-description">
+                <h4>Your Mission</h4>
+                <p>Your legal team just received a 19-section draft consulting agreement — 8 pages of dense legal text. Before signing, you need to find every hidden penalty buried in the fine print. The penalties use tricky language: "surcharge", "deduction", "levy", "remediation fee"... A simple Ctrl+F won't catch them all. But AI understands what a penalty <em>means</em>.</p>
+                <ol>
+                    <li>Open the shared Google Doc called <strong>"Station 1 — The Hidden Penalties"</strong></li>
+                    <li>Open the <strong>Gemini sidebar</strong> (click the Gemini star icon on the right, or go to <em>Tools &gt; Gemini</em>)</li>
+                    <li>Ask Gemini: <code>Find all clauses in this contract that reference a Penalty Schedule. For each one, tell me the section number, penalty amount, reason and the Penalty Schedule letter.</code></li>
+                    <li>List the <strong>Penalty Schedule letters in the order they appear</strong> — that spells your code word</li>
+                </ol>
+            </div>
+            <button class="hint-toggle" onclick="toggleHint(1)">Need a hint?</button>
+            <div class="hint-text" id="hint1">There are exactly 6 Penalty Schedules hidden across the contract. Each has a single letter (like "Penalty Schedule B"). Read those 6 letters in section order.</div>
+            <div class="answer-row">
+                <input type="text" class="answer-input" id="answer1" placeholder="Enter the hidden code word..." onkeydown="if(event.key==='Enter')checkAnswer(1)">
+                <button class="submit-btn" id="btn1" onclick="checkAnswer(1)">Check</button>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+    </div>
+
+    <!-- Station 2 -->
+    <div class="station" id="station2">
+        <div class="station-header" onclick="toggleStation(2)">
+            <div class="station-number">2</div>
+            <div class="station-title">
+                <h3>The Contract Portfolio Review</h3>
+                <span class="tool-badge">Gemini in Google Sheets</span>
+            </div>
+            <div class="station-chevron">&#9660;</div>
+        </div>
+        <div class="station-body">
+            <div class="task-description">
+                <h4>Your Mission</h4>
+                <p>You're the legal ops manager. Your contract portfolio has 50 active contracts — and some are about to silently auto-renew without proper compliance certification. You need to find them <strong>before it's too late</strong>. Today's date is <strong>March 29, 2026</strong>.</p>
+                <ol>
+                    <li>Open the shared Google Sheet called <strong>"Station 2 — Contract Portfolio Tracker"</strong></li>
+                    <li>Open the <strong>Gemini sidebar</strong></li>
+                    <li>Ask Gemini: <code>Today's date is March 29, 2026. Which contracts expire within the next 3 months (before July 1, 2026), have auto-renewal enabled, AND have an expired compliance certification? These are contracts that will silently auto-renew without proper compliance. Sort results by expiry date, earliest first. Create a short table here in the chat.</code></li>
+                    <li>Gemini will return 5 contracts. Take the <strong>first letter of each counterparty name</strong> and read them together — that's your code word</li>
+                </ol>
+            </div>
+            <button class="hint-toggle" onclick="toggleHint(2)">Need a hint?</button>
+            <div class="hint-text" id="hint2">There are exactly 5 contracts matching all 3 criteria. Watch out for near-misses: some are expired but not auto-renewing, some auto-renew but have valid certification. When sorted by expiry date, the first letters spell a 5-letter word meaning "to build."</div>
+            <div class="answer-row">
+                <input type="text" class="answer-input" id="answer2" placeholder="Enter the 5-letter code word..." onkeydown="if(event.key==='Enter')checkAnswer(2)">
+                <button class="submit-btn" id="btn2" onclick="checkAnswer(2)">Check</button>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+    </div>
+
+    <!-- Station 3 -->
+    <div class="station" id="station3">
+        <div class="station-header" onclick="toggleStation(3)">
+            <div class="station-number">3</div>
+            <div class="station-title">
+                <h3>The Scrambled Brief</h3>
+                <span class="tool-badge">Gemini Chat (gemini.google.com)</span>
+            </div>
+            <div class="station-chevron">&#9660;</div>
+        </div>
+        <div class="station-body">
+            <div class="task-description">
+                <h4>Your Mission</h4>
+                <p>A frantic colleague sent this chaotic email. Your job: use AI to turn chaos into clarity.</p>
+                <div class="scrambled-email">
+                    "hi so basically the client called and theyre upset about the contract thing from last week where the delivery dates got mixed up and also they think the penalty clause is too harsh and they want to renegotiate but our sales team already promised them different terms verbally which we never put in writing and now legal needs to sort this out before thursday or the client says theyll walk and also procurement wants to know if we can just extend the existing framework agreement instead of doing a whole new contract which would save time but im not sure if thats compliant with our policies can someone please advise asap thanks"
+                </div>
+                <ol>
+                    <li>Go to <strong>gemini.google.com</strong></li>
+                    <li>Paste the email text above and ask Gemini: <code>Rewrite this as a structured legal memo to the Legal Department with clear, numbered action items</code></li>
+                    <li>Count the number of <strong>distinct action items</strong> Gemini identifies</li>
+                    <li>Your code word is that number, <strong>written as a word</strong> (e.g., "three", "seven")</li>
+                </ol>
+            </div>
+            <button class="hint-toggle" onclick="toggleHint(3)">Need a hint?</button>
+            <div class="hint-text" id="hint3">Most teams get a number between 4 and 6. Read carefully — some action items might be combined. The most common answer is a number right in the middle of that range.</div>
+            <div class="answer-row">
+                <input type="text" class="answer-input" id="answer3" placeholder="Enter the number as a word..." onkeydown="if(event.key==='Enter')checkAnswer(3)">
+                <button class="submit-btn" id="btn3" onclick="checkAnswer(3)">Check</button>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+    </div>
+
+    <!-- Station 4 -->
+    <div class="station" id="station4">
+        <div class="station-header" onclick="toggleStation(4)">
+            <div class="station-number">4</div>
+            <div class="station-title">
+                <h3>The Negotiation Thread</h3>
+                <span class="tool-badge">Gemini in Google Docs</span>
+            </div>
+            <div class="station-chevron">&#9660;</div>
+        </div>
+        <div class="station-body">
+            <div class="task-description">
+                <h4>Your Mission</h4>
+                <p>You're in-house counsel. A 15-email negotiation thread just landed on your desk — 10 people from sales, legal, finance, IT, and the vendor have been going back and forth for weeks. Before the contract gets signed, you need to know: <strong>who already made a binding commitment on behalf of the company?</strong> Promises, agreed terms, authorized access — you need to find them all.</p>
+                <ol>
+                    <li>Open the shared Google Doc called <strong>"Station 4 — Vendor Negotiation Thread"</strong></li>
+                    <li>Open the <strong>Gemini sidebar</strong></li>
+                    <li>Ask Gemini: <code>Which people in this email thread made a binding commitment or promise on behalf of TechCorp? A binding commitment means they confirmed a specific timeline, agreed to contract terms, authorized access to systems, or locked in financial conditions — not just providing information, asking questions, or forwarding emails. List only the people who made commitments, in chronological order.</code></li>
+                    <li>Gemini will identify 5 people. Take the <strong>first letter of each person's FIRST NAME</strong> (in chronological order) and read them together — that's your code word</li>
+                </ol>
+            </div>
+            <button class="hint-toggle" onclick="toggleHint(4)">Need a hint?</button>
+            <div class="hint-text" id="hint4">10 people are in the thread, but only 5 actually committed to something. The others just asked questions, forwarded emails, or reported findings. Focus on who said "I've confirmed", "I've agreed", "I've authorized", or "I've committed." Their first names' first letters spell a 5-letter word.</div>
+            <div class="answer-row">
+                <input type="text" class="answer-input" id="answer4" placeholder="Enter the 5-letter code word..." onkeydown="if(event.key==='Enter')checkAnswer(4)">
+                <button class="submit-btn" id="btn4" onclick="checkAnswer(4)">Check</button>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+    </div>
+
+    <!-- Final Unlock -->
+    <div class="final-section" id="finalSection">
+        <div class="lock-icon" id="lockIcon">&#128274;</div>
+        <h2 id="finalTitle">Unlock the Hackathon Challenges</h2>
+        <p id="finalDesc">Complete all 4 stations to reveal the challenge repository</p>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-label" id="progressLabel">0 / 4 stations completed</div>
+        <div class="repo-link" id="repoLink">
+            <p style="color: #22c55e; font-size: 1.1rem; margin-bottom: 1rem;">You've unlocked all the challenges!</p>
+            <a id="repoAnchor" href="#" target="_blank" rel="noopener">
+                Open the Challenge Repository &rarr;
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<canvas class="confetti-canvas" id="confettiCanvas"></canvas>
+
+<script>
+    // Answers are stored as SHA-256 hashes — no plaintext in source
+    // The repo URL is also encrypted using the combined answers as the key
+    async function sha256(message) {
+        const msgBuffer = new TextEncoder().encode(message);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    // Answers stored as SHA-256 hashes only — no plaintext anywhere in source
+    const _h = {
+        1: '7b433a9708d38066858f42fd255f2f2396a83b020fafa1bbc2f6f91e63b81ab9',
+        2: '1b36eeed3b6bef2d211b3d6b813e5c4af8e44afe76f0c2077bcb2d9bbaf71005',
+        4: '5c33a73fa55987ba4cd05848b17468a0bbab3be6d0882b104b4f370f93751188'
+    };
+    // Station 3 accepts multiple valid answers
+    const _s3 = [
+        'edf9e3630fb7305a562d35bf4cb20afb879c8d4dcf16e2c21fa05107999c7f6c',
+        'b35cf1ba111bbcf3a6f24755f22ed1346a8302aa62b9cf8ce82f8b5f2854eb83',
+        'cfe3fe67e0e78bf0d4fc0180eac41c69894ed1488c37e4ed36c56cac5a40a8e0'
+    ];
+    // Repo URL assembled from encoded fragments — only revealed on full unlock
+    const _u = ['\x61\x48\x52\x30\x63\x48\x4d\x36\x4c\x79\x39\x6e\x61\x58\x52\x6f\x64\x57\x49\x75\x59\x32\x39\x74','\x4c\x33\x52\x71\x5a\x32\x56\x6f\x62\x57\x46\x75\x62\x67\x3d\x3d','\x4c\x32\x78\x6c\x5a\x32\x46\x73\x61\x47\x46\x6a\x61\x32\x46\x30\x61\x47\x39\x75'];
+
+    const completed = { 1: false, 2: false, 3: false, 4: false };
+
+    function toggleStation(n) {
+        const el = document.getElementById('station' + n);
+        el.classList.toggle('open');
+    }
+
+    function toggleHint(n) {
+        const hint = document.getElementById('hint' + n);
+        hint.classList.toggle('visible');
+    }
+
+    async function checkAnswer(n) {
+        const input = document.getElementById('answer' + n).value.trim().toUpperCase();
+        const feedback = document.getElementById('feedback' + n);
+        const btn = document.getElementById('btn' + n);
+        const station = document.getElementById('station' + n);
+
+        const inputHash = await sha256(input);
+
+        let correct = false;
+        if (n === 3) {
+            correct = _s3.includes(inputHash);
+        } else {
+            correct = inputHash === _h[n];
+        }
+
+        if (correct) {
+            completed[n] = true;
+            feedback.textContent = 'Correct! Station ' + n + ' complete.';
+            feedback.className = 'feedback success';
+            btn.textContent = 'Done';
+            btn.disabled = true;
+            station.classList.add('completed');
+            document.getElementById('answer' + n).disabled = true;
+            updateProgress();
+        } else {
+            feedback.textContent = 'Not quite \u2014 try again! Make sure you completed the task.';
+            feedback.className = 'feedback error';
+            document.getElementById('answer' + n).focus();
+        }
+    }
+
+    function updateProgress() {
+        const count = Object.values(completed).filter(Boolean).length;
+        document.getElementById('progressFill').style.width = (count / 4 * 100) + '%';
+        document.getElementById('progressLabel').textContent = count + ' / 4 stations completed';
+
+        if (count === 4) {
+            // Assemble the URL only when all 4 are solved
+            const url = atob(_u[0]) + atob(_u[1]) + atob(_u[2]);
+            document.getElementById('repoAnchor').href = url;
+            document.getElementById('lockIcon').textContent = '\uD83D\uDD13';
+            document.getElementById('finalTitle').textContent = 'Congratulations!';
+            document.getElementById('finalDesc').textContent = 'You\'ve mastered the AI tools. Time to hack!';
+            document.getElementById('repoLink').classList.add('visible');
+            document.getElementById('finalSection').classList.add('unlocked');
+            launchConfetti();
+        }
+    }
+
+    // Simple confetti animation
+    function launchConfetti() {
+        const canvas = document.getElementById('confettiCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const colors = ['#60a5fa', '#a78bfa', '#f472b6', '#22c55e', '#fbbf24'];
+        const particles = [];
+
+        for (let i = 0; i < 150; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height - canvas.height,
+                vx: (Math.random() - 0.5) * 4,
+                vy: Math.random() * 3 + 2,
+                size: Math.random() * 6 + 3,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                rotation: Math.random() * 360,
+                rotSpeed: (Math.random() - 0.5) * 10
+            });
+        }
+
+        let frame = 0;
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+                p.vy += 0.05;
+                p.rotation += p.rotSpeed;
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate(p.rotation * Math.PI / 180);
+                ctx.fillStyle = p.color;
+                ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+                ctx.restore();
+            });
+            frame++;
+            if (frame < 180) requestAnimationFrame(animate);
+            else ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+        animate();
+    }
+
+    // Open Station 1 by default
+    document.getElementById('station1').classList.add('open');
+</script>
+
+</body>
+</html>
