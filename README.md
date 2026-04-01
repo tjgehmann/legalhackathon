@@ -39,7 +39,7 @@ The goal is to **think, experiment, and learn** — not to ship production softw
 
 ## The Tools at Your Disposal
 
-You have access to incredibly powerful AI tools. That can be requested through Global IT or directly in the company software portal. Here's how to use each one:
+You have access to incredibly powerful AI tools. Some can be requested through Global IT or downloaded directly in the company software portal. Here's how to use each one:
 
 ---
 
