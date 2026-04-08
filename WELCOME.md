@@ -35,7 +35,7 @@ No coding skills? No problem. No AI experience? Even better — you're about to 
 
 ## Pick Your Challenge
 
-Below are **16 challenges** inspired by real legal headaches. Pick one that speaks to you. Work solo or grab a team. There's no wrong answer — just jump in.
+Below are **17 challenges** inspired by real legal headaches. Pick one that speaks to you. Work solo or grab a team. There's no wrong answer — just jump in.
 
 ---
 
@@ -148,6 +148,13 @@ Law enforcement requests come by fax, post, email, and phone. Different rules fo
 **For:** Customer Care & Legal | **Vibe:** "Do I really need legal sign-off for a EUR 50 refund?"
 
 75% of CC-to-Legal escalations get the same pre-approved answer. Build a system that gives agents "Pre-Approved Legal Lanes" — Green/Yellow/Red classification, instant micro-waivers, and a feedback dashboard that spots systemic issues.
+
+---
+
+### 17. Negotiation Preparation Tool — ZOPA, BATNA & Counterparty Interests
+**For:** Legal, Deal Teams, Procurement | **Vibe:** "We're going into this negotiation blind. Again."
+
+Most negotiations are won or lost before the first meeting — yet lawyers walk in without a clear BATNA, a realistic ZOPA, or a structured read of what the other side actually needs. Build an AI-powered prep tool that maps your walk-away points, estimates the counterparty's real interests, surfaces value trades, and generates a principled negotiation strategy (Fisher & Ury style). Win more deals. Walk away from the right ones.
 
 ---
 

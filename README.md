@@ -10,7 +10,7 @@ So take a deep breath, pick a challenge that excites you, and let's have fun.
 
 ## What Is This Hackathon About?
 
-Legal teams deal with a daily overload of repetitive, time-consuming work — contract reviews, compliance checks, policy questions, document summaries. At the same time, AI tools have reached a point where they can genuinely help with all of this, right now, today, without writing a single line of code.
+Legal teams deal with a daily overload of repetitive, time-consuming work — contract reviews, compliance checks, policy questions, document summaries. And when deals need to be won, lawyers sit across the table from counterparties without a structured read of the other side's real interests, a clear BATNA, or a mapped-out ZOPA. At the same time, AI tools have reached a point where they can genuinely help with all of this, right now, today, without writing a single line of code.
 
 This hackathon gives you a structured day to **explore that potential hands-on**. Pick a real-world legal challenge, use the AI tools available to you, and build something — anything — that demonstrates an idea worth sharing.
 
@@ -183,6 +183,7 @@ Each challenge has its own folder with a detailed brief and mock data. Pick the 
 | 14 | **Employment Law Self-Service Assistant for HR** | HR, Legal | [challenge-14](./challenge-14-employment-law-hr-assistant/) |
 | 15 | **Law Enforcement Request Compliance Assistant** | Legal, Compliance, IT | [challenge-15](./challenge-15-law-enforcement-compliance/) |
 | 16 | **CC Authority Matrix & Resolution Engine** | Customer Care, Legal | [challenge-16](./challenge-16-cc-authority-matrix/) |
+| 17 | **Negotiation Preparation Tool** — ZOPA, BATNA & Counterparty Interests | Legal, Deal Teams, Procurement | [challenge-17](./challenge-17-negotiation-tool/) |
 
 ---
 
@@ -281,7 +282,10 @@ legalhackathon/
 ├── challenge-15-law-enforcement-compliance/
 │   ├── CHALLENGE.md
 │   └── mock-data/
-└── challenge-16-cc-authority-matrix/
+├── challenge-16-cc-authority-matrix/
+│   ├── CHALLENGE.md
+│   └── mock-data/
+└── challenge-17-negotiation-tool/
     ├── CHALLENGE.md
     └── mock-data/
 ```
