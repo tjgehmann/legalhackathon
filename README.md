@@ -2,7 +2,7 @@
 
 > **You don't need to be a developer. You just need curiosity and a problem worth solving.**
 
-Welcome! Today is your day to experiment, explore, and experience firsthand what AI can do for legal work. This is not a coding exam. It's a playground. There are no wrong answers, no failed attempts — only learning and building.
+Welcome! This is your chance to experiment, explore, and experience firsthand what AI can do for legal work. This is not a coding exam. It's a playground. There are no wrong answers, no failed attempts — only learning and building.
 
 So take a deep breath, pick a challenge that excites you, and let's have fun.
 
@@ -39,7 +39,7 @@ The goal is to **think, experiment, and learn** — not to ship production softw
 
 ## The Tools at Your Disposal
 
-You have access to incredibly powerful AI tools today. Here's how to use each one:
+You have access to incredibly powerful AI tools. Some can be requested through Global IT or downloaded directly in the company software portal. Here's how to use each one:
 
 ---
 
@@ -49,9 +49,9 @@ You have access to incredibly powerful AI tools today. Here's how to use each on
 
 **Two ways to use it:**
 
-**Desktop App** — Download from [claude.ai/download](https://claude.ai/download). Open a folder, describe your idea, and Claude writes the code, runs it, fixes errors, and iterates — all from a simple chat interface.
+**Desktop App** — Request a license via Global IT Support. Download the desktop app from the company software portal (or claude.ai directly if you have a selfmanaged device). Open a folder, describe your idea, and Claude writes the code, runs it, fixes errors, and iterates — all from a simple chat interface.
 
-**IDE Extension** — If you have VS Code or a JetBrains IDE, install the Claude Code extension. Claude works alongside you in your editor, reading and writing files, running tests, and explaining every step.
+**IDE Extension** — If you have Visiual Studio Code or a JetBrains IDE, install the Claude Code extension. Claude works alongside you in your editor, reading and writing files, running tests, and explaining every step.
 
 **What you can build with Claude Code:**
 - A web app that lets users upload a contract and get an instant risk summary
@@ -86,6 +86,8 @@ You have access to incredibly powerful AI tools today. Here's how to use each on
 **Antigravity** is a no-code platform that lets you build and deploy real web applications through conversation — no installation, no setup, no code.
 
 **Why use it:** If you want a polished, shareable prototype that looks like a real product, Antigravity is the fastest path. Describe your legal tool, and it builds, styles, and hosts the app for you.
+
+**How to use it:** Download it using the company software portal. Login in with you google credentials.
 
 **Ideas:**
 - A branded contract review dashboard with a file upload and analysis panel
@@ -180,7 +182,8 @@ Each challenge has its own folder with a detailed brief and mock data. Pick the 
 | 13 | **Customer Complaint Resolution Assistant** | Customer Care, Legal | [challenge-13](./challenge-13-customer-complaint-assistant/) |
 | 14 | **Employment Law Self-Service Assistant for HR** | HR, Legal | [challenge-14](./challenge-14-employment-law-hr-assistant/) |
 | 15 | **Law Enforcement Request Compliance Assistant** | Legal, Compliance, IT | [challenge-15](./challenge-15-law-enforcement-compliance/) |
-| 16 | **Negotiation Preparation Tool** — ZOPA, BATNA & Counterparty Interests | Legal, Deal Teams, Procurement | [challenge-16](./challenge-16-negotiation-tool/) |
+| 16 | **CC Authority Matrix & Resolution Engine** | Customer Care, Legal | [challenge-16](./challenge-16-cc-authority-matrix/) |
+| 17 | **Negotiation Preparation Tool** — ZOPA, BATNA & Counterparty Interests | Legal, Deal Teams, Procurement | [challenge-17](./challenge-17-negotiation-tool/) |
 
 ---
 
@@ -195,14 +198,8 @@ Each challenge has its own folder with a detailed brief and mock data. Pick the 
 | 10:00 – 12:30 | Build session 1 |
 | 12:30 – 13:30 | Lunch break |
 | 13:30 – 16:30 | Build session 2 |
-| 16:30 – 17:00 | Final polish & prep |
-| 17:00 – 18:00 | Presentations & judging |
-
-### Who Should Participate
-- **Lawyers and legal professionals** — you know the problems best. You don't need to know how to code.
-- **Paralegals and legal ops** — you live in the workflows. You know exactly where the bottlenecks are.
-- **Business professionals** (HR, procurement, sales, compliance) — you interact with legal constantly. What would make your life easier?
-- **Anyone curious** — this is a day for exploration. No prerequisites required.
+| 16:30 – 18:00 | Final polish & prep |
+| Day 2: 09:00 - 12:00 | Presentations & judging |
 
 ### Judging Criteria
 
@@ -228,7 +225,7 @@ Each challenge has its own folder with a detailed brief and mock data. Pick the 
 
 ## Rules
 
-- Use any publicly available AI tool — Claude, Gemini, ChatGPT, open-source models, or any combination
+- Use any available AI tool
 - All mock data is fictional — do not use real client data, privileged information, or confidential documents
 - Think about data privacy — be ready to explain how your solution would handle sensitive data in production
 - Most importantly: **have fun, ask for help, and be open to surprises**
@@ -285,7 +282,10 @@ legalhackathon/
 ├── challenge-15-law-enforcement-compliance/
 │   ├── CHALLENGE.md
 │   └── mock-data/
-└── challenge-16-negotiation-tool/
+├── challenge-16-cc-authority-matrix/
+│   ├── CHALLENGE.md
+│   └── mock-data/
+└── challenge-17-negotiation-tool/
     ├── CHALLENGE.md
     └── mock-data/
 ```
