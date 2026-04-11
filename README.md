@@ -184,6 +184,7 @@ Each challenge has its own folder with a detailed brief and mock data. Pick the 
 | 15 | **Law Enforcement Request Compliance Assistant** | Legal, Compliance, IT | [challenge-15](./challenge-15-law-enforcement-compliance/) |
 | 16 | **CC Authority Matrix & Resolution Engine** | Customer Care, Legal | [challenge-16](./challenge-16-cc-authority-matrix/) |
 | 17 | **Negotiation Preparation Tool** — ZOPA, BATNA & Counterparty Interests | Legal, Deal Teams, Procurement | [challenge-17](./challenge-17-negotiation-tool/) |
+| 18 | **AI Agent Compliance Harness** — EU AI Act Governance for Internal Agents | Legal, Compliance, IT, all builders | [challenge-18](./challenge-18-ai-agent-compliance-harness/) |
 
 ---
 
@@ -285,7 +286,10 @@ legalhackathon/
 ├── challenge-16-cc-authority-matrix/
 │   ├── CHALLENGE.md
 │   └── mock-data/
-└── challenge-17-negotiation-tool/
+├── challenge-17-negotiation-tool/
+│   ├── CHALLENGE.md
+│   └── mock-data/
+└── challenge-18-ai-agent-compliance-harness/
     ├── CHALLENGE.md
     └── mock-data/
 ```

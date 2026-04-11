@@ -35,7 +35,7 @@ No coding skills? No problem. No AI experience? Even better — you're about to 
 
 ## Pick Your Challenge
 
-Below are **17 challenges** inspired by real legal headaches. Pick one that speaks to you. Work solo or grab a team. There's no wrong answer — just jump in.
+Below are **18 challenges** inspired by real legal headaches. Pick one that speaks to you. Work solo or grab a team. There's no wrong answer — just jump in.
 
 ---
 
@@ -155,6 +155,13 @@ Law enforcement requests come by fax, post, email, and phone. Different rules fo
 **For:** Legal, Deal Teams, Procurement | **Vibe:** "We're going into this negotiation blind. Again."
 
 Most negotiations are won or lost before the first meeting — yet lawyers walk in without a clear BATNA, a realistic ZOPA, or a structured read of what the other side actually needs. Build an AI-powered prep tool that maps your walk-away points, estimates the counterparty's real interests, surfaces value trades, and generates a principled negotiation strategy (Fisher & Ury style). Win more deals. Walk away from the right ones.
+
+---
+
+### 18. AI Agent Compliance Harness
+**For:** Legal, Compliance, IT — and every team building agents | **Vibe:** "Everyone is building AI agents. Nobody has a list. The EU AI Act applies. Now what?"
+
+Your company has AI agents running in HR, sales, finance, IT, and customer care — some of which would fail an EU AI Act audit tomorrow. One of them is probably prohibited outright. Build a compliance harness: a risk classifier, a governance wrapper, and a deployment gate that makes compliant behavior the path of least resistance. This is Legal's chance to govern AI before regulators do it for you.
 
 ---
 
